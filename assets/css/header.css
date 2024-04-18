@@ -16,3 +16,43 @@
   margin-top: 1.5em;
   font-size: 4em;
 }
+
+.menu {
+    width: 100%;
+}
+
+.menu ul {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.menu li {
+    width: 100%;
+    list-style: none;
+    border: 1px solid #000000;
+}
+
+.menu li:hover {
+    background: #00000094;
+}
+
+.menu .actual {
+    background: #00000051;
+}
+
+.menu a {
+    width: 100%;
+    text-decoration: none;
+    color: #000000;
+}
+
+.cerrar-sesion {
+    text-align: right;
+    margin-right: 1em;
+}
+
+.cerrar-sesion a {
+    text-decoration: none;
+    color: #000000;
+}
