@@ -8,7 +8,7 @@
     color: #ffffff;
     padding: 1em 1em;
     margin: 1em 0.5em;
-    -webkit-text-stroke: 0.1em black;
+    -webkit-text-stroke: 0.1em #000000;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

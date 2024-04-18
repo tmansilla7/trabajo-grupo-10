@@ -1,18 +1,37 @@
 .inicio {
     width: 30%;
-    margin: 0 auto;
+    margin: 3em auto;
 }
 
-.inicio label {
+.label-inicio {
+    text-align:right;
+}
+
+.label-inicio input {
+    margin: 0 3em;
+    padding: 0.5em;
+}
+
+.inicio label, a {
     display: block;
+    margin: 1em auto;
 }
 
 .inicio a {
-    display: block;
     text-align: center;
-    margin: 0.5em;
+    text-decoration: none;
+    color: #0000ff;
+}
+
+.inicio a:hover {
+    text-decoration: underline;
 }
 
 .inicio .ingresar {
     text-align: center;
+}
+
+.btn-ingresar {
+    margin: 1em auto;
+    padding: 0.5em 5em;
 }
