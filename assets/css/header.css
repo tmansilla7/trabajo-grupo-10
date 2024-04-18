@@ -1,0 +1,18 @@
+.principal {
+    background-image: url(../img/planeta.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 40%;
+    border-radius: 2em;
+    text-align: center;
+    color: #ffffff;
+    padding: 1em 1em;
+    margin: 1em 0.5em;
+    -webkit-text-stroke: 0.1em black;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.principal h1 {
+    margin-top: 1.5em;
+    font-size:4em;
+}

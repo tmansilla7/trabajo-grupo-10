@@ -1,0 +1,18 @@
+.inicio {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.inicio label {
+    display: block;
+}
+
+.inicio a {
+    display: block;
+    text-align: center;
+    margin: 0.5em;
+}
+
+.inicio .ingresar {
+    text-align: center;
+}
