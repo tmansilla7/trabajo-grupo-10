@@ -1,37 +1,38 @@
 .inicio {
-    width: 30%;
-    margin: 3em auto;
+  width: 30%;
+  margin: 3em auto;
 }
 
 .label-inicio {
-    text-align:right;
+  text-align: right;
 }
 
 .label-inicio input {
-    margin: 0 3em;
-    padding: 0.5em;
+  margin: 0 3em;
+  padding: 0.5em;
 }
 
-.inicio label, a {
-    display: block;
-    margin: 1em auto;
+.inicio label,
+a {
+  display: block;
+  margin: 1em auto;
 }
 
 .inicio a {
-    text-align: center;
-    text-decoration: none;
-    color: #0000ff;
+  text-align: center;
+  text-decoration: none;
+  color: #0000ff;
 }
 
 .inicio a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .inicio .ingresar {
-    text-align: center;
+  text-align: center;
 }
 
 .btn-ingresar {
-    margin: 1em auto;
-    padding: 0.5em 5em;
+  margin: 1em auto;
+  padding: 0.5em 5em;
 }
