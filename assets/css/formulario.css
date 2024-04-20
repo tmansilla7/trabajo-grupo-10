@@ -1,19 +1,23 @@
-.inicio {
+.inicio,
+.recuperar {
   width: 30%;
   margin: 3em auto;
 }
 
-.label-inicio {
+.label-inicio,
+.label-recuperar {
   text-align: right;
 }
 
-.label-inicio input {
+.label-inicio input,
+.label-recuperar input {
   margin: 0 3em;
   padding: 0.5em;
 }
 
-.inicio label,
-a {
+.label-inicio,
+.inicio a,
+.label-recuperar {
   display: block;
   margin: 1em auto;
 }
@@ -28,11 +32,35 @@ a {
   text-decoration: underline;
 }
 
-.inicio .ingresar {
+.inicio .ingresar,
+.recuperar .envio {
   text-align: center;
+}
+
+.envio {
+  margin-top: 2em;
 }
 
 .btn-ingresar {
   margin: 1em auto;
   padding: 0.5em 5em;
+}
+
+.btn-recuperar {
+  margin: 1em 1em;
+  padding: 0.5em 3em;
+}
+
+.btn-recuperar.enviar {
+  background-color: #66bd668f;
+}
+
+.btn-recuperar.cancelar {
+  background-color: #ff1b1b8e;
+}
+
+.recuperar h1 {
+  text-align: center;
+  margin: 4em 0 2em 0;
+  font-size: 2em;
 }
