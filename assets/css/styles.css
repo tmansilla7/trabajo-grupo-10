@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: auto;
+}
+
+.series, .peliculas {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.series img, .peliculas img {
+    height: 300px;
+}
+
+.series a, .peliculas a {
+    text-decoration: none;
+    color: #000;
+}
+
+.series a:hover, .peliculas a:hover {
+    color: #0000ff7c;
+}

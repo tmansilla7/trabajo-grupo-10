@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h1>Registrarse</h1>
+        </section>
+
+        <section>
+            <form action="./home.html">
+                <div>
+                    <label for="nombre">
+                        Nombre
+                        <input type="text" placeholder="Ingresa tu nombre" name="nombre" id="nombre">
+                    </label>
+                    <label for="apellido">
+                        Apellido
+                        <input type="text" placeholder="Ingresa tu apellido" name="apellido" id="apellido">
+                    </label>
+                    <label for="email">
+                        E-mail
+                        <input type="email" placeholder="Ingresa tu email" name="email" id="email">
+                    </label>
+                    <label for="usuario">
+                        Nombre de usuario
+                        <input type="text" placeholder="Nombre de usuario" name="usuario" id="usuario" required>
+                    </label>
+                    <label for="password">
+                        Contraseña
+                        <input type="password" placeholder="Contraseña" name="password" id="password" required>
+                    </label>
+                    <label for="rep-password">
+                        Repetir contraseña
+                        <input type="password" placeholder="Repetir contraseña" name="rep-password" id="rep-password"
+                            required>
+                    </label>
+                </div>
+
+                <div>
+                    <label for="metodo-pago">Método de pago</label>
+                    <label for="tarjeta">
+                        <input type="radio" name="metodo-pago" id="tarjeta" value="Tarjeta">
+                        Tarjeta de crédito
+                        <textarea name="numero" cols="20" rows="2" placeholder="Número de tarjeta" disabled></textarea>
+                        <textarea name="numero" cols="7" rows="2" placeholder="XXX" disabled></textarea>
+                    </label>
+                    <label for="cupon">
+                        <input type="radio" name="metodo-pago" id="cupon" value="Cupón">
+                        Cupón de pago
+                        <label for="facil">
+                            <input type="checkbox" name="facil" id="facil" value="facil" disabled>
+                            Pago fácil
+                        </label>
+                        <label for="rapi">
+                            <input type="checkbox" name="rapi" id="rapi" value="rapi" disabled>
+                            RapiPago
+                        </label>
+                    </label>
+                    <label for="transferencia">
+                        <input type="radio" name="metodo-pago" id="transferencia" value="Transferencia">
+                        Transferencia bancaria
+                        <label for="transferencia">CBU: 5950493839933</label>
+                    </label>
+                </div>
+
+                <div>
+                    <button type="submit">Confirmar</button>
+                    <a href="../index.html"><input type="button" value="Ya tengo un usuario"></a>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
