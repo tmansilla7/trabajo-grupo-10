@@ -1,7 +1,9 @@
 .inicio,
 .recuperar {
-  width: 30%;
-  margin: 3em auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .label-inicio,
@@ -19,6 +21,10 @@
 .inicio a,
 .label-recuperar {
   display: block;
+}
+
+.label-inicio,
+.label-recuperar {
   margin: 1em auto;
 }
 
@@ -26,6 +32,7 @@
   text-align: center;
   text-decoration: none;
   color: #0000ff;
+  margin: 0.5em;
 }
 
 .inicio a:hover {
