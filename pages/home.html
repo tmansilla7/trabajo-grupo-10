@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../assets/img/logo.png"
+    />
     <link rel="stylesheet" href="../assets/css/styles.css" />
     <link rel="stylesheet" href="../assets/css/header.css" />
     <link
@@ -11,7 +16,7 @@
       rel="stylesheet"
     />
   </head>
-  
+
   <body>
     <header>
       <nav class="menu">
@@ -49,13 +54,27 @@
     </header>
 
     <main>
+      <section>
+        <label for="categorias">Categorías:</label>
+        <select id="categorias" name="categorias">
+          <option value="1">Fantasía</option>
+          <option value="2">Comedia</option>
+          <option value="3">Terror</option>
+          <option value="4">Ciencia Ficción</option>
+        </select>
+
+        <input
+          type="text"
+          id="buscar"
+          name="buscar"
+          placeholder="Buscar por nombre"
+        />
+      </section>
+
       <section class="series peliculas">
         <article>
           <a href="./supernatural.html">
-            <img
-              src="../assets/img/Supernatural.jpg"
-              alt="Supernatural"
-            />
+            <img src="../assets/img/Supernatural.jpg" alt="Supernatural" />
             <h3>Supernatural</h3>
           </a>
         </article>
@@ -65,9 +84,6 @@
             <h3>Heroes</h3>
           </a>
         </article>
-        
-
-    
       </section>
     </main>
   </body>

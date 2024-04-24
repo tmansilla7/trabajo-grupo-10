@@ -1,24 +1,38 @@
 .inicio,
 .recuperar {
-  width: 30%;
-  margin: 3em auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .label-inicio,
-.label-recuperar {
+.label-recuperar,
+.label-registro {
   text-align: right;
 }
 
+.pago .label-registro {
+  text-align: left;
+}
+
 .label-inicio input,
-.label-recuperar input {
+.label-recuperar input,
+.label-registro input {
   margin: 0 3em;
   padding: 0.5em;
 }
 
 .label-inicio,
 .inicio a,
-.label-recuperar {
+.label-recuperar,
+.label-registro {
   display: block;
+}
+
+.label-inicio,
+.label-recuperar,
+.label-registro {
   margin: 1em auto;
 }
 
@@ -26,6 +40,7 @@
   text-align: center;
   text-decoration: none;
   color: #0000ff;
+  margin: 0.5em;
 }
 
 .inicio a:hover {
@@ -33,7 +48,8 @@
 }
 
 .inicio .ingresar,
-.recuperar .envio {
+.recuperar .envio,
+.registro .registrar {
   text-align: center;
 }
 
@@ -41,26 +57,43 @@
   margin-top: 2em;
 }
 
+.registrar {
+  margin-top: 4em;
+}
+
 .btn-ingresar {
   margin: 1em auto;
   padding: 0.5em 5em;
 }
 
-.btn-recuperar {
+.btn-recuperar,
+.btn-registrar {
   margin: 1em 1em;
   padding: 0.5em 3em;
 }
 
-.btn-recuperar.enviar {
+.btn-recuperar.enviar,
+.btn-registrar.confirmar {
   background-color: #66bd668f;
 }
 
-.btn-recuperar.cancelar {
+.btn-recuperar.cancelar,
+.btn-registrar.cancelar {
   background-color: #ff1b1b8e;
 }
 
 .recuperar h1 {
   text-align: center;
-  margin: 4em 0 2em 0;
+  margin: 4em 0 1em 0;
   font-size: 2em;
+}
+
+.registro h1 {
+  margin: 2em 0 0 4em;
+  font-size: 2em;
+}
+
+.registro form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
