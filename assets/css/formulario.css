@@ -89,13 +89,22 @@
 }
 
 .registro h1 {
-  margin: 2em 0 0 4em;
+  margin: 2em 0 1em 4em;
   font-size: 2em;
 }
 
-.registro form {
-  display: flex;
-  flex-direction: row;
+.form-registro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-content: center;
   justify-content: center;
-  align-items: center;
+}
+
+.form-registro .datos {
+  margin-top: 0;
+}
+
+.pago-check,
+.label-registro .pago-check {
+  display: inline;
 }

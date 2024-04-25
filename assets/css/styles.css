@@ -4,6 +4,10 @@
     margin: auto;
 }
 
+html {
+    height: 100%;
+}
+
 .series, .peliculas {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
