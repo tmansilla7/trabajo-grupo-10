@@ -1,2 +1,2 @@
-hello
-I'm the second commit hre 
+Hello , somos el grupo 10 !  
+aqui estara el proyecto de CINEMA 
