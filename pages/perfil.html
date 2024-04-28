@@ -59,7 +59,7 @@
           <img src="../assets/img/perfil.JPG" alt="foto de perfil" />
           <h3>Nombre de usuario</h3>
         </section>
-        <section>
+        <section class="formulario-perfil">
           <form>
             <div class="form-perfil">
               <div class="datos">
@@ -109,7 +109,7 @@
                     value="Tarjeta"
                   />
                   Tarjeta de crédito
-                  <div>
+                  <div class="datos-tarjeta">
                     <textarea
                       name="numero"
                       cols="20"
@@ -126,7 +126,7 @@
                     ></textarea>
                   </div>
                 </label>
-                <label for="cupon" class="label-perfil">
+                <label for="cupon" class="label-perfil metodo-pago">
                   <input
                     type="radio"
                     name="metodo-pago"
@@ -135,29 +135,33 @@
                   />
                   Cupón de pago
                 </label>
-                <label for="facil" class="label-perfil pago-check">
-                  <input
-                    class="pago-check"
-                    type="checkbox"
-                    name="facil"
-                    id="facil"
-                    value="facil"
-                    disabled
-                  />
-                  Pago fácil
-                </label>
-                <label for="rapi" class="label-perfil pago-check">
-                  <input
-                    class="pago-check"
-                    type="checkbox"
-                    name="rapi"
-                    id="rapi"
-                    value="rapi"
-                    disabled
-                  />
-                  RapiPago
-                </label>
-                <label for="transferencia" class="label-perfil">
+                <div class="pago-check">
+                  <label for="facil" class="label-perfil">
+                    <input
+                      class="pago-check"
+                      type="checkbox"
+                      name="facil"
+                      id="facil"
+                      value="facil"
+                      disabled
+                    />
+                    Pago fácil
+                  </label>
+                  <label for="rapi" class="label-perfil">
+                    <input
+                      class="pago-check"
+                      type="checkbox"
+                      name="rapi"
+                      id="rapi"
+                      value="rapi"
+                      disabled
+                    />
+                    RapiPago
+                  </label>
+                </div>
+                
+                
+                <label for="transferencia" class="label-perfil metodo-pago">
                   <input
                     type="radio"
                     name="metodo-pago"
@@ -166,7 +170,7 @@
                   />
                   Transferencia bancaria
                 </label>
-                <label for="transferencia" class="label-perfil"
+                <label for="transferencia" class="label-perfil metodo-pago cbu"
                   >CBU: 5950493839933</label
                 >                
               </div>

@@ -119,8 +119,10 @@
   display: inline;
 }
 
-.form-perfil {
-  margin-top: 3em;
+.formulario-perfil {
+  height: 100%;
+  align-content: center;
+  padding: 2em 0 ;
 }
 
 .form-perfil .datos {
@@ -137,11 +139,50 @@
 }
 
 .label-perfil {
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 .perfil-guardar {
   display: flex;
   justify-content: center;
   align-content: center;
+  margin-top: 1em;
+}
+
+.perfil .pago {
+  height: 100%;
+  margin: 0;
+}
+
+.perfil .pago input {
+  margin-left: 3em;
+  margin-right: 0.8em;
+}
+
+.datos-tarjeta {
+  margin: 0.5em 4.5em 0 4.5em;
+}
+
+.datos-tarjeta textarea {
+  margin: 0 0.5em;
+  align-items: center;
+}
+
+.pago-check {
+  text-align: center;
+  margin-left: 3em;
+}
+
+.pago-check label {
+  display: inline;
+}
+
+.label-perfil.metodo-pago {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.label-perfil.metodo-pago.cbu {
+  margin-top: 0.1em;
+  margin-left: 5.5em;
 }
