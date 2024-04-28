@@ -8,17 +8,20 @@
 
 .label-inicio,
 .label-recuperar,
-.label-registro {
+.label-registro,
+.label-perfil {
   text-align: right;
 }
 
-.pago .label-registro {
+.pago .label-registro,
+.pago .label-perfil {
   text-align: left;
 }
 
 .label-inicio input,
 .label-recuperar input,
-.label-registro input {
+.label-registro input,
+.label-perfil input {
   margin: 0 3em;
   padding: 0.5em;
 }
@@ -26,7 +29,8 @@
 .label-inicio,
 .inicio a,
 .label-recuperar,
-.label-registro {
+.label-registro,
+.label-perfil {
   display: block;
 }
 
@@ -57,7 +61,8 @@
   margin-top: 2em;
 }
 
-.registrar {
+.registrar,
+.perfil-guardar {
   margin-top: 4em;
 }
 
@@ -67,18 +72,21 @@
 }
 
 .btn-recuperar,
-.btn-registrar {
+.btn-registrar,
+.btn-guardar {
   margin: 1em 1em;
   padding: 0.5em 3em;
 }
 
 .btn-recuperar.enviar,
-.btn-registrar.confirmar {
+.btn-registrar.confirmar,
+.btn-guardar.confirmar {
   background-color: #66bd668f;
 }
 
 .btn-recuperar.cancelar,
-.btn-registrar.cancelar {
+.btn-registrar.cancelar,
+.btn-guardar.cancelar {
   background-color: #ff1b1b8e;
 }
 
@@ -93,18 +101,47 @@
   font-size: 2em;
 }
 
-.form-registro {
+.form-registro,
+.form-perfil {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-content: center;
   justify-content: center;
 }
 
-.form-registro .datos {
+.form-registro .datos,
+.form-perfil .datos {
   margin-top: 0;
 }
 
 .pago-check,
 .label-registro .pago-check {
   display: inline;
+}
+
+.form-perfil {
+  margin-top: 3em;
+}
+
+.form-perfil .datos {
+  margin-right: 5em;
+}
+
+.label-perfil h3 {
+  display: inline;
+  margin: 0 3em 0 1.7em;
+}
+
+.label-perfil.email {
+  margin-right: 0.9em;
+}
+
+.label-perfil {
+  margin-top: 2em;
+}
+
+.perfil-guardar {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }

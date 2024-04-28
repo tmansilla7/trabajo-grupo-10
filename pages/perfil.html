@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/logo.png">
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../assets/img/logo.png"
+    />
     <link rel="stylesheet" href="../assets/css/styles.css" />
     <link rel="stylesheet" href="../assets/css/header.css" />
+    <link rel="stylesheet" href="../assets/css/formulario.css" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -48,6 +53,136 @@
       </div>
     </header>
 
-    <main></main>
+    <main>
+      <section class="perfil">
+        <section class="foto-perfil">
+          <img src="../assets/img/perfil.JPG" alt="foto de perfil" />
+          <h3>Nombre de usuario</h3>
+        </section>
+        <section>
+          <form>
+            <div class="form-perfil">
+              <div class="datos">
+                <label for="email" class="label-perfil email">E-mail
+                  <h3>usuario@gmail.com</h3>
+                </label>
+                
+                <label for="password" class="label-perfil">
+                  Contraseña
+                  <input
+                    type="password"
+                    placeholder="Ingresa tu contraseña"
+                    name="password"
+                    id="password"
+                    required
+                  />
+                </label>
+                <label for="password" class="label-perfil">
+                  Nueva contraseña
+                  <input
+                    type="password"
+                    placeholder="Ingresa la nueva contraseña"
+                    name="password"
+                    id="password"
+                  />
+                </label>
+                <label for="password" class="label-perfil">
+                  Repetir contraseña
+                  <input
+                    type="password"
+                    placeholder="Repite la nueva contraseña"
+                    name="password"
+                    id="password"
+                  />
+                </label>
+              </div>
+
+              <div class="pago">
+                <label for="metodo-pago" class="label-perfil"
+                  >Método de pago</label
+                >
+                <label for="tarjeta" class="label-perfil">
+                  <input
+                    type="radio"
+                    name="metodo-pago"
+                    id="tarjeta"
+                    value="Tarjeta"
+                  />
+                  Tarjeta de crédito
+                  <div>
+                    <textarea
+                      name="numero"
+                      cols="20"
+                      rows="2"
+                      placeholder="Número de tarjeta"
+                      disabled
+                    ></textarea>
+                    <textarea
+                      name="numero"
+                      cols="7"
+                      rows="2"
+                      placeholder="XXX"
+                      disabled
+                    ></textarea>
+                  </div>
+                </label>
+                <label for="cupon" class="label-perfil">
+                  <input
+                    type="radio"
+                    name="metodo-pago"
+                    id="cupon"
+                    value="Cupón"
+                  />
+                  Cupón de pago
+                </label>
+                <label for="facil" class="label-perfil pago-check">
+                  <input
+                    class="pago-check"
+                    type="checkbox"
+                    name="facil"
+                    id="facil"
+                    value="facil"
+                    disabled
+                  />
+                  Pago fácil
+                </label>
+                <label for="rapi" class="label-perfil pago-check">
+                  <input
+                    class="pago-check"
+                    type="checkbox"
+                    name="rapi"
+                    id="rapi"
+                    value="rapi"
+                    disabled
+                  />
+                  RapiPago
+                </label>
+                <label for="transferencia" class="label-perfil">
+                  <input
+                    type="radio"
+                    name="metodo-pago"
+                    id="transferencia"
+                    value="Transferencia"
+                  />
+                  Transferencia bancaria
+                </label>
+                <label for="transferencia" class="label-perfil"
+                  >CBU: 5950493839933</label
+                >                
+              </div>
+            </div>
+            
+          </form>
+        </section>
+      </section>
+      <section class="perfil-guardar">
+        <button type="submit" class="btn-guardar confirmar">
+          Guardar cambios
+        </button>
+        <button type="submit" class="btn-guardar cancelar">
+          Cancelar suscripción
+        </button>
+      </section>
+    </main>
   </body>
 </html>

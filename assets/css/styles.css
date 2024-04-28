@@ -27,3 +27,22 @@ html {
 .series a:hover, .peliculas a:hover {
     color: #0000ff7c;
 }
+
+.perfil {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.foto-perfil {
+    margin-top: 0;
+}
+
+.foto-perfil img {
+    width: 50%;
+    display: block;
+}
+
+.foto-perfil h3 {
+    font-size: 1em;
+    text-align: center;
+}
