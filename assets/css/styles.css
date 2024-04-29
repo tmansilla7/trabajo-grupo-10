@@ -23,3 +23,29 @@
 .series a:hover, .peliculas a:hover {
     color: #0000ff7c;
 }
+.category {
+    background-color: red ;
+    border-radius: 50px;
+    width: 500px;
+    margin: 5px !important;
+    color: white !important;
+    padding: 15px ;
+    border: none !important;
+}
+input {
+    
+    border: 1px solid #ccc; 
+    padding: 5px;
+    border-radius: 5px; 
+    margin-left: 15px;
+    margin-bottom: 15px;
+    color: red;
+    background-color: antiquewhite;
+}
+select{
+    border-radius: 5px;
+    padding: 5px;
+    color: red;
+    background-color: antiquewhite;
+
+}
