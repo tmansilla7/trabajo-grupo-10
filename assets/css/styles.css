@@ -64,7 +64,7 @@ select {
     height: 70px;
     background-color: red;
     border-radius: 50px;
-    margin-right: 1em;
+    margin-right: 2em;
 }
 
 .cerrar-sesion a {
@@ -103,4 +103,9 @@ img {
 
 img:hover {
     border-radius: 50px;
+}
+
+.frame a[href="./heroes.html"] h3 {
+    color: #000;
+    text-decoration: none !important;
 }
