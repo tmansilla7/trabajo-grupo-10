@@ -46,45 +46,42 @@ input {
     border-radius: 5px;
     margin-left: 15px;
     margin-bottom: 15px;
-    color: red !important;
     background-color: antiquewhite;
 
-}
-
-input::placeholder {
-    color: red;
 }
 
 select {
     font-size: 18px;
     border-radius: 5px;
     padding: 5px;
-    color: red;
     background-color: antiquewhite;
 }
 
 .cerrar-sesion {
     display: flex;
-    align-items: center;
     justify-content: center;
     width: 150px;
     height: 70px;
     background-color: red;
     border-radius: 50px;
+    margin-right: 1em;
 }
 
 .cerrar-sesion a {
     font-size: 18px;
     display: flex;
     color: white !important;
+    text-decoration: none;
 }
 
 .submenu {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
+    display: flex; /* Activar el modelo de caja flexible */
+    justify-content: space-between; /* Distribuir los elementos en los extremos */
+    align-items: center; /* Centrar verticalmente los elementos */
+  }
+  
+
 
 label[for="categorias"] {
     font-size: 18px;
-  }
+}
