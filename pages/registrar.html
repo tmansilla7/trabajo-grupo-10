@@ -18,98 +18,108 @@
       <section class="registro">
         <h1>Registrarse</h1>
         <form action="./home.html">
-          <div>
-            <label for="nombre" class="label-registro">
-              Nombre
-              <input
-                type="text"
-                placeholder="Ingresa tu nombre"
-                name="nombre"
-                id="nombre"
-              />
-            </label>
-            <label for="apellido" class="label-registro">
-              Apellido
-              <input
-                type="text"
-                placeholder="Ingresa tu apellido"
-                name="apellido"
-                id="apellido"
-              />
-            </label>
-            <label for="email" class="label-registro">
-              E-mail
-              <input
-                type="email"
-                placeholder="Ingresa tu email"
-                name="email"
-                id="email"
-              />
-            </label>
-            <label for="usuario" class="label-registro">
-              Nombre de usuario
-              <input
-                type="text"
-                placeholder="Nombre de usuario"
-                name="usuario"
-                id="usuario"
-                required
-              />
-            </label>
-            <label for="password" class="label-registro">
-              Contraseña
-              <input
-                type="password"
-                placeholder="Contraseña"
-                name="password"
-                id="password"
-                required
-              />
-            </label>
-            <label for="rep-password" class="label-registro">
-              Repetir contraseña
-              <input
-                type="password"
-                placeholder="Repetir contraseña"
-                name="rep-password"
-                id="rep-password"
-                required
-              />
-            </label>
-          </div>
-
-          <div class="pago">
-            <label for="metodo-pago" class="label-registro"
-              >Método de pago</label
-            >
-            <label for="tarjeta" class="label-registro">
-              <input
-                type="radio"
-                name="metodo-pago"
-                id="tarjeta"
-                value="Tarjeta"
-              />
-              Tarjeta de crédito
-              <textarea
-                name="numero"
-                cols="20"
-                rows="2"
-                placeholder="Número de tarjeta"
-                disabled
-              ></textarea>
-              <textarea
-                name="numero"
-                cols="7"
-                rows="2"
-                placeholder="XXX"
-                disabled
-              ></textarea>
-            </label>
-            <label for="cupon" class="label-registro">
-              <input type="radio" name="metodo-pago" id="cupon" value="Cupón" />
-              Cupón de pago
-              <label for="facil" class="label-registro">
+          <div class="form-registro">
+            <div class="datos">
+              <label for="nombre" class="label-registro">
+                Nombre
                 <input
+                  type="text"
+                  placeholder="Ingresa tu nombre"
+                  name="nombre"
+                  id="nombre"
+                />
+              </label>
+              <label for="apellido" class="label-registro">
+                Apellido
+                <input
+                  type="text"
+                  placeholder="Ingresa tu apellido"
+                  name="apellido"
+                  id="apellido"
+                />
+              </label>
+              <label for="email" class="label-registro">
+                E-mail
+                <input
+                  type="email"
+                  placeholder="Ingresa tu email"
+                  name="email"
+                  id="email"
+                />
+              </label>
+              <label for="usuario" class="label-registro">
+                Nombre de usuario
+                <input
+                  type="text"
+                  placeholder="Nombre de usuario"
+                  name="usuario"
+                  id="usuario"
+                  required
+                />
+              </label>
+              <label for="password" class="label-registro">
+                Contraseña
+                <input
+                  type="password"
+                  placeholder="Contraseña"
+                  name="password"
+                  id="password"
+                  required
+                />
+              </label>
+              <label for="rep-password" class="label-registro">
+                Repetir contraseña
+                <input
+                  type="password"
+                  placeholder="Repetir contraseña"
+                  name="rep-password"
+                  id="rep-password"
+                  required
+                />
+              </label>
+            </div>
+
+            <div class="pago">
+              <label for="metodo-pago" class="label-registro"
+                >Método de pago</label
+              >
+              <label for="tarjeta" class="label-registro">
+                <input
+                  type="radio"
+                  name="metodo-pago"
+                  id="tarjeta"
+                  value="Tarjeta"
+                />
+                Tarjeta de crédito
+                <div>
+                  <textarea
+                    name="numero"
+                    cols="20"
+                    rows="2"
+                    placeholder="Número de tarjeta"
+                    disabled
+                  ></textarea>
+                  <textarea
+                    name="numero"
+                    cols="7"
+                    rows="2"
+                    placeholder="XXX"
+                    disabled
+                  ></textarea>
+                </div>
+              </label>
+              <label for="cupon" class="label-registro">
+                <input
+                  type="radio"
+                  name="metodo-pago"
+                  id="cupon"
+                  value="Cupón"
+                />
+                Cupón de pago
+              </label>
+              <label for="facil" class="label-registro pago-check">
+                <input
+                  class="pago-check"
                   type="checkbox"
                   name="facil"
                   id="facil"
@@ -118,8 +128,9 @@
                 />
                 Pago fácil
               </label>
-              <label for="rapi" class="label-registro">
+              <label for="rapi" class="label-registro pago-check">
                 <input
+                  class="pago-check"
                   type="checkbox"
                   name="rapi"
                   id="rapi"
@@ -128,30 +139,30 @@
                 />
                 RapiPago
               </label>
-            </label>
-            <label for="transferencia" class="label-registro">
-              <input
-                type="radio"
-                name="metodo-pago"
-                id="transferencia"
-                value="Transferencia"
-              />
-              Transferencia bancaria
+              <label for="transferencia" class="label-registro">
+                <input
+                  type="radio"
+                  name="metodo-pago"
+                  id="transferencia"
+                  value="Transferencia"
+                />
+                Transferencia bancaria
+              </label>
               <label for="transferencia" class="label-registro"
                 >CBU: 5950493839933</label
               >
-            </label>
 
-            <div class="registrar">
-              <button type="submit" class="btn-registrar confirmar">
-                Confirmar
-              </button>
-              <a href="../index.html"
-                ><input
-                  type="button"
-                  class="btn-registrar cancelar"
-                  value="Ya tengo un usuario"
-              /></a>
+              <div class="registrar">
+                <button type="submit" class="btn-registrar confirmar">
+                  Confirmar
+                </button>
+                <a href="../index.html"
+                  ><input
+                    type="button"
+                    class="btn-registrar cancelar"
+                    value="Ya tengo un usuario"
+                /></a>
+              </div>
             </div>
           </div>
         </form>

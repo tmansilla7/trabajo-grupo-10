@@ -4,6 +4,10 @@
     margin: auto;
 }
 
+html {
+    height: 100vh;
+}
+
 .series, .peliculas {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -22,4 +26,26 @@
 
 .series a:hover, .peliculas a:hover {
     color: #0000ff7c;
+}
+
+.perfil {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-content: center;
+}
+
+.foto-perfil {
+    height: 100%;
+    margin-top: 0;
+    align-content: center;
+}
+
+.foto-perfil img {
+    width: 50%;
+    display: block;
+}
+
+.foto-perfil h3 {
+    font-size: 1em;
+    text-align: center;
 }
