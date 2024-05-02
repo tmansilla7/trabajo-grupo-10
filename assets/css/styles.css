@@ -5,8 +5,11 @@
     margin: auto;
 }
 
-.series,
-.peliculas {
+html {
+    height: 100vh;
+}
+
+.series, .peliculas {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     font-size: 1.5em;
@@ -48,4 +51,26 @@ input {
     margin-bottom: 15px;
     background-color: antiquewhite;
 
+}
+
+.perfil {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-content: center;
+}
+
+.foto-perfil {
+    height: 100%;
+    margin-top: 0;
+    align-content: center;
+}
+
+.foto-perfil img {
+    width: 50%;
+    display: block;
+}
+
+.foto-perfil h3 {
+    font-size: 1em;
+    text-align: center;
 }
