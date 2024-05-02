@@ -105,7 +105,7 @@ img:hover {
     border-radius: 50px;
 }
 
-.frame a[href="./heroes.html"] h3 {
-    color: #000;
-    text-decoration: none !important;
+.frame h3 {
+    color:black;
+    text-align: center;
 }
