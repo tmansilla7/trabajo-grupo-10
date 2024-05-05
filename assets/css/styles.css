@@ -1,4 +1,5 @@
 * {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     box-sizing: border-box;
     padding: 0;
     margin: auto;
@@ -15,17 +16,41 @@ html {
     text-align: center;
 }
 
-.series img, .peliculas img {
+.series img,
+.peliculas img {
     height: 300px;
 }
 
-.series a, .peliculas a {
+.series a,
+.peliculas a {
     text-decoration: none;
     color: #000;
 }
 
-.series a:hover, .peliculas a:hover {
+.series a:hover,
+.peliculas a:hover {
     color: #0000ff7c;
+}
+
+.category {
+    background-color: red;
+    border-radius: 50px;
+    width: 550px;
+    height: 70px;
+    color: white !important;
+    padding: 15px;
+    margin-left: 14px;
+}
+
+input {
+    font-size: 18px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    background-color: antiquewhite;
+
 }
 
 .perfil {
