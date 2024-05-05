@@ -1,8 +1,16 @@
 * {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    box-sizing: border-box;
-    padding: 0;
-    margin: auto;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: auto;
+}
+
+.series,
+.peliculas {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  font-size: 1.5em;
+  text-align: center;
 }
 
 html {
@@ -18,18 +26,31 @@ html {
 
 .series img,
 .peliculas img {
-    height: 300px;
+  height: 300px;
 }
 
 .series a,
 .peliculas a {
-    text-decoration: none;
-    color: #000;
+  text-decoration: none;
+  color: #000;
 }
 
 .series a:hover,
 .peliculas a:hover {
-    color: #0000ff7c;
+  color: #0000ff7c;
+}
+
+.similares {
+  display: inline-flex;
+  flex-direction: row;
+  /*margin: 15px 15px;*/
+  text-align: center;
+}
+
+.similares img {
+  height: 300px;
+  margin: 20px 50px;
+  text-align: center;
 }
 
 .category {
