@@ -45,41 +45,52 @@
           </a>
         </ul>
       </nav>
-      <section class="submenu">
-
-      <div class="cerrar-sesion">
-        <a href="../index.html">Cerrar sesión</a>
-      </div>
-      </section>
+      
     </header>
 
     <main>
+      <section class="submenu">
+        <div class="category">
+          <label for="categorias">Categorías:</label>
+          <select id="categorias" name="categorias">
+            <option value="1">Fantasía</option>
+            <option value="2">Comedia</option>
+            <option value="3">Terror</option>
+            <option value="4">Ciencia Ficción</option>
+          </select>
+          <input type="text" id="buscar" name="buscar" placeholder="Buscar por nombre" />
+        </div>
+        <div class="cerrar-sesion">
+          <a href="../index.html">Cerrar sesión</a>
+        </div>
+      </section>
+
       <section class="series-peliculas">
         <div class="sermov">
-          <div class="frame">
+          <article class="frame">
             <a href="./supernatural.html">
               <img src="../assets/img/Supernatural.jpg" alt="Supernatural" />
               <h3>Supernatural</h3>
             </a>
-          </div>
-          <div class="frame">
+          </article>
+          <article class="frame">
             <a href="./heroes.html">
               <img src="../assets/img/Heroes.jpg" alt="Heroes" />
               <h3>Heroes</h3>
             </a>
-          </div>
-          <div class="frame">
+          </article>
+          <article class="frame">
             <a href="./heroes.html">
               <img src="../assets/img/Heroes.jpg" alt="Heroes" />
               <h3>Heroes</h3>
             </a>
-          </div>
-          <div class="frame">
+          </article>
+          <article class="frame">
             <a href="./heroes.html">
               <img src="../assets/img/Heroes.jpg" alt="Heroes" />
               <h3>Heroes</h3>
             </a>
-          </div>
+          </article>
         </div>
     
       </section>
