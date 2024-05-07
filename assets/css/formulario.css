@@ -8,8 +8,7 @@
 
 .label-inicio,
 .label-recuperar,
-.label-registro,
-.label-perfil {
+.label-registro {
   text-align: right;
 }
 
@@ -101,17 +100,19 @@
   font-size: 2em;
 }
 
-.form-registro,
-.form-perfil {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-content: center;
-  justify-content: center;
+.formulario-perfil {
+  margin: 0 1em;
 }
 
-.form-registro .datos,
+.form-registro,
+.form-perfil {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .form-perfil .datos {
-  margin-top: 0;
+  margin:auto
 }
 
 .pago-check,
@@ -119,27 +120,20 @@
   display: inline;
 }
 
-.formulario-perfil {
-  height: 100%;
-  align-content: center;
-  padding: 2em 0 ;
-}
-
-.form-perfil .datos {
-  margin-right: 5em;
-}
-
-.label-perfil h3 {
-  display: inline;
-  margin: 0 3em 0 1.7em;
-}
-
 .label-perfil.email {
-  margin-right: 0.9em;
+  text-align: left;
 }
 
 .label-perfil {
   margin-top: 1em;
+  text-align: left;
+}
+
+.datos .label-perfil input {
+  display: block;
+  margin-top: 1em;
+  text-align: left;
+  margin-left: 0;
 }
 
 .perfil-guardar {
@@ -151,12 +145,13 @@
 
 .perfil .pago {
   height: 100%;
-  margin: 0;
+  margin: 0 4em;
 }
 
 .perfil .pago input {
   margin-left: 3em;
   margin-right: 0.8em;
+  margin-bottom: 0.5em;
 }
 
 .datos-tarjeta {
@@ -177,6 +172,7 @@
   display: inline;
 }
 
+.label-registro.metodo-pago,
 .label-perfil.metodo-pago {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
@@ -185,4 +181,8 @@
 .label-perfil.metodo-pago.cbu {
   margin-top: 0.1em;
   margin-left: 5.5em;
+}
+
+.label-registro.metodo-pago.cbu {
+  margin-left: 8em;
 }

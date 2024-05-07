@@ -55,6 +55,7 @@
 
 .menu {
   width: 100%;
+  background-color: #000000a2;
 }
 
 .menu ul {
@@ -66,9 +67,10 @@
 .menu li {
   width: 100%;
   list-style: none;
-  border: 1px solid #000000;
+  border: 1px solid #ffffffbb;
   font-size: 1.5em;
   display: grid;
+  color: #ffffff;
 }
 
 .menu h3 {
@@ -80,7 +82,7 @@
 }
 
 .menu .actual {
-  background: #00000051;
+  background: #000000e5;
 }
 
 .menu a {
