@@ -1,9 +1,8 @@
-
 select {
     font-size: 18px;
     border-radius: 5px;
     padding: 5px;
-    background-color: antiquewhite;
+    background-color: #faebd7;
 }
 
 .cerrar-sesion {
@@ -11,7 +10,7 @@ select {
     justify-content: center;
     width: 150px;
     height: 70px;
-    background-color: red;
+    background-color: #ff1c1c;;
     border-radius: 50px;
     margin-right: 2em;
 }

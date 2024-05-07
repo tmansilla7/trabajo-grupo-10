@@ -17,7 +17,7 @@
     <main>
       <section class="registro">
         <h1>Registrarse</h1>
-        <form action="./home.html">
+        <form action="../index.html">
           <div class="form-registro">
             <div class="datos">
               <label for="nombre" class="label-registro">
@@ -91,24 +91,22 @@
                   value="Tarjeta"
                 />
                 Tarjeta de crédito
-                <div>
+                <div class="datos-tarjeta">
                   <textarea
                     name="numero"
                     cols="20"
                     rows="2"
                     placeholder="Número de tarjeta"
-                    disabled
                   ></textarea>
                   <textarea
                     name="numero"
                     cols="7"
                     rows="2"
                     placeholder="XXX"
-                    disabled
                   ></textarea>
                 </div>
               </label>
-              <label for="cupon" class="label-registro">
+              <label for="cupon" class="label-registro metodo-pago">
                 <input
                   type="radio"
                   name="metodo-pago"
@@ -124,7 +122,6 @@
                   name="facil"
                   id="facil"
                   value="facil"
-                  disabled
                 />
                 Pago fácil
               </label>
@@ -135,11 +132,10 @@
                   name="rapi"
                   id="rapi"
                   value="rapi"
-                  disabled
                 />
                 RapiPago
               </label>
-              <label for="transferencia" class="label-registro">
+              <label for="transferencia" class="label-registro metodo-pago">
                 <input
                   type="radio"
                   name="metodo-pago"
@@ -148,7 +144,7 @@
                 />
                 Transferencia bancaria
               </label>
-              <label for="transferencia" class="label-registro"
+              <label for="transferencia" class="label-registro metodo-pago cbu"
                 >CBU: 5950493839933</label
               >
 
