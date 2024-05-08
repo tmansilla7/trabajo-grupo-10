@@ -95,3 +95,22 @@ input {
     font-size: 1em;
     text-align: center;
 }
+
+iframe{
+  height: 300px;
+  width: 300px;
+  margin: 15px;
+}
+
+.similares_heroes {
+  display: inline-flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+
+.similares_heroes img {
+  height: 300px;
+  margin: 20px 50px;
+  text-align: center;
+}
