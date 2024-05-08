@@ -5,17 +5,17 @@
   margin: auto;
 }
 
+.series-peliculas {
+  padding-bottom: 1em;
+}
+
 .series-peliculas .sermov {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  text-align: center;
-  justify-content: space-around;
-  /* display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  font-size: 1.5em;
-  text-align: center;
-  grid-gap: 0.5em; */
+  margin: 2em 1em;
+  gap: 1em;
+  
 }
 
 html {
@@ -25,6 +25,16 @@ html {
 
 .frame img {
   height: 300px;
+  width: 230px;
+}
+
+.frame h3 {
+  color:black;
+  text-align: center;
+}
+
+.frame img:hover {
+  border-radius: 50px;
 }
 
 .series-peliculas a {
@@ -41,7 +51,6 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /*margin: 15px 15px;*/
   text-align: center;
 }
 
@@ -56,7 +65,7 @@ html {
   border-radius: 50px;
   width: 550px;
   height: 70px;
-  color: white !important;
+  color: white ;
   padding: 15px;
   margin-left: 14px;
 }
@@ -84,6 +93,7 @@ input {
 }
 
 .foto-perfil img {
+  width: 50%;
   display: block;
   border-radius: 50%;
 }
