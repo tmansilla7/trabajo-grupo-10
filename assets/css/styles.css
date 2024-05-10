@@ -1,36 +1,43 @@
 * {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   box-sizing: border-box;
   padding: 0;
   margin: auto;
 }
 
-.series,
-.peliculas {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  font-size: 1.5em;
-  text-align: center;
+.series-peliculas {
+  padding-bottom: 1em;
+}
+
+.series-peliculas .sermov {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 2em 1em;
+  gap: 1em;
+  
 }
 
 html {
-    height: 100vh;
+  height: 100vh;
+  background-color: #00000047;
 }
 
-.series, .peliculas {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    font-size: 1.5em;
-    text-align: center;
-}
-
-.series img,
-.peliculas img {
+.frame img {
   height: 300px;
+  width: 230px;
 }
 
-.series a,
-.peliculas a {
+.frame h3 {
+  color:black;
+  text-align: center;
+}
+
+.frame img:hover {
+  border-radius: 50px;
+}
+
+.series-peliculas a {
   text-decoration: none;
   color: #000;
 }
@@ -41,9 +48,9 @@ html {
 }
 
 .similares {
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
-  /*margin: 15px 15px;*/
+  flex-wrap: wrap;
   text-align: center;
 }
 
@@ -54,46 +61,47 @@ html {
 }
 
 .category {
-    background-color: red;
-    border-radius: 50px;
-    width: 550px;
-    height: 70px;
-    color: white !important;
-    padding: 15px;
-    margin-left: 14px;
+  background-color: #ff1c1c;
+  border-radius: 50px;
+  width: 550px;
+  height: 70px;
+  color: white ;
+  padding: 15px;
+  margin-left: 14px;
 }
 
 input {
-    font-size: 18px;
-    border: 1px solid #ccc;
-    padding: 5px;
-    border-radius: 5px;
-    margin-left: 15px;
-    margin-bottom: 15px;
-    background-color: antiquewhite;
-
+  font-size: 18px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  background-color: #faebd7;
 }
 
 .perfil {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    align-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .foto-perfil {
-    height: 100%;
-    margin-top: 0;
-    align-content: center;
+  margin: 0 1em;
+  align-content: center;
 }
 
 .foto-perfil img {
-    width: 50%;
-    display: block;
+  width: 50%;
+  display: block;
+  border-radius: 50%;
 }
 
 .foto-perfil h3 {
-    font-size: 1em;
-    text-align: center;
+  font-size: 1em;
+  text-align: center;
+  margin-top: 1em;
 }
 
 iframe{
