@@ -1,53 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UNFLIX</title>
-    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/logo.png">
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-    <link rel="stylesheet" href="./assets/css/header.css" />
-    <link rel="stylesheet" href="./assets/css/formulario.css" />
-  </head>
-  <!-- --> 
-  <body>
-    <header class="principal">
-      <h1>UNFLIX</h1>
-      <h2>Las mejores series y películas</h2>
-      <!-- <img src="./assets/img/planeta.jpg" alt="unflix"> -->
-    </header>
-    <main>
-      <section class="inicio">
-        <form action="./pages/home.html">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNFLIX</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/img/logo.png">
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="stylesheet" href="./assets/css/header.css" />
+  <link rel="stylesheet" href="./assets/css/formulario.css" />
+</head>
+<!-- -->
+
+<body>
+  <header class="principal">
+    <h1>UNFLIX</h1>
+    <h2>Las mejores series y películas</h2>
+    <!-- <img src="./assets/img/planeta.jpg" alt="unflix"> -->
+  </header>
+  <main>
+    <section class="inicio">
+      <form action="./pages/home.html">
+        <div class="padrecaja">
           <label for="nombre" class="label-inicio">
             Nombre de usuario
-            <input
-              type="text"
-              placeholder="Nombre de usuario"
-              name="nombre"
-              id="nombre"
-              required
-            />
-          </label>
-          <label for="password" class="label-inicio">
-            Contraseña
-            <input
-              type="password"
-              placeholder="Contraseña"
-              name="password"
-              id="password"
-              required
-            />
-          </label>
-          <div class="ingresar">
-            <button type="submit" class="btn-ingresar">Iniciar sesión</button>
-          </div>
-        </form>
+            <input type="text" placeholder="Nombre de usuario" name="nombre" id="nombre" required />
+        </div>
+        </label>
+        <label for="password" class="label-inicio">
+          Contraseña
+          <input type="password" placeholder="Contraseña" name="password" id="password" required />
+        </label>
+        <div class="ingresar">
+          <button type="submit" class="btn-ingresar">Iniciar sesión</button>
+        </div>
+      </form>
 
-        <a href="./pages/recuperar.html">Recuperar contraseña</a>
-        <a href="./pages/registrar.html">Registrarse</a>
-      </section>
-    </main>
-    
-  </body>
+      <a href="./pages/recuperar.html">Recuperar contraseña</a>
+      <a href="./pages/registrar.html">Registrarse</a>
+    </section>
+  </main>
+
+</body>
+
 </html>
