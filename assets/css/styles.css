@@ -33,7 +33,7 @@ html {
 }
 
 .frame h3 {
-  color:black;
+  color: black;
   text-align: center;
 }
 
@@ -74,7 +74,7 @@ html {
   border-radius: 50px;
   width: 550px;
   height: 70px;
-  color: white ;
+  color: white;
   padding: 15px;
   margin-left: 14px;
 }
@@ -113,7 +113,7 @@ input {
   margin-top: 1em;
 }
 
-iframe{
+iframe {
   height: 300px;
   width: 300px;
   margin: 15px;
@@ -132,63 +132,62 @@ iframe{
   text-align: center;
 }
 
-
-@media  screen and (max-width:575px) {
-  
-  .submenu{
-   display: flex;
-   flex-direction: column;
+@media screen and (max-width: 575px) {
+  .submenu {
+    display: flex;
+    flex-direction: column;
   }
-  .category{
+  .category {
     width: 100%;
     height: 100%;
     margin-left: 1rem;
     margin-right: 1rem;
     margin-bottom: 1rem;
   }
-
-  #buscar{
+  #buscar {
     margin-top: 10px;
   }
-  .cerrar-sesion{
-    
+  .registro {
+    text-align: center;
   }
-.inicio{
-  width: 90%;
-}
-  label.label-inicio {
+  .registro h1 {
+    text-align: left;
+  }
+  .inicio,
+  .recuperar,
+  .form-registro .datos {
+    width: 90%;
+  }
+  label.label-inicio,
+  label.label-recuperar,
+  label.label-registro {
     display: flex;
-}
-.frame img:hover {
-  border-radius: 50px;
-}
-.similares img {
-  height: 300px;
-  margin: 20px 50px;
-  text-align: center;
-  width: 230px;
-}
-.similar h2{
-  text-align: center;
-}
-.padrecaja {
-  display: flex;
-  flex-direction: column;
-  width: 90%; /* Para ocupar el 90% del ancho del contenedor padre */
+  }
+  .frame img:hover {
+    border-radius: 50px;
+  }
+  .similares img {
+    height: 300px;
+    margin: 20px 50px;
+    text-align: center;
+    width: 230px;
+  }
+  .similar h2 {
+    text-align: center;
+  }
+  .label-inicio,
+  .label-recuperar,
+  .datos .label-registro {
+    margin-bottom: 10px; /* Espacio entre cada campo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 
-}
-
-.label-inicio {
-  margin-bottom: 10px; /* Espacio entre cada campo */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap:10px;
-
-}
-
-.label-inicio input {
-  width: 90%; /* Para ocupar todo el ancho disponible */
-}
-
+  .label-inicio input,
+  .label-recuperar input,
+  .datos .label-registro input {
+    width: 90%; /* Para ocupar todo el ancho disponible */
+  }
 }
