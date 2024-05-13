@@ -24,7 +24,8 @@ html {
 
 .frame {
   text-align: center;
-  width: 250px;
+  width: 255px;
+  margin-bottom: 1rem;
 }
 
 .frame img {
