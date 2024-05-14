@@ -152,7 +152,6 @@ iframe {
 .trailer a {
   text-decoration: none;
 }
-
 @media screen and (max-width: 575px) {
   .submenu {
     display: flex;
@@ -172,7 +171,8 @@ iframe {
     text-align: center;
   }
   .registro h1 {
-    text-align: left;
+    text-align: center;
+    margin: 0;
   }
   .inicio,
   .recuperar,

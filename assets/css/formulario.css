@@ -96,8 +96,14 @@
 }
 
 .registro h1 {
-  margin: 2em 0 1em 4em;
+  margin: 2em 0 1em 0;
   font-size: 2em;
+}
+
+@media (min-width: 768px) { 
+  .registro h1{
+    margin: 2em 0 1em 2em;
+  }
 }
 
 .formulario-perfil {
@@ -186,4 +192,7 @@
 
 .label-registro.metodo-pago.cbu {
   margin-left: 8em;
+}
+#titulo-pago {
+  transform: translateX(80px);
 }
