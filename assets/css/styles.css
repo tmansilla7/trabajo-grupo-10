@@ -17,10 +17,9 @@
   gap: 1em;
 }
 
-html {
-  height: 100vh;
-  background-color: #00000047;
-}
+body {
+  background: linear-gradient(to right,rgb(4, 6, 6) 15%, rgb(251, 254, 255) 100% );
+  ; }
 
 .frame {
   text-align: center;
