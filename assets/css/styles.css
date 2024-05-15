@@ -25,7 +25,9 @@ html {
 .frame {
   text-align: center;
   width: 255px;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem;    
+  box-shadow: 10px 10px 0px -2px rgba(0,0,0,0.9) ;
+  background-color: white;
 }
 
 .frame img {
