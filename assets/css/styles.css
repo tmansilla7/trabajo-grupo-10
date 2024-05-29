@@ -93,6 +93,7 @@ input {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  overflow: hidden;
 }
 
 .foto-perfil {
@@ -224,4 +225,15 @@ iframe {
   iframe {
     height: 300px;
   }
+
+  .perfil .pago-check {
+  display: inline-block;
+    margin-top: 0
+  }
+
+  .perfil .pago-check .label-perfil {
+    display: block;
+    
+  }
+  
 }
