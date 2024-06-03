@@ -198,6 +198,18 @@
 .label-registro.metodo-pago.cbu {
   margin-left: 8em;
 }
+
 #titulo-pago {
   transform: translateX(80px);
+}
+
+.error {
+  border: 1px solid #ff0000;
+}
+
+#errorNombre, #errorPassword {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  color: #ff0000;
+  text-align: center;
 }

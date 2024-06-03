@@ -30,8 +30,8 @@
               placeholder="Nombre de usuario"
               name="nombre"
               id="nombre"
-              required
             />
+            <h4 id="errorNombre"></h4>
           </label>
           <label for="password" class="label-inicio">
             Contraseña
@@ -40,11 +40,11 @@
               placeholder="Contraseña"
               name="password"
               id="password"
-              required
             />
+            <h4 id="errorPassword"></h4>
           </label>
           <div class="ingresar">
-            <button type="submit" class="btn-ingresar">Iniciar sesión</button>
+            <button type="submit" class="btn-ingresar" id="btn-submit">Iniciar sesión</button>
           </div>
         </form>
 
@@ -52,5 +52,7 @@
         <a href="./pages/registrar.html">Registrarse</a>
       </section>
     </main>
+
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>
