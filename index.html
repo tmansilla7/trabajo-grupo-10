@@ -22,7 +22,7 @@
     </header>
     <main>
       <section class="inicio">
-        <form action="./pages/home.html">
+        <form id="login-form"  action="./pages/home.html" >
           <label for="nombre" class="label-inicio">
             Nombre de usuario
             <input
@@ -44,13 +44,13 @@
             />
           </label>
           <div class="ingresar">
-            <button type="submit" class="btn-ingresar">Iniciar sesión</button>
+            <button type="button" id="submit-btn" class="btn-ingresar">Iniciar sesión</button>
           </div>
         </form>
-
         <a href="./pages/recuperar.html">Recuperar contraseña</a>
         <a href="./pages/registrar.html">Registrarse</a>
       </section>
     </main>
+    <script src="./js/index.js"></script>
   </body>
 </html>
