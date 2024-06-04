@@ -48,7 +48,7 @@ function soloLetras(evento, selector, selector2, texto) {
 }
 
 function soloLetrasYNumeros(evento, selector, selector2, texto) {
-    if (selector.value.match("[^A-Za-z]") && selector.value.match("[^0-9]")) {
+    if (selector.value.match("[^0-9A-Za-z]")) {
       evento.preventDefault();
       selector.classList.add("error");
       selector2.textContent = texto;
