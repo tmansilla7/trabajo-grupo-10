@@ -18,7 +18,7 @@ function verificarFormulario(evento) {
   if (nombreUsuario.value == "") {
     evento.preventDefault();
     nombreUsuario.classList.add("error");
-    errorNombre.textContent = "Ingresa el nombre de usuario";
+    errorNombre.textContent = "Ingresa tu nombre de usuario";
   } else {
     localStorage.setItem("usuario", nombreUsuario.value);
   }
@@ -26,7 +26,7 @@ function verificarFormulario(evento) {
   if (password.value == "") {
     evento.preventDefault();
     password.classList.add("error");
-    errorPassword.textContent = "Ingresa la contraseña";
+    errorPassword.textContent = "Ingresa tu contraseña";
   }
 }
 

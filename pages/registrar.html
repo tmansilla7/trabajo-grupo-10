@@ -28,6 +28,7 @@
                   name="nombre"
                   id="nombre"
                 />
+                <h4 id="errorNombre"></h4>
               </label>
               <label for="apellido" class="label-registro">
                 Apellido
@@ -37,6 +38,7 @@
                   name="apellido"
                   id="apellido"
                 />
+                <h4 id="errorApellido"></h4>
               </label>
               <label for="email" class="label-registro">
                 E-mail
@@ -46,6 +48,7 @@
                   name="email"
                   id="email"
                 />
+                <h4 id="errorEmail"></h4>
               </label>
               <label for="usuario" class="label-registro">
                 Nombre de usuario
@@ -56,6 +59,7 @@
                   id="usuario"
                   required
                 />
+                <h4 id="errorUsuario"></h4>
               </label>
               <label for="password" class="label-registro">
                 Contraseña
@@ -149,7 +153,7 @@
               >
 
               <div class="registrar">
-                <button type="submit" class="btn-registrar confirmar">
+                <button type="submit" class="btn-registrar confirmar" id="btn-submit">
                   Confirmar
                 </button>
                 <a href="../index.html"
@@ -164,5 +168,7 @@
         </form>
       </section>
     </main>
+
+    <script src="../assets/js/registro.js"></script>
   </body>
 </html>
