@@ -207,6 +207,11 @@
   border: 1px solid #ff0000;
 }
 
+.error:focus {
+  outline: none;
+  border: 2px solid #ff0000;
+}
+
 #errorNombre, #errorPassword {
   font-size: 1rem;
   margin: 0.5rem 0;
