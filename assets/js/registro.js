@@ -7,6 +7,8 @@ const repetirPassword = document.querySelector("#rep-password");
 const tarjeta = document.querySelector("#tarjeta")
 const cupon = document.querySelector("#cupon")
 const transferencia = document.querySelector("#transferencia")
+const numeroTarjeta = document.querySelector("#numeroTarjeta")
+const claveTarjeta = document.querySelector("#claveTarjeta")
 const submit = document.querySelector("#btn-submit");
 submit.disabled = true;
 
@@ -116,6 +118,18 @@ function verificarPasswordIguales(evento, selector, selector2, selector3, texto)
   }
 }
 
+function habilitarTextarea() {
+  if (tarjeta.checked) {
+    numeroTarjeta.disabled = false
+    claveTarjeta.disabled = false
+  }
+}
+
+function deshabilitarTextarea() {
+  numeroTarjeta.disabled = true
+  claveTarjeta.disabled = true
+}
+
 function verificarFormulario(evento) {
   validarCampo(evento, nombre, errorNombre, "Ingresa tu nombre");
   soloLetras(
@@ -164,5 +178,8 @@ usuario.addEventListener("keyup", habilitarBoton);
 password.addEventListener("keyup", habilitarBoton);
 repetirPassword.addEventListener("keyup", habilitarBoton)
 tarjeta.addEventListener("click", habilitarBoton)
+tarjeta.addEventListener("click", habilitarTextarea)
 cupon.addEventListener("click", habilitarBoton)
+cupon.addEventListener("click", deshabilitarTextarea)
 transferencia.addEventListener("click", habilitarBoton)
+transferencia.addEventListener("click", deshabilitarTextarea)
