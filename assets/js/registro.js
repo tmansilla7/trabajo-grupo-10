@@ -4,7 +4,11 @@ const email = document.querySelector("#email");
 const usuario = document.querySelector("#usuario");
 const password = document.querySelector("#password");
 const repetirPassword = document.querySelector("#rep-password");
+const tarjeta = document.querySelector("#tarjeta")
+const cupon = document.querySelector("#cupon")
+const transferencia = document.querySelector("#transferencia")
 const submit = document.querySelector("#btn-submit");
+submit.disabled = true;
 
 const errorNombre = document.querySelector("#errorNombre");
 const errorApellido = document.querySelector("#errorApellido");
@@ -12,6 +16,12 @@ const errorEmail = document.querySelector("#errorEmail");
 const errorUsuario = document.querySelector("#errorUsuario");
 const errorPassword = document.querySelector("#errorPassword");
 const errorRepetirPassword = document.querySelector("#errorRepetirPassword");
+
+function habilitarBoton() {
+  if (nombre.value != "" && apellido.value != "" && email.value != "" && usuario.value != "" && password.value != "" && repetirPassword != "" && (tarjeta.checked || cupon.checked || transferencia.checked)) {
+    submit.disabled = false;
+  }
+}
 
 function removerClaseErrorDelNombre(evento) {
   nombre.classList.remove("error");
@@ -67,15 +77,19 @@ function soloLetrasYNumeros(evento, selector, selector2, texto) {
   }
 }
 
-function verificarPassword(evento, selector, selector2, texto, texto2) {
+function verificarPassword(evento, selector, selector2, texto, texto2, texto3) {
   const array = password.value.split("");
   let letras = 0;
   let numeros = 0;
   let caracteresEspeciales = 0;
-  if (password.value.length < 8) {
+  if (password.value == '') {
     evento.preventDefault();
     selector.classList.add("error");
     selector2.textContent = texto;
+  } else if (password.value.length < 8) {
+    evento.preventDefault();
+    selector.classList.add("error");
+    selector2.textContent = texto2;
   } else {
     for (let i = 0; i < array.length; i++) {
       if (array[i].match("[A-Za-z]")) {
@@ -89,7 +103,7 @@ function verificarPassword(evento, selector, selector2, texto, texto2) {
     if (letras < 2 || numeros < 2 || caracteresEspeciales < 2) {
       evento.preventDefault();
       selector.classList.add("error");
-      selector2.textContent = texto2;
+      selector2.textContent = texto3;
     }
   }
 }
@@ -117,7 +131,6 @@ function verificarFormulario(evento) {
     errorApellido,
     "El apellido sólo puede contener letras"
   );
-  validarCampo(evento, apellido, errorApellido, "Ingresa tu apellido");
   validarCampo(evento, email, errorEmail, "Ingresa tu email");
   validarCampo(evento, usuario, errorUsuario, "Ingresa el nombre de usuario");
   soloLetrasYNumeros(
@@ -125,11 +138,12 @@ function verificarFormulario(evento) {
     usuario,
     errorUsuario,
     "El nombre de usuario sólo puede contener letras y números"
-  );
+  )
   verificarPassword(
     evento,
     password,
     errorPassword,
+    "Ingresa tu contraseña",
     "La contraseña debe tener al menos 8 caracteres",
     "La contraseña debe tener al menos 2 letras, 2 números y 2 caracteres especiales"
   );
@@ -143,3 +157,12 @@ email.addEventListener("keyup", removerClaseErrorDelEmail);
 usuario.addEventListener("keyup", removerClaseErrorDelUsuario);
 password.addEventListener("keyup", removerClaseErrorDePassword);
 repetirPassword.addEventListener("keyup", removerClaseErrorDeRepetirPassword)
+nombre.addEventListener("keyup", habilitarBoton);
+apellido.addEventListener("keyup", habilitarBoton);
+email.addEventListener("keyup", habilitarBoton);
+usuario.addEventListener("keyup", habilitarBoton);
+password.addEventListener("keyup", habilitarBoton);
+repetirPassword.addEventListener("keyup", habilitarBoton)
+tarjeta.addEventListener("click", habilitarBoton)
+cupon.addEventListener("click", habilitarBoton)
+transferencia.addEventListener("click", habilitarBoton)
