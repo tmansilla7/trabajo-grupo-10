@@ -20,7 +20,7 @@ const errorPassword = document.querySelector("#errorPassword");
 const errorRepetirPassword = document.querySelector("#errorRepetirPassword");
 
 function habilitarBoton() {
-  if (nombre.value != "" && apellido.value != "" && email.value != "" && usuario.value != "" && password.value != "" && repetirPassword != "" && (tarjeta.checked || cupon.checked || transferencia.checked)) {
+  if (nombre.value != "" && apellido.value != "" && email.value != "" && usuario.value != "" && password.value != "" && repetirPassword.value != "" && (tarjeta.checked || cupon.checked || transferencia.checked)) {
     submit.disabled = false;
   }
 }
