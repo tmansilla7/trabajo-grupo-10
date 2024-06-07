@@ -30,36 +30,39 @@ for (let i = 1; i <= SERIES[indice_de_la_serie]["capitulos"]; i++) {
 const nodo_genero = document.querySelector("#genero");
 nodo_genero.textContent = SERIES[indice_de_la_serie]["categoría"];
 
-const nodo_actores = document.querySelector("#actores")
+const nodo_actores = document.querySelector("#actores");
 for (let actor of SERIES[indice_de_la_serie]["actores"]) {
-    let nodo_actor = document.createElement("a");
-    nodo_actor.href = actor["url"];
-    nodo_actor.target = "_blank"
-    nodo_actor.textContent = actor["nombre"]
-    nodo_actores.appendChild(nodo_actor)
-    nodo_actores.append(", ")
+  let nodo_actor = document.createElement("a");
+  nodo_actor.href = actor["url"];
+  nodo_actor.target = "_blank";
+  nodo_actor.textContent = actor["nombre"];
+  nodo_actores.appendChild(nodo_actor);
+
+  if (
+    actor.nombre !=
+    SERIES[indice_de_la_serie]["actores"][
+      SERIES[indice_de_la_serie]["actores"].length - 1
+    ].nombre
+  ) {
+    nodo_actores.append(", ");
+  }
 }
 
-const nodo_sinopsis = document.querySelector(".sinopsis")
+const nodo_sinopsis = document.querySelector(".sinopsis");
 nodo_sinopsis.textContent = SERIES[indice_de_la_serie]["sinopsis"];
 
-const nodo_iframe = document.querySelector("iframe")
-nodo_iframe.src = SERIES[indice_de_la_serie]["trailer"]["url_iframe"]
+const nodo_iframe = document.querySelector("iframe");
+nodo_iframe.src = SERIES[indice_de_la_serie]["trailer"]["url_iframe"];
 
-const nodo_trailer = document.querySelector("#trailer_youtube")
-nodo_trailer.href = SERIES[indice_de_la_serie]["trailer"]["url_youtube"]
+const nodo_trailer = document.querySelector("#trailer_youtube");
+nodo_trailer.href = SERIES[indice_de_la_serie]["trailer"]["url_youtube"];
 
-const nodo_similares = document.querySelector(".similares")
+const nodo_similares = document.querySelector(".similares");
 for (let similar of SERIES[indice_de_la_serie]["similares"]) {
-    let nodo_similar = document.createElement("article");
-    let nodo_img = document.createElement("img");
-    nodo_img.src = similar["src"]
-    nodo_img.alt = similar["alt"]
-    nodo_similar.appendChild(nodo_img)
-    nodo_similares.appendChild(nodo_similar)
+  let nodo_similar = document.createElement("article");
+  let nodo_img = document.createElement("img");
+  nodo_img.src = similar["src"];
+  nodo_img.alt = similar["alt"];
+  nodo_similar.appendChild(nodo_img);
+  nodo_similares.appendChild(nodo_similar);
 }
-
-
-// const nodo_texto_p = document.createTextNode(SERIES[indice_de_la_serie]['sinopsis'])
-// const nodo_p = document.querySelector("p")
-// nodo_p.appendChild(nodo_texto_p)
