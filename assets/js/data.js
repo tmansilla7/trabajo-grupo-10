@@ -1,11 +1,13 @@
-const LOCAL_STORAGE_SERIES = "series";
-const LOCAL_STORAGE_PELICULAS = "peliculas";
+const LOCAL_STORAGE_SERIES_Y_PELICULAS = 'series y películas'
+//const LOCAL_STORAGE_SERIES = "series";
+//const LOCAL_STORAGE_PELICULAS = "peliculas";
 
 const SUPERNATURAL = {
-    imagen: {
-        src: "../assets/img/Supernatural.jpg",
-        alt: "Supernatural"
-    },
+  tipo: "serie",
+  imagen: {
+    src: "../assets/img/Supernatural.jpg",
+    alt: "Supernatural",
+  },
   titulo: "Supernatural",
   temporadas: 15,
   capitulos: 23,
@@ -113,17 +115,18 @@ const SUPERNATURAL = {
       alt: "the last of us",
     },
     {
-        src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
-        alt: "the boys"
-    }
+      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
+      alt: "the boys",
+    },
   ],
 };
 
 const HEROES = {
-    imagen: {
-        src: "../assets/img/heroes.jpg",
-        alt: "Heroes"
-    },
+  tipo: "serie",
+  imagen: {
+    src: "../assets/img/heroes.jpg",
+    alt: "Heroes",
+  },
   titulo: "Heroes",
   temporadas: 4,
   capitulos: 25,
@@ -236,9 +239,63 @@ const HEROES = {
   ],
 };
 
-const SERIES_A_GUARDAR = [SUPERNATURAL, HEROES];
+const VOLVER_AL_FUTURO = {
+  tipo: "película",
+  imagen: {
+    src: "../assets/img/volver al futuro.jpg",
+    alt: "Volver al futuro",
+  },
+  titulo: "Volver al Futuro",
+duracion: "1h 56m",
+  categoría: "Ciencia Ficción",
+  actores: [
+    {
+      nombre: "Michael J. Fox",
+      url: "https://es.wikipedia.org/wiki/Michael_J._Fox",
+    },
+    {
+      nombre: "Christopher Lloyd",
+      url: "https://es.wikipedia.org/wiki/Christopher_Lloyd",
+    },
+    {
+      nombre: "Lea Thompson",
+      url: "https://es.wikipedia.org/wiki/Lea_Thompson",
+    },
+    {
+      nombre: "Crispin Glover",
+      url: "https://es.wikipedia.org/wiki/Crispin_Glover",
+    },
+    {
+      nombre: "Thomas F. Wilson",
+      url: "https://es.wikipedia.org/wiki/Thomas_F._Wilson",
+    }
+  ],
+  sinopsis:
+    "Una máquina del tiempo transporta a un adolescente a los años 50, cuando sus padres todavía estudiaban en la secundaria.",
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/GM6_MHRc4Xo",
+    url_youtube: "https://www.youtube.com/watch?v=GM6_MHRc4Xo",
+  },
+  similares: [
+    {
+      src: "../assets/img/10things.jpeg",
+      alt: "10 things I hate about you",
+    },
+    {
+      src: "../assets/img/smile.jpg",
+      alt: "smile",
+    },
+    {
+      src: "../assets/img/gladiator.jpg",
+      alt: "gladiator",
+    },
+    {
+      src: "../assets/img/torrente.jpg",
+      alt: "torrente",
+    },
+  ],
+}
 
-const PELICULAS_A_GUARDAR = [];
+const SERIES_Y_PELICULAS_A_GUARDAR = [SUPERNATURAL, HEROES, VOLVER_AL_FUTURO];
 
-localStorage.setItem(LOCAL_STORAGE_SERIES, JSON.stringify(SERIES_A_GUARDAR));
-localStorage.setItem(LOCAL_STORAGE_PELICULAS, JSON.stringify(PELICULAS_A_GUARDAR));
+localStorage.setItem(LOCAL_STORAGE_SERIES_Y_PELICULAS, JSON.stringify(SERIES_Y_PELICULAS_A_GUARDAR));

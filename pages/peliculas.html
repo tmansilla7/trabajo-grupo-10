@@ -1,122 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Películas</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../assets/img/logo.png"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/header.css" />
+    <link rel="stylesheet" href="../assets/css/home.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Películas</title>
-  <link rel="shortcut icon" type="image/x-icon" href="../assets/img/logo.png">
-  <link rel="stylesheet" href="../assets/css/styles.css">
-  <link rel="stylesheet" href="../assets/css/header.css">
-  <link rel="stylesheet" href="../assets/css/home.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-</head>
+  <body>
+    <header>
+      <nav class="menu">
+        <ul>
+          <a href="./home.html">
+            <li>
+              <span class="material-icons md-48"> home </span>
+              <h3>Home</h3>
+            </li>
+          </a>
+          <a href="./series.html">
+            <li>
+              <span class="material-icons"> local_movies </span>
+              <h3>Series</h3>
+            </li>
+            <!-- tomodo -->
+          </a>
+          <a href="./peliculas.html">
+            <li class="actual">
+              <span class="material-icons"> local_movies </span>
+              <h3>Películas</h3>
+            </li>
+          </a>
+          <a href="./perfil.html">
+            <li>
+              <span class="material-icons"> account_circle </span>
+              <h3>Perfil</h3>
+            </li>
+          </a>
+        </ul>
+      </nav>
+    </header>
 
-<body>
-  <header>
-    <nav class="menu">
-      <ul>
-        <a href="./home.html">
-          <li>
-            <span class="material-icons md-48"> home </span>
-            <h3>Home</h3>
-          </li>
-        </a>
-        <a href="./series.html">
-          <li>
-            <span class="material-icons"> local_movies </span>
-            <h3>Series</h3>
-          </li>
-          <!-- tomodo -->
-        </a>
-        <a href="./peliculas.html">
-          <li class="actual">
-            <span class="material-icons"> local_movies </span>
-            <h3>Películas</h3>
-          </li>
-        </a>
-        <a href="./perfil.html">
-          <li>
-            <span class="material-icons"> account_circle </span>
-            <h3>Perfil</h3>
-          </li>
-        </a>
-      </ul>
-    </nav>
-   
-  </header>
+    <main>
+      <section class="submenu">
+        <div class="category">
+          <label for="categorias">Categorías:</label>
+          <select id="categorias" name="categorias">
+            <option value="1">Fantasía</option>
+            <option value="2">Comedia</option>
+            <option value="3">Terror</option>
+            <option value="4">Drama</option>
+            <option value="5">Ciencia Ficción</option>
+            <option value="6">Aventura</option>
+          </select>
+          <input
+            type="text"
+            id="buscar"
+            name="buscar"
+            placeholder="Buscar por nombre"
+          />
+        </div>
+        <div id="cerrar-sesion" class="cerrar-sesion">
+          <a href="../index.html">Cerrar sesión</a>
+        </div>
+      </section>
+      <section class="series-peliculas">
+        <div class="sermov">
+          <!--<article class="frame">
+            <a href="./movies-details/torrente.html">
+              <img src="../assets/img/torrente.jpg" alt="Torrente" />
+              <h3>Torrente</h3>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="./movies-details/volveralfuturo.html">
+              <img
+                src="../assets/img/volver al futuro.jpg"
+                alt="volver al futuro"
+              />
+              <h3>Volver al Futuro</h3>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="./movies-details/smile.html">
+              <img src="../assets/img/smile.jpg" alt="smile" />
+              <h3>Smile</h3>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="./movies-details/gladiator.html">
+              <img src="../assets/img/gladiator.jpg" alt="gladiator" />
+              <h3>Gladiator</h3>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="./movies-details/10thingsihate.html">
+              <img
+                src="../assets/img/10things.jpeg"
+                alt="10 things I hate about u "
+              />
+              <h3>10 things I hate about you</h3>
+            </a>
+          </article>
+          -->
+        </div>
+      </section>
+    </main>
 
-  <main>
-    <section class="submenu">
-      <div class="category">
-        <label for="categorias">Categorías:</label>
-        <select id="categorias" name="categorias">
-          <option value="1">Fantasía</option>
-          <option value="2">Comedia</option>
-          <option value="3">Terror</option>
-          <option value="4">Drama</option>
-          <option value="5">Ciencia Ficción</option>
-          <option value="6">Aventura</option>
-        </select>
-        <input type="text" id="buscar" name="buscar" placeholder="Buscar por nombre" />
-      </div>
-      <div id="cerrar-sesion" class="cerrar-sesion">
-        <a href="../index.html">Cerrar sesión</a>
-      </div>
-    </section>
-    <section class="series-peliculas">
-      <div class="sermov">     
-        <article class="frame">
-          <a href="./movies-details/torrente.html">
-            <img
-              src="../assets/img/torrente.jpg"
-              alt="Torrente"
-            />
-            <h3>Torrente</h3>
-          </a>  
-        </article>
-        <article class="frame">
-          <a href="./movies-details/volveralfuturo.html">
-            <img
-              src="../assets/img/volver al futuro.jpg"
-              alt="volver al futuro"
-            />
-            <h3>Volver al Futuro</h3>
-          </a>  
-        </article>
-        <article class="frame">
-          <a href="./movies-details/smile.html">
-            <img
-              src="../assets/img/smile.jpg"
-              alt="smile"
-            />
-            <h3>Smile</h3>
-          </a>  
-        </article>
-        <article class="frame">
-          <a href="./movies-details/gladiator.html">
-            <img
-              src="../assets/img/gladiator.jpg"
-              alt="gladiator"
-            />
-            <h3>Gladiator</h3>
-          </a>  
-        </article>
-        <article class="frame">
-          <a href="./movies-details/10thingsihate.html">
-            <img
-              src="../assets/img/10things.jpeg"
-              alt="10 things I hate about u "
-            />
-            <h3>10 things I hate about you </h3>
-          </a>  
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <script src="../assets/js/cerrarsesion.js"></script>
-</body>
-
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/peliculas.js"></script>
+    <script src="../assets/js/cerrarsesion.js"></script>
+  </body>
 </html>
