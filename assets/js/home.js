@@ -8,7 +8,7 @@ function agregarSeriesYPeliculas() {
     let nodo_article = document.createElement("article");
     nodo_article.classList.add("frame")
     let nodo_a = document.createElement("a");
-    nodo_a.href = `./serie.html?indice=${i}`;
+    nodo_a.href = `./serie-pelicula.html?indice=${i}`;
     let nodo_img = document.createElement("img")
     nodo_img.src = SERIES_Y_PELICULAS[i]['imagen']['src']
     nodo_img.alt = SERIES_Y_PELICULAS[i]['imagen']['alt']
