@@ -1,4 +1,4 @@
-const LOCAL_STORAGE_SERIES_Y_PELICULAS = 'series y películas'
+const LOCAL_STORAGE_SERIES_Y_PELICULAS = "series y películas";
 //const LOCAL_STORAGE_SERIES = "series";
 //const LOCAL_STORAGE_PELICULAS = "peliculas";
 
@@ -246,7 +246,7 @@ const VOLVER_AL_FUTURO = {
     alt: "Volver al futuro",
   },
   titulo: "Volver al Futuro",
-duracion: "1h 56m",
+  duracion: "1h 56m",
   categoría: "Ciencia Ficción",
   actores: [
     {
@@ -268,7 +268,7 @@ duracion: "1h 56m",
     {
       nombre: "Thomas F. Wilson",
       url: "https://es.wikipedia.org/wiki/Thomas_F._Wilson",
-    }
+    },
   ],
   sinopsis:
     "Una máquina del tiempo transporta a un adolescente a los años 50, cuando sus padres todavía estudiaban en la secundaria.",
@@ -294,8 +294,341 @@ duracion: "1h 56m",
       alt: "torrente",
     },
   ],
+};
+
+const THE_BOYS = {
+  tipo: "serie",
+  imagen: {
+    src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
+    alt: "The Boys",
+  },
+  titulo: "The Boys",
+  temporadas: 4,
+  capitulos: 8,
+  categoría: "Fantasía",
+  actores: [
+    {
+      nombre: "Karl Urban",
+      url: "https://es.wikipedia.org/wiki/Karl_Urban",
+    },
+    {
+      nombre: "Jack Quaid",
+      url: "https://es.wikipedia.org/wiki/Jack_Quaid",
+    },
+    {
+      nombre: "Erin Moriarty",
+      url: "https://es.wikipedia.org/wiki/Erin_Moriarty",
+    },
+    {
+      nombre: "Antony Starr",
+      url: "https://es.wikipedia.org/wiki/Antony_Starr",
+    },
+    {
+      nombre: "Karen Fukuhara",
+      url: "https://es.wikipedia.org/wiki/Karen_Fukuhara",
+    },
+    {
+      nombre: "Tomer Capone",
+      url: "https://es.wikipedia.org/wiki/Tomer_Capone",
+    },
+    {
+      nombre: "Laz Alonso",
+      url: "https://es.wikipedia.org/wiki/Laz_Alonso",
+    },
+    {
+      nombre: "Jensen Ackles",
+      url: "https://es.wikipedia.org/wiki/Jensen_Ackles",
+    },
+    {
+      nombre: "Dominique McElligott",
+      url: "https://en.wikipedia.org/wiki/Dominique_McElligott",
+    },
+  ],
+  sinopsis:
+    'En un mundo donde los superhéroes adoptan el lado más oscuro de su fama y celebridad masiva, un grupo de justicieros conocidos informalmente como "The Boys" se propusieron acabar con superhéroes corruptos sin más que coraje y voluntad que pelear sucio.',
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/F0cvD8kzgkA",
+    url_youtube:
+      "https://www.youtube.com/watch?v=F0cvD8kzgkA",
+  },
+  similares: [
+    {
+      src: "../assets/img/Heroes.jpg",
+      alt: "heroes",
+    },
+    {
+      src: "../assets/img/Supernatural.jpg",
+      alt: "supernatural",
+    },
+    {
+      src: "https://es.web.img3.acsta.net/pictures/22/10/04/16/26/1929878.jpg",
+      alt: "los anillos del poder",
+    },
+    {
+      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
+      alt: "house of the dragon",
+    },
+  ],
+};
+
+const TORRENTE = {
+  tipo: "película",
+  imagen: {
+    src: "../assets/img/torrente.jpg",
+    alt: "Torrente",
+  },
+  titulo: "Torrente",
+  duracion: "1h 37m",
+  categoría: "Comedia",
+  actores: [
+    {
+      nombre: "Santiago Segura",
+      url: "https://es.wikipedia.org/wiki/Santiago_Segura",
+    },
+    {
+      nombre: "Javier Camara",
+      url: "https://es.wikipedia.org/wiki/Javier_C%C3%A1mara",
+    },
+    {
+      nombre: "Chus Lampreave",
+      url: "https://es.wikipedia.org/wiki/Chus_Lampreave",
+    },
+    {
+      nombre: "Neus Asensi",
+      url: "https://es.wikipedia.org/wiki/Neus_Asensi",
+    },
+    {
+      nombre: "Manuel Manquiña",
+      url: "https://es.wikipedia.org/wiki/Manuel_Manqui%C3%B1a",
+    }
+  ],
+  sinopsis:
+    "Torrente, el brazo tonto de la ley es una película española dirigida por Santiago Segura, escrita y protagonizada por él mismo, y producida por Lolafilms. Caracterizada por su humor grueso y caricaturesco, tuvo una gran acogida del público y también de la crítica, entrando Torrente y sus sketches a formar parte del imaginario popular español contemporáneo. Las bromas de mal gusto, el lenguaje soez y las escenas escatológicas parecen ser las claves de su éxito en España.",
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/TXc1lcEbKwk",
+    url_youtube: "https://www.youtube.com/watch?v=AsEK7-UwFwM",
+  },
+  similares: [
+    {
+      src: "../assets/img/10things.jpeg",
+      alt: "10 things I hate about you",
+    },
+    {
+      src: "../assets/img/smile.jpg",
+      alt: "smile",
+    },
+    {
+      src: "../assets/img/gladiator.jpg",
+      alt: "gladiator",
+    },
+    {
+      src: "../assets/img/volver al futuro.jpg",
+      alt: "volver al futuro",
+    },
+  ],
 }
 
-const SERIES_Y_PELICULAS_A_GUARDAR = [SUPERNATURAL, HEROES, VOLVER_AL_FUTURO];
+const THE_END_OF_THE_FXXXING_WORLD = {
+  tipo: "serie",
+  imagen: {
+    src: "../assets/img/theendof.jpg",
+    alt: "The End of the F***ing World",
+  },
+  titulo: "The End of the F*g world",
+  temporadas: 2,
+  capitulos: 8,
+  categoría: "Drama",
+  actores: [
+    {
+      nombre: "Jessica Barden",
+      url: "https://es.wikipedia.org/wiki/Jessica_Barden",
+    },
+    {
+      nombre: "Alex Lawther",
+      url: "https://es.wikipedia.org/wiki/Alex_Lawther",
+    },
+    {
+      nombre: "Naomi Ackie",
+      url: "https://es.wikipedia.org/wiki/Naomi_Ackie",
+    },
+    {
+      nombre: "Christine Bottomley",
+      url: "https://es.wikipedia.org/wiki/Christine_Bottomley",
+    },
+    {
+      nombre: "Gemma Whelan",
+      url: "https://es.wikipedia.org/wiki/Gemma_Whelan",
+    },
+    {
+      nombre: "Steve Oram",
+      url: "https://es.wikipedia.org/wiki/Steve_Oram",
+    },
+    {
+      nombre: "Wunmi Mosaku",
+      url: "https://es.wikipedia.org/wiki/Wunmi_Mosaku",
+    }
+  ],
+  sinopsis:
+    "The End of the F*ing World es una serie de televisión británica de comedia dramática oscura, basado en la novela gráfica The End of the Fucking World por Charles S. Forsman. La primera parte constó de ocho episodios y se estrenó en Channel 4 en el Reino Unido el 24 de octubre de 2017, después la temporada completa se estrenó en All 4. The End of the F***ing World fue lanzado exclusivamente por Netflix a nivel internacional el 5 de enero de 2018. El 8 de octubre de 2019, Netflix anunció la fecha de la segunda temporada que estuvo disponible desde el 5 de noviembre de 2019 y consta también de un total de 8 episodios.",
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/FruHLslczag?si=KepGq38vDgJ5Z_FD",
+    url_youtube: "https://www.youtube.com/watch?v=FruHLslczag",
+  },
+  similares: [
+    {
+      src: "https://images.justwatch.com/poster/245159343/s592/juego-de-tronos",
+      alt: "juego de tronos",
+    },
+    {
+      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
+      alt: "the boys",
+    },
+    {
+      src: "https://es.web.img3.acsta.net/pictures/22/10/04/16/26/1929878.jpg",
+      alt: "los anillos del poder",
+    },
+    {
+      src: "../assets/img/merlina.jpg",
+      alt: "merlina",
+    },
+  ],
+}
 
-localStorage.setItem(LOCAL_STORAGE_SERIES_Y_PELICULAS, JSON.stringify(SERIES_Y_PELICULAS_A_GUARDAR));
+const REASONS_WHY = {
+  tipo: "serie",
+  imagen: {
+    src: "../assets/img/13_reasons_why_season_2_a_netflix_original_series_soundtrack-portada.jpg",
+    alt: "13 reasons why",
+  },
+  titulo: "13 Reasons Why",
+  temporadas: 4,
+  capitulos: 13,
+  categoría: "Drama",
+  actores: [
+    { 
+      nombre: "Dylan Minnette",
+      url: "https://es.wikipedia.org/wiki/Dylan_Minnette",
+    },
+    {
+      nombre: "Alisha Boe",
+      url: "https://es.wikipedia.org/wiki/Alisha_Boe",
+    },
+    {
+      nombre: "Katherine Langford",
+      url: "https://es.wikipedia.org/wiki/Katherine_Langford",
+    },
+    {
+      nombre: "Brandon Flynn",
+      url: "https://es.wikipedia.org/wiki/Brandon_Flynn",
+    },
+    {
+      nombre: "Christian Navarro",
+      url: "https://es.wikipedia.org/wiki/Christian_Navarro",
+    },
+    {
+      nombre: "Justin Prentice",
+      url: "https://es.wikipedia.org/wiki/Justin_Prentice",
+    },
+    {
+      nombre: "Ross Butler",
+      url: "https://es.wikipedia.org/wiki/Ross_Butler",
+    },
+    {
+      nombre: "Miles Heizer",
+      url: "https://es.wikipedia.org/wiki/Miles_Heizer",
+    }
+  ],
+  sinopsis:
+    "A pesar del desconcierto que supone volver a oír la voz de Hannah, Clay descubrirá que son trece las razones por las cuales ha decidido quitarse la vida, trece caras de cassete y que, por ello, son trece las personas que deben escucharlas. Él es una de ellas.",
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/AsEK7-UwFwM",
+    url_youtube: "https://www.youtube.com/watch?v=AsEK7-UwFwM",
+  },
+  similares: [
+    {
+      src: "../assets/img/merlina.jpg",
+      alt: "merlina",
+    },
+    {
+      src: "../assets/img/thealist.jpg",
+      alt: "the a list",
+    },
+    {
+      src: "../assets/img/theendof.jpg",
+      alt: "the end of the f*g world",
+    },
+    {
+      src: "../assets/img/Heroes.jpg",
+      alt: "heroes",
+    },
+  ],
+}
+
+const MERLINA = {
+  tipo: "serie",
+  imagen: {
+    src: "../assets/img/merlina.jpg",
+    alt: "Merlina",
+  },
+  titulo: "Merlina",
+  temporadas: 1,
+  capitulos: 8,
+  categoría: "Fantasía",
+  actores: [
+    {
+      nombre: "Jenna Ortega",
+      url: "https://es.wikipedia.org/wiki/Jenna_Ortega",
+    },
+    {
+      nombre: "Emma Myers",
+      url: "https://es.wikipedia.org/wiki/Emma_Myers",
+    },
+    {
+      nombre: "Percy Hynes White",
+      url: "https://es.wikipedia.org/wiki/Percy_Hynes_White",
+    },
+    {
+      nombre: "Hunter Doohan",
+      url: "https://es.wikipedia.org/wiki/Hunter_Doohan",
+    }
+  ],
+  sinopsis: "Mientras asiste a la Academia Nevermore, Merlina Addams intenta dominar su incipiente habilidad psíquica, frustrar una ola de asesinatos y resolver el misterio que involucró a sus padres 25 años atrás.",
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/gmp7LTKnVPo",
+    url_youtube: "https://www.youtube.com/watch?v=gmp7LTKnVPo",
+  },
+  similares: [
+    {
+      src: "https://images.justwatch.com/poster/245159343/s592/juego-de-tronos",
+      alt: "juego de tronos",
+    },
+    {
+      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
+      alt: "the boys",
+    },
+    {
+      src: "https://es.web.img3.acsta.net/pictures/22/10/04/16/26/1929878.jpg",
+      alt: "los anillos del poder",
+    },
+    {
+      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
+      alt: "house of the dragon",
+    },
+  ],
+}
+
+const SERIES_Y_PELICULAS_A_GUARDAR = [
+  SUPERNATURAL,
+  HEROES,
+  VOLVER_AL_FUTURO,
+  THE_BOYS,
+  TORRENTE,
+  THE_END_OF_THE_FXXXING_WORLD,
+  REASONS_WHY,
+  MERLINA
+];
+
+localStorage.setItem(
+  LOCAL_STORAGE_SERIES_Y_PELICULAS,
+  JSON.stringify(SERIES_Y_PELICULAS_A_GUARDAR)
+);
