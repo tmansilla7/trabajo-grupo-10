@@ -1,7 +1,7 @@
 const cerrarSesion = document.querySelector("#cerrar-sesion")
 
 function eliminarDatosDeLocalStorage() {
-    localStorage.removeItem("usuario")
+    localStorage.clear()
 }
 
 cerrarSesion.addEventListener("click", eliminarDatosDeLocalStorage)
