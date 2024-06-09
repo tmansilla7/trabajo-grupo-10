@@ -1,6 +1,4 @@
 const LOCAL_STORAGE_SERIES_Y_PELICULAS = "series y películas";
-//const LOCAL_STORAGE_SERIES = "series";
-//const LOCAL_STORAGE_PELICULAS = "peliculas";
 
 const SUPERNATURAL = {
   tipo: "serie",
@@ -9,8 +7,68 @@ const SUPERNATURAL = {
     alt: "Supernatural",
   },
   titulo: "Supernatural",
-  temporadas: 15,
-  capitulos: 23,
+  temporadas: [
+    {
+      numero: 1,
+      capitulos: 22,
+    },
+    {
+      numero: 2,
+      capitulos: 22,
+    },
+    {
+      numero: 3,
+      capitulos: 22,
+    },
+    {
+      numero: 4,
+      capitulos: 22,
+    },
+    {
+      numero: 5,
+      capitulos: 22,
+    },
+    {
+      numero: 6,
+      capitulos: 22,
+    },
+    {
+      numero: 7,
+      capitulos: 23,
+    },
+    {
+      numero: 8,
+      capitulos: 23,
+    },
+    {
+      numero: 9,
+      capitulos: 23,
+    },
+    {
+      numero: 10,
+      capitulos: 23,
+    },
+    {
+      numero: 11,
+      capitulos: 23,
+    },
+    {
+      numero: 12,
+      capitulos: 23,
+    },
+    {
+      numero: 13,
+      capitulos: 23,
+    },
+    {
+      numero: 14,
+      capitulos: 20,
+    },
+    {
+      numero: 15,
+      capitulos: 20,
+    },
+  ],
   categoría: "Fantasía",
   actores: [
     {
@@ -128,8 +186,24 @@ const HEROES = {
     alt: "Heroes",
   },
   titulo: "Heroes",
-  temporadas: 4,
-  capitulos: 25,
+  temporadas: [
+    {
+      numero: 1,
+      capitulos: 23,
+    },
+    {
+      numero: 2,
+      capitulos: 11,
+    },
+    {
+      numero: 3,
+      capitulos: 25,
+    },
+    {
+      numero: 4,
+      capitulos: 19,
+    },
+  ],
   categoría: "Fantasía",
   actores: [
     {
@@ -303,8 +377,24 @@ const THE_BOYS = {
     alt: "The Boys",
   },
   titulo: "The Boys",
-  temporadas: 4,
-  capitulos: 8,
+  temporadas: [
+    {
+      numero: 1,
+      capitulos: 8,
+    },
+    {
+      numero: 2,
+      capitulos: 8,
+    },
+    {
+      numero: 3,
+      capitulos: 8,
+    },
+    {
+      numero: 4,
+      capitulos: 8,
+    },
+  ],
   categoría: "Fantasía",
   actores: [
     {
@@ -348,8 +438,7 @@ const THE_BOYS = {
     'En un mundo donde los superhéroes adoptan el lado más oscuro de su fama y celebridad masiva, un grupo de justicieros conocidos informalmente como "The Boys" se propusieron acabar con superhéroes corruptos sin más que coraje y voluntad que pelear sucio.',
   trailer: {
     url_iframe: "https://www.youtube.com/embed/F0cvD8kzgkA",
-    url_youtube:
-      "https://www.youtube.com/watch?v=F0cvD8kzgkA",
+    url_youtube: "https://www.youtube.com/watch?v=F0cvD8kzgkA",
   },
   similares: [
     {
@@ -400,7 +489,7 @@ const TORRENTE = {
     {
       nombre: "Manuel Manquiña",
       url: "https://es.wikipedia.org/wiki/Manuel_Manqui%C3%B1a",
-    }
+    },
   ],
   sinopsis:
     "Torrente, el brazo tonto de la ley es una película española dirigida por Santiago Segura, escrita y protagonizada por él mismo, y producida por Lolafilms. Caracterizada por su humor grueso y caricaturesco, tuvo una gran acogida del público y también de la crítica, entrando Torrente y sus sketches a formar parte del imaginario popular español contemporáneo. Las bromas de mal gusto, el lenguaje soez y las escenas escatológicas parecen ser las claves de su éxito en España.",
@@ -426,7 +515,7 @@ const TORRENTE = {
       alt: "volver al futuro",
     },
   ],
-}
+};
 
 const THE_END_OF_THE_FXXXING_WORLD = {
   tipo: "serie",
@@ -435,8 +524,16 @@ const THE_END_OF_THE_FXXXING_WORLD = {
     alt: "The End of the F***ing World",
   },
   titulo: "The End of the F*g world",
-  temporadas: 2,
-  capitulos: 8,
+  temporadas: [
+    {
+      numero: 1,
+      capitulos: 8,
+    },
+    {
+      numero: 2,
+      capitulos: 8,
+    },
+  ],
   categoría: "Drama",
   actores: [
     {
@@ -466,7 +563,7 @@ const THE_END_OF_THE_FXXXING_WORLD = {
     {
       nombre: "Wunmi Mosaku",
       url: "https://es.wikipedia.org/wiki/Wunmi_Mosaku",
-    }
+    },
   ],
   sinopsis:
     "The End of the F*ing World es una serie de televisión británica de comedia dramática oscura, basado en la novela gráfica The End of the Fucking World por Charles S. Forsman. La primera parte constó de ocho episodios y se estrenó en Channel 4 en el Reino Unido el 24 de octubre de 2017, después la temporada completa se estrenó en All 4. The End of the F***ing World fue lanzado exclusivamente por Netflix a nivel internacional el 5 de enero de 2018. El 8 de octubre de 2019, Netflix anunció la fecha de la segunda temporada que estuvo disponible desde el 5 de noviembre de 2019 y consta también de un total de 8 episodios.",
@@ -492,7 +589,7 @@ const THE_END_OF_THE_FXXXING_WORLD = {
       alt: "merlina",
     },
   ],
-}
+};
 
 const REASONS_WHY = {
   tipo: "serie",
@@ -501,11 +598,27 @@ const REASONS_WHY = {
     alt: "13 reasons why",
   },
   titulo: "13 Reasons Why",
-  temporadas: 4,
-  capitulos: 13,
+  temporadas: [
+    {
+      numero: 1,
+      capitulos: 13,
+    },
+    {
+      numero: 2,
+      capitulos: 13,
+    },
+    {
+      numero: 3,
+      capitulos: 13,
+    },
+    {
+      numero: 4,
+      capitulos: 10,
+    },
+  ],
   categoría: "Drama",
   actores: [
-    { 
+    {
       nombre: "Dylan Minnette",
       url: "https://es.wikipedia.org/wiki/Dylan_Minnette",
     },
@@ -536,7 +649,7 @@ const REASONS_WHY = {
     {
       nombre: "Miles Heizer",
       url: "https://es.wikipedia.org/wiki/Miles_Heizer",
-    }
+    },
   ],
   sinopsis:
     "A pesar del desconcierto que supone volver a oír la voz de Hannah, Clay descubrirá que son trece las razones por las cuales ha decidido quitarse la vida, trece caras de cassete y que, por ello, son trece las personas que deben escucharlas. Él es una de ellas.",
@@ -562,7 +675,7 @@ const REASONS_WHY = {
       alt: "heroes",
     },
   ],
-}
+};
 
 const MERLINA = {
   tipo: "serie",
@@ -590,9 +703,10 @@ const MERLINA = {
     {
       nombre: "Hunter Doohan",
       url: "https://es.wikipedia.org/wiki/Hunter_Doohan",
-    }
+    },
   ],
-  sinopsis: "Mientras asiste a la Academia Nevermore, Merlina Addams intenta dominar su incipiente habilidad psíquica, frustrar una ola de asesinatos y resolver el misterio que involucró a sus padres 25 años atrás.",
+  sinopsis:
+    "Mientras asiste a la Academia Nevermore, Merlina Addams intenta dominar su incipiente habilidad psíquica, frustrar una ola de asesinatos y resolver el misterio que involucró a sus padres 25 años atrás.",
   trailer: {
     url_iframe: "https://www.youtube.com/embed/gmp7LTKnVPo",
     url_youtube: "https://www.youtube.com/watch?v=gmp7LTKnVPo",
@@ -615,7 +729,7 @@ const MERLINA = {
       alt: "house of the dragon",
     },
   ],
-}
+};
 
 const SERIES_Y_PELICULAS_A_GUARDAR = [
   SUPERNATURAL,
@@ -625,7 +739,7 @@ const SERIES_Y_PELICULAS_A_GUARDAR = [
   TORRENTE,
   THE_END_OF_THE_FXXXING_WORLD,
   REASONS_WHY,
-  MERLINA
+  MERLINA,
 ];
 
 localStorage.setItem(
