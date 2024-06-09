@@ -16,7 +16,7 @@ function agregarTemporadasODuracion(array) {
     nodo_temporadas.textContent = "Temporadas: ";
     const nodo_select = document.createElement("select");
     nodo_select.name = "temporadas";
-    for (let i = 1; i <= array["temporadas"]; i++) {
+    for (let i = 1; i <= array["temporadas"].length; i++) {
       const nodo_option = document.createElement("option");
       nodo_option.value = i;
       nodo_option.textContent = i;
@@ -29,14 +29,34 @@ function agregarTemporadasODuracion(array) {
     nodo_capitulos.textContent = "Capítulos: ";
     const nodo_select2 = document.createElement("select");
     nodo_select2.name = "capitulos";
-    for (let i = 1; i <= array["capitulos"]; i++) {
+
+    let temporada = 1;
+    let numero_capitulos = array["temporadas"][0]["capitulos"];
+
+    for (let i = 1; i <= numero_capitulos; i++) {
       const nodo_option = document.createElement("option");
       nodo_option.value = i;
       nodo_option.textContent = i;
       nodo_select2.appendChild(nodo_option);
     }
+
     nodo_div.appendChild(nodo_capitulos);
     nodo_div.appendChild(nodo_select2);
+
+    nodo_select.addEventListener("change", (event) => {
+      temporada = nodo_select.options[nodo_select.selectedIndex].text;
+      numero_capitulos = array["temporadas"][temporada - 1]["capitulos"];
+
+      nodo_select2.innerHTML = ""
+     
+      for (let i = 1; i <= numero_capitulos; i++) {
+        const nodo_option = document.createElement("option");
+        nodo_option.value = i;
+        nodo_option.textContent = i;
+        nodo_select2.appendChild(nodo_option);
+      }     
+    });
+
   } else {
     const nodo_div = document.querySelector("#duracion");
     const nodo_duracion = document.createElement("h3");
