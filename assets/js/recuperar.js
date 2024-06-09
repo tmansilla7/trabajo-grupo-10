@@ -1,7 +1,7 @@
 const nombreUsuario = document.querySelector("#nombre");
 const email = document.querySelector("#email");
 const errorUsuario = document.querySelector("#errorUsuario");
-const errorEmail = document.querySelector("#errorEmail")
+const errorEmail = document.querySelector("#errorEmail");
 const submit = document.querySelector("#btn-submit");
 submit.disabled = true;
 
@@ -12,26 +12,16 @@ function habilitarBoton() {
 }
 
 function removerClaseErrorDelEmail(evento) {
-  email.classList.remove("error");
-  errorEmail.textContent = "";
+  removerClase("error", email, errorEmail);
 }
 
 function removerClaseErrorDeUsuario(evento) {
-  nombreUsuario.classList.remove("error");
-  errorUsuario.textContent = "";
-}
-
-function validarCampo(evento, selector, selector2, texto) {
-  if (selector.value == "") {
-    evento.preventDefault();
-    selector.classList.add("error");
-    selector2.textContent = texto;
-  }
+  removerClase("error", nombreUsuario, errorUsuario);
 }
 
 function verificarFormulario(evento) {
-  validarCampo(evento, email, errorEmail, "Ingresa tu email")
-  validarCampo(evento, nombreUsuario, errorUsuario, "Ingresa tu usuario")
+  validarCampo(evento, email, errorEmail, "Ingresa tu email");
+  validarCampo(evento, nombreUsuario, errorUsuario, "Ingresa tu usuario");
 }
 
 submit.addEventListener("click", verificarFormulario);
