@@ -5,6 +5,8 @@ const SERIES_Y_PELICULAS = JSON.parse(JSON_SERIES_Y_PELICULAS);
 let nodo_section = document.querySelector(".sermov");
 const CATEGORIAS = document.querySelector("#categorias");
 let categoria_seleccionada = "";
+const buscador = document.querySelector("#buscar");
+let palabra_buscada = "";
 
 function removerClase(clase, selector, selector2, texto) {
   selector.classList.remove(clase);
@@ -97,7 +99,7 @@ function crearArticle(i) {
 function agregarSeriesOPeliculas(array, tipo) {
   for (let i in array) {
     if (array[i]["tipo"] == tipo) {
-      crearArticle(i)
+      crearArticle(i);
     }
   }
 }
@@ -105,18 +107,45 @@ function agregarSeriesOPeliculas(array, tipo) {
 function cambioDeCategoria(array, tipo) {
   CATEGORIAS.addEventListener("change", (event) => {
     categoria_seleccionada = CATEGORIAS.options[CATEGORIAS.selectedIndex].text;
-  
+
     nodo_section.innerHTML = "";
-  
+
     if (categoria_seleccionada == "Todas") {
-      agregarSeriesOPeliculas(array, tipo)
+      agregarSeriesOPeliculas(array, tipo);
     } else {
       for (let i in array) {
-        if (categoria_seleccionada == array[i]["categoría"] && array[i]["tipo"] == tipo) {
+        if (
+          categoria_seleccionada == array[i]["categoría"] &&
+          array[i]["tipo"] == tipo
+        ) {
           crearArticle(i);
+        }
+      }
+    }
+    buscador.value = "";
+  });
+}
+
+function buscar(array, tipo) {
+  buscador.addEventListener("keyup", (event) => {
+    nodo_section.innerHTML = "";
+    palabra_buscada = buscador.value;
+    if (palabra_buscada == "" && categoria_seleccionada == "Todas") {
+      agregarSeriesOPeliculas(array, tipo);
+    } else {
+      for (let i in array) {
+        if (
+          array[i]["titulo"]
+            .toUpperCase()
+            .includes(palabra_buscada.toUpperCase())
+        ) {
+          if (array[i]["tipo"] == tipo) {
+            crearArticle(i);
+          }
+
+          CATEGORIAS.value = "1";
         }
       }
     }
   });
 }
-
