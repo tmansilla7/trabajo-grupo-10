@@ -124,3 +124,28 @@ agregarDescripcion(
   SERIES_PELICULAS[indice_de_la_serie_pelicula]["actores"],
   SERIES_PELICULAS[indice_de_la_serie_pelicula]["sinopsis"]
 );
+
+let sliderInner = document.querySelector('.similares');
+let currentIndex = 0;
+
+function showSlide(index) {
+  const totalSlides = document.querySelectorAll('.similares article').length;
+  if (index >= totalSlides) {
+    currentIndex = 0;
+  } else if (index < 0) {
+    currentIndex = totalSlides - 1;
+  } else {
+    currentIndex = index;
+  }
+  const newTransform = -currentIndex * 100 + '%';
+  sliderInner.style.transform = `translateX(${newTransform})`;
+}
+function nextSlide() {
+  showSlide(currentIndex + 1);
+}
+function prevSlide() {
+  showSlide(currentIndex - 1);
+}
+document.addEventListener('DOMContentLoaded', () => {
+  showSlide(currentIndex);
+});
