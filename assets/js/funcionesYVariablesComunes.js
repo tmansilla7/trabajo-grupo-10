@@ -4,7 +4,7 @@ const JSON_SERIES_Y_PELICULAS = localStorage.getItem(
 const SERIES_Y_PELICULAS = JSON.parse(JSON_SERIES_Y_PELICULAS);
 let nodo_section = document.querySelector(".sermov");
 const CATEGORIAS = document.querySelector("#categorias");
-let categoria_seleccionada = "";
+let categoria_seleccionada = "Todas";
 const buscador = document.querySelector("#buscar");
 let palabra_buscada = "";
 
@@ -133,17 +133,32 @@ function buscar(array, tipo) {
     if (palabra_buscada == "" && categoria_seleccionada == "Todas") {
       agregarSeriesOPeliculas(array, tipo);
     } else {
-      for (let i in array) {
-        if (
-          array[i]["titulo"]
-            .toUpperCase()
-            .includes(palabra_buscada.toUpperCase())
-        ) {
-          if (array[i]["tipo"] == tipo) {
-            crearArticle(i);
+      if (categoria_seleccionada == "Todas") {
+        for (let i in array) {
+          if (
+            array[i]["titulo"]
+              .toUpperCase()
+              .includes(palabra_buscada.toUpperCase())
+          ) {
+            if (array[i]["tipo"] == tipo) {
+              crearArticle(i);
+            }
           }
-
-          CATEGORIAS.value = "1";
+        }
+      } else {
+        for (let i in array) {
+          if (
+            array[i]["titulo"]
+              .toUpperCase()
+              .includes(palabra_buscada.toUpperCase())
+          ) {
+            if (
+              array[i]["categoría"] == categoria_seleccionada &&
+              array[i]["tipo"] == tipo
+            ) {
+              crearArticle(i);
+            }
+          }
         }
       }
     }

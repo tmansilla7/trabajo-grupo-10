@@ -33,14 +33,27 @@ buscador.addEventListener("keyup", (event) => {
   if (palabra_buscada == "" && categoria_seleccionada == "Todas") {
     agregarSeriesYPeliculas();
   } else {
-    for (let i in SERIES_Y_PELICULAS) {
-      if (
-        SERIES_Y_PELICULAS[i]["titulo"]
-          .toUpperCase()
-          .includes(palabra_buscada.toUpperCase())
-      ) {
-        crearArticle(i);
-        CATEGORIAS.value = "1";
+    if (categoria_seleccionada == "Todas") {
+      for (let i in SERIES_Y_PELICULAS) {
+        if (
+          SERIES_Y_PELICULAS[i]["titulo"]
+            .toUpperCase()
+            .includes(palabra_buscada.toUpperCase())
+        ) {
+          crearArticle(i);
+        }
+      }
+    } else {
+      for (let i in SERIES_Y_PELICULAS) {
+        if (
+          SERIES_Y_PELICULAS[i]["titulo"]
+            .toUpperCase()
+            .includes(palabra_buscada.toUpperCase())
+        ) {
+          if (SERIES_Y_PELICULAS[i]["categoría"] == categoria_seleccionada) {
+            crearArticle(i);
+          }
+        }
       }
     }
   }
