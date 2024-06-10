@@ -125,26 +125,28 @@
                 />
                 Cupón de pago
               </label>
-              <label for="facil" class="label-registro pago-check">
-                <input
-                  class="pago-check"
-                  type="checkbox"
-                  name="facil"
-                  id="facil"
-                  value="facil"
-                />
-                Pago fácil
-              </label>
-              <label for="rapi" class="label-registro pago-check">
-                <input
-                  class="pago-check"
-                  type="checkbox"
-                  name="rapi"
-                  id="rapi"
-                  value="rapi"
-                />
-                RapiPago
-              </label>
+              <div class="pagoCheck">
+                <label for="facil" class="label-registro pago-check">
+                  <input
+                    class="pago-check"
+                    type="checkbox"
+                    name="facil"
+                    id="facil"
+                    value="facil"
+                  />
+                  Pago fácil
+                </label>
+                <label for="rapi" class="label-registro pago-check">
+                  <input
+                    class="pago-check"
+                    type="checkbox"
+                    name="rapi"
+                    id="rapi"
+                    value="rapi"
+                  />
+                  RapiPago
+                </label>
+              </div>
               <label for="transferencia" class="label-registro metodo-pago">
                 <input
                   type="radio"
@@ -159,7 +161,11 @@
               >
 
               <div class="registrar">
-                <button type="submit" class="btn-registrar confirmar" id="btn-submit">
+                <button
+                  type="submit"
+                  class="btn-registrar confirmar"
+                  id="btn-submit"
+                >
                   Confirmar
                 </button>
                 <a href="../index.html"
