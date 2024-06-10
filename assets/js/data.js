@@ -684,8 +684,12 @@ const MERLINA = {
     alt: "Merlina",
   },
   titulo: "Merlina",
-  temporadas: 1,
-  capitulos: 8,
+  temporadas: [
+    {
+      numero: 1,
+      capitulos: 8,
+    },
+  ],
   categoría: "Fantasía",
   actores: [
     {
@@ -731,6 +735,372 @@ const MERLINA = {
   ],
 };
 
+const LOST = {
+  tipo: "serie",
+  imagen: {
+    src: "../assets/img/Lost.jpg",
+    alt: "Lost",
+  },
+  titulo: "Lost",
+  temporadas: [
+    {
+      numero: 1,
+      capitulos: 25,
+    },
+    {
+      numero: 2,
+      capitulos: 24,
+    },
+    {
+      numero: 3,
+      capitulos: 23,
+    },
+    {
+      numero: 4,
+      capitulos: 14,
+    },
+    {
+      numero: 5,
+      capitulos: 17,
+    },
+    {
+      numero: 6,
+      capitulos: 18,
+    },
+  ],
+  categoría: "Ciencia Ficción",
+  actores: [
+    {
+      nombre: "Matthew Fox",
+      url: "https://es.wikipedia.org/wiki/Matthew_Fox",
+    },
+    {
+      nombre: "Evangeline Lilly",
+      url: "https://es.wikipedia.org/wiki/Evangeline_Lilly",
+    },
+    {
+      nombre: "Jorge Garcia",
+      url: "https://es.wikipedia.org/wiki/Jorge_Garcia_(actor)",
+    },
+    {
+      nombre: "Josh Holloway",
+      url: "https://es.wikipedia.org/wiki/Josh_Holloway",
+    },
+    {
+      nombre: "Michael Emerson",
+      url: "https://es.wikipedia.org/wiki/Michael_Emerson",
+    },
+    {
+      nombre: "Naveen Andrews",
+      url: "https://es.wikipedia.org/wiki/Naveen_Andrews",
+    },
+    {
+      nombre: "Emilie de Ravin",
+      url: "https://es.wikipedia.org/wiki/Emilie_de_Ravin",
+    },
+    {
+      nombre: "Yunjin Kim",
+      url: "https://es.wikipedia.org/wiki/Yunjin_Kim",
+    },
+    {
+      nombre: "Daniel Dae Kim",
+      url: "https://es.wikipedia.org/wiki/Daniel_Dae_Kim",
+    },
+  ],
+  sinopsis:
+    "El vuelo 815 se estrella en una isla desierta, exuberante y misteriosa. Enseguida, los sobrevivientes deben encontrar la forma de adaptarse al nuevo ambiente, a la vez que descubren un extraño sistema de seguridad, refugios subterráneos y un violento grupo de supervivientes.",
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/F7_dkEkE50g",
+    url_youtube: "https://www.youtube.com/watch?v=F7_dkEkE50g",
+  },
+  similares: [
+    {
+      src: "https://images.justwatch.com/poster/245159343/s592/juego-de-tronos",
+      alt: "juego de tronos",
+    },
+    {
+      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
+      alt: "the boys",
+    },
+    {
+      src: "https://es.web.img3.acsta.net/pictures/22/10/04/16/26/1929878.jpg",
+      alt: "los anillos del poder",
+    },
+    {
+      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
+      alt: "house of the dragon",
+    },
+  ],
+};
+
+const EL_LUGAR_BUENO = {
+  tipo: "serie",
+  imagen: {
+    src: "../assets/img/El lugar bueno.jpg",
+    alt: "El lugar bueno",
+  },
+  titulo: "El Lugar Bueno",
+  temporadas: [
+    {
+      numero: 1,
+      capitulos: 13,
+    },
+    {
+      numero: 2,
+      capitulos: 13,
+    },
+    {
+      numero: 3,
+      capitulos: 13,
+    },
+    {
+      numero: 4,
+      capitulos: 13,
+    },
+  ],
+  categoría: "Comedia",
+  actores: [
+    {
+      nombre: "Kristen Bell",
+      url: "https://es.wikipedia.org/wiki/Kristen_Bell",
+    },
+    {
+      nombre: "Ted Danson",
+      url: "https://en.wikipedia.org/wiki/Ted_Danson",
+    },
+    {
+      nombre: "William Jackson Harper",
+      url: "https://es.wikipedia.org/wiki/William_Jackson_Harper",
+    },
+    {
+      nombre: "Jameela Jamil",
+      url: "https://es.wikipedia.org/wiki/Jameela_Jamil",
+    },
+    {
+      nombre: "Manny Jacinto",
+      url: "https://es.wikipedia.org/wiki/Manny_Jacinto",
+    },
+    {
+      nombre: "D'Arcy Carden",
+      url: "https://es.wikipedia.org/wiki/D%27Arcy_Carden",
+    },
+  ],
+  sinopsis:
+    "Cuando Eleanor Shellstrop llega a la otra vida, siente alivio y se sorprende de que haya llegado al Buen Lugar, pero no le toma mucho tiempo en darse cuenta de que ella está en ese sitio debido a un error, por lo que tendrá que cambiar para quedarse.",
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/TqMLZEkVBrU",
+    url_youtube: "https://www.youtube.com/watch?v=TqMLZEkVBrU&t",
+  },
+  similares: [
+    {
+      src: "../assets/img/Supernatural.jpg",
+      alt: "supernatural",
+    },
+    {
+      src: "../assets/img/Heroes.jpg",
+      alt: "heroes",
+    },
+    {
+      src: "../assets/img/merlina.jpg",
+      alt: "merlina",
+    },
+    {
+      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
+      alt: "house of the dragon",
+    },
+  ],
+};
+
+const ZATHURA = {
+  tipo: "película",
+  imagen: {
+    src: "../assets/img/Zathura.jpg",
+    alt: "Zathura",
+  },
+  titulo: "Zathura",
+  duracion: "1h 41m",
+  categoría: "Aventura",
+  actores: [
+    {
+      nombre: "Josh Hutcherson",
+      url: "https://es.wikipedia.org/wiki/Josh_Hutcherson",
+    },
+    {
+      nombre: "Jonah Bobo",
+      url: "https://es.wikipedia.org/wiki/Jonah_Bobo",
+    },
+    {
+      nombre: "Kristen Stewart",
+      url: "https://es.wikipedia.org/wiki/Kristen_Stewart",
+    },
+    {
+      nombre: "Dax Shepard",
+      url: "https://es.wikipedia.org/wiki/Dax_Shepard",
+    }
+  ],
+  sinopsis:
+    "Dos hermanos encuentran un juego de mesa llamado Zathura. Danny empieza a jugar solo y, desde la primera jugada, se da cuenta de que no es un juego de mesa normal: la ficha de la nave espacial se mueve sola y lanza mensajes que se cumplen.",
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/QCpMedfJ5uo",
+    url_youtube: "https://www.youtube.com/watch?v=QCpMedfJ5uo",
+  },
+  similares: [
+    {
+      src: "../assets/img/10things.jpeg",
+      alt: "10 things I hate about you",
+    },
+    {
+      src: "../assets/img/smile.jpg",
+      alt: "smile",
+    },
+    {
+      src: "../assets/img/gladiator.jpg",
+      alt: "gladiator",
+    },
+    {
+      src: "../assets/img/volver al futuro.jpg",
+      alt: "volver al futuro",
+    },
+  ],
+};
+
+const CHUCKY = {
+  tipo: "serie",
+  imagen: {
+    src: "../assets/img/Chucky.jpg",
+    alt: "Chucky",
+  },
+  titulo: "Chucky",
+  temporadas: [
+    {
+      numero: 1,
+      capitulos: 8,
+    },
+    {
+      numero: 2,
+      capitulos: 8,
+    },
+    {
+      numero: 3,
+      capitulos: 8,
+    }
+  ],
+  categoría: "Terror",
+  actores: [
+    {
+      nombre: "Zackary Arthur",
+      url: "https://es.wikipedia.org/wiki/Zackary_Arthur",
+    },
+    {
+      nombre: "Bjorgvin Arnarson",
+      url: "https://www.sensacine.com/actores/actor-927749/",
+    },
+    {
+      nombre: "Alyvia Alyn Lind",
+      url: "https://es.wikipedia.org/wiki/Alyvia_Alyn_Lind",
+    },
+    {
+      nombre: "Brad Dourif",
+      url: "https://es.wikipedia.org/wiki/Brad_Dourif",
+    },
+    {
+      nombre: "Jennifer Tilly",
+      url: "https://es.wikipedia.org/wiki/Jennifer_Tilly",
+    }
+  ],
+  sinopsis:
+    "Cuando un muñeco antiguo de Chucky aparece en una venta de jardín de los suburbios, una idílica ciudad estadounidense se ve sumida en el caos.",
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/qcArPbMOVss",
+    url_youtube: "https://www.youtube.com/watch?v=qcArPbMOVss",
+  },
+  similares: [
+    {
+      src: "../assets/img/Supernatural.jpg",
+      alt: "supernatural",
+    },
+    {
+      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
+      alt: "the boys",
+    },
+    {
+      src: "../assets/img/merlina.jpg",
+      alt: "merlina",
+    },
+    {
+      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
+      alt: "house of the dragon",
+    },
+  ],
+};
+
+const ERAGON = {
+  tipo: "película",
+  imagen: {
+    src: "../assets/img/Eragon.jpg",
+    alt: "Eragon",
+  },
+  titulo: "Eragon",
+  duracion: "1h 44m",
+  categoría: "Fantasía",
+  actores: [
+    {
+      nombre: "Edward Speleers",
+      url: "https://es.wikipedia.org/wiki/Edward_Speleers",
+    },
+    {
+      nombre: "Rachel Weisz",
+      url: "https://es.wikipedia.org/wiki/Rachel_Weisz",
+    },
+    {
+      nombre: "Jeremy Irons",
+      url: "https://es.wikipedia.org/wiki/Jeremy_Irons",
+    },
+    {
+      nombre: "Sienna Guillory",
+      url: "https://es.wikipedia.org/wiki/Sienna_Guillory",
+    },
+    {
+      nombre: "Garrett Hedlund",
+      url: "https://es.wikipedia.org/wiki/Garrett_Hedlund",
+    },
+    {
+      nombre: "Robert Carlyle",
+      url: "https://es.wikipedia.org/wiki/Robert_Carlyle",
+    },
+    {
+      nombre: "John Malkovich",
+      url: "https://es.wikipedia.org/wiki/John_Malkovich",
+    }
+      
+    
+  ],
+  sinopsis:
+    "Eragon, un humilde joven granjero, vive en Alagaesia, un reino controlado por Galbatorix, un monarca poderoso y malvado. Un día, Eragon descubre una hermosa piedra que resulta ser el huevo de un dragón. Cuando la criatura nace, el joven idea un plan para poder restaurar la gloria de los legendarios Jinetes Dragón de su pueblo natal y poder derrocar a Galbatorix.",
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/MAqm-1zUyno",
+    url_youtube: "https://www.youtube.com/watch?v=MAqm-1zUyno",
+  },
+  similares: [
+    {
+      src: "../assets/img/10things.jpeg",
+      alt: "10 things I hate about you",
+    },
+    {
+      src: "../assets/img/smile.jpg",
+      alt: "smile",
+    },
+    {
+      src: "../assets/img/gladiator.jpg",
+      alt: "gladiator",
+    },
+    {
+      src: "../assets/img/volver al futuro.jpg",
+      alt: "volver al futuro",
+    },
+  ],
+};
+
 const SERIES_Y_PELICULAS_A_GUARDAR = [
   SUPERNATURAL,
   HEROES,
@@ -740,6 +1110,11 @@ const SERIES_Y_PELICULAS_A_GUARDAR = [
   THE_END_OF_THE_FXXXING_WORLD,
   REASONS_WHY,
   MERLINA,
+  ZATHURA,
+  LOST,
+  EL_LUGAR_BUENO,
+  ERAGON,
+  CHUCKY
 ];
 
 localStorage.setItem(
