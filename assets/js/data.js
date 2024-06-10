@@ -729,6 +729,166 @@ const MERLINA = {
       alt: "house of the dragon",
     },
   ],
+  
+};
+
+const SMILE = {
+  tipo: "película",
+  imagen: {
+    src: "../assets/img/smile.jpg",
+    alt: "Smile",
+  },
+  titulo: "Smile",
+  duracion: "1h 55m",
+  categoría: "Terror",
+  actores: [
+    {
+      nombre: "Sosie Bacon",
+      url: "https://es.wikipedia.org/wiki/Sosie_Bacon",
+    },
+    {
+      nombre: "Jessie T. Usher",
+      url: "https://es.wikipedia.org/wiki/Jessie_Usher",
+    },
+    {
+      nombre: "Kyle gallner",
+      url: "https://es.wikipedia.org/wiki/Kyle_Gallner",
+    },
+    {
+      nombre: "Caytlin Stasey",
+      url: "https://es.wikipedia.org/wiki/Caitlin_Stasey",
+    },
+    {
+      nombre: "Kal Penn",
+      url: "https://es.wikipedia.org/wiki/Kal_Penn",
+    },
+  ],
+  sinopsis:
+    "En un pabellón psiquiátrico, la terapeuta Dra. Rose Cotter conoce a la estudiante de doctorado Laura Weaver, quien le explica que hace poco presenció cómo su profesor se suicidaba. Laura afirma que está siendo aterrorizada por una entidad invisible que aparece como varias personas sonrientes y que ha predicho su muerte. Laura empieza a gritar y a entrar en pánico y Rose pide ayuda. De repente, Laura se tranquiliza de forma anormal y sonríe, para después cortarse el cuello, aterrorizando a Rose.",
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/yhKiQGJop_8",
+    url_youtube: "https://www.youtube.com/watch?v=yhKiQGJop_8",
+  },
+  similares: [
+    {
+      src: "../assets/img/10things.jpeg",
+      alt: "10 things I hate about you",
+    },
+    {
+      src: "../assets/img/smile.jpg",
+      alt: "smile",
+    },
+    {
+      src: "../assets/img/gladiator.jpg",
+      alt: "gladiator",
+    },
+    {
+      src: "../assets/img/volver al futuro.jpg",
+      alt: "volver al futuro",
+    },
+  ],
+};
+
+const GLADIATOR = {
+  tipo: "película",
+  imagen: {
+    src: "../assets/img/gladiator.jpg",
+    alt: "gladiator",
+  },
+  titulo: "Gladiator",
+  duracion: "2h 35m",
+  categoría: "Terror",
+  actores: [
+    {
+      nombre: "Russell Crowe",
+      url: "https://es.wikipedia.org/wiki/Russell_Crowe",
+    },
+    {
+      nombre: "Joaquin Phoenix",
+      url: "https://es.wikipedia.org/wiki/Joaquin_Phoenix",
+    },
+    {
+      nombre: "Connie Nielsenr",
+      url: "https://es.wikipedia.org/wiki/Connie_Nielsen",
+    },
+  ],
+  sinopsis:
+    "Gladiator (llamada Gladiador en Hispanoamérica) es una película épica del género péplum y acción del año 2000 dirigida por Ridley Scott y protagonizada por Russell Crowe, Joaquin Phoenix y Connie Nielsen. Crowe interpreta a Máximo Décimo Meridio, un leal general hispano del ejército del Imperio romano que es traicionado por Cómodo, el ambicioso hijo del emperador Marco Aurelio, quien ha asesinado a su padre y se ha hecho con el trono. Forzado a convertirse en esclavo, Máximo triunfa como gladiador mientras anhela vengar la muerte de su familia y la del emperador",
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/P5ieIbInFpg",
+    url_youtube: "https://www.youtube.com/watch?v=P5ieIbInFpg",
+  },
+  similares: [
+    {
+      src: "../assets/img/10things.jpeg",
+      alt: "10 things I hate about you",
+    },
+    {
+      src: "../assets/img/smile.jpg",
+      alt: "smile",
+    },
+    {
+      src: "../assets/img/gladiator.jpg",
+      alt: "gladiator",
+    },
+    {
+      src: "../assets/img/volver al futuro.jpg",
+      alt: "volver al futuro",
+    },
+  ],
+};
+
+const THENTHINGSIHATE = {
+  tipo: "película",
+  imagen: {
+    src: "../assets/img/tenthings.jpeg",
+    alt: "10 things I hate",
+  },
+  titulo: "10 things I Hate",
+  duracion: "1h 37m",
+  categoría: "Terror",
+  actores: [
+    {
+      nombre: "Julia Stiles",
+      url: "https://es.wikipedia.org/wiki/Julia_Stiles",
+    },
+    {
+      nombre: "Heath Ledger",
+      url: "https://es.wikipedia.org/wiki/Heath_Ledger",
+    },
+    {
+      nombre: "Joseph Gordon-Levitt",
+      url: "https://es.wikipedia.org/wiki/Joseph_Gordon-Levitt",
+    },
+    {
+      nombre: "Larisa Oleynik",
+      url: "https://es.wikipedia.org/wiki/Larisa_Oleynik",
+    },
+  ],
+  sinopsis:
+    "Las hermanas Stratford son muy distintas. La bella y popular Bianca nunca ha salido con un chico, pero lo está deseando, y Kat, su hermana mayor, es arisca y con mal genio. Su padre no deja que Bianca tenga novio hasta que Kat consiga uno.",
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/yEmcEuS6xm4",
+    url_youtube: "https://www.youtube.com/watch?v=yEmcEuS6xm4",
+  },
+  similares: [
+    {
+      src: "../assets/img/10things.jpeg",
+      alt: "10 things I hate about you",
+    },
+    {
+      src: "../assets/img/smile.jpg",
+      alt: "smile",
+    },
+    {
+      src: "../assets/img/gladiator.jpg",
+      alt: "gladiator",
+    },
+    {
+      src: "../assets/img/volver al futuro.jpg",
+      alt: "volver al futuro",
+    },
+  ],
 };
 
 const SERIES_Y_PELICULAS_A_GUARDAR = [
@@ -740,6 +900,9 @@ const SERIES_Y_PELICULAS_A_GUARDAR = [
   THE_END_OF_THE_FXXXING_WORLD,
   REASONS_WHY,
   MERLINA,
+  SMILE,
+  GLADIATOR,
+  THENTHINGSIHATE,
 ];
 
 localStorage.setItem(
