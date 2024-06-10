@@ -2,6 +2,9 @@ const JSON_SERIES_Y_PELICULAS = localStorage.getItem(
   LOCAL_STORAGE_SERIES_Y_PELICULAS
 );
 const SERIES_Y_PELICULAS = JSON.parse(JSON_SERIES_Y_PELICULAS);
+let nodo_section = document.querySelector(".sermov");
+const CATEGORIAS = document.querySelector("#categorias");
+let categoria_seleccionada = "";
 
 function removerClase(clase, selector, selector2, texto) {
   selector.classList.remove(clase);
@@ -76,7 +79,6 @@ function verificarPasswordIguales(
 }
 
 function crearArticle(i) {
-  let nodo_section = document.querySelector(".sermov");
   let nodo_article = document.createElement("article");
   nodo_article.classList.add("frame");
   let nodo_a = document.createElement("a");
@@ -91,3 +93,30 @@ function crearArticle(i) {
   nodo_article.appendChild(nodo_a);
   nodo_section.appendChild(nodo_article);
 }
+
+function agregarSeriesOPeliculas(array, tipo) {
+  for (let i in array) {
+    if (array[i]["tipo"] == tipo) {
+      crearArticle(i)
+    }
+  }
+}
+
+function cambioDeCategoria(array, tipo) {
+  CATEGORIAS.addEventListener("change", (event) => {
+    categoria_seleccionada = CATEGORIAS.options[CATEGORIAS.selectedIndex].text;
+  
+    nodo_section.innerHTML = "";
+  
+    if (categoria_seleccionada == "Todas") {
+      agregarSeriesOPeliculas(array, tipo)
+    } else {
+      for (let i in array) {
+        if (categoria_seleccionada == array[i]["categoría"] && array[i]["tipo"] == tipo) {
+          crearArticle(i);
+        }
+      }
+    }
+  });
+}
+

@@ -1,9 +1,3 @@
-function agregarPeliculas() {
-  for (let i in SERIES_Y_PELICULAS) {
-    if (SERIES_Y_PELICULAS[i]["tipo"] == "película") {
-      crearArticle(i)
-    }
-  }
-}
+agregarSeriesOPeliculas(SERIES_Y_PELICULAS, "película");
 
-agregarPeliculas();
+cambioDeCategoria(SERIES_Y_PELICULAS, "película");
