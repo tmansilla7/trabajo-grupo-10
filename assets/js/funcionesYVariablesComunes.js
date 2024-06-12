@@ -7,6 +7,7 @@ const CATEGORIAS = document.querySelector("#categorias");
 let categoria_seleccionada = "Todas";
 const buscador = document.querySelector("#buscar");
 let palabra_buscada = "";
+const USUARIO = localStorage.getItem("usuario")
 
 function removerClase(clase, selector, selector2, texto) {
   selector.classList.remove(clase);

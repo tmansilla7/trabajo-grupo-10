@@ -733,7 +733,6 @@ const MERLINA = {
       alt: "house of the dragon",
     },
   ],
-  
 };
 
 const SMILE = {
@@ -801,7 +800,7 @@ const GLADIATOR = {
   },
   titulo: "Gladiator",
   duracion: "2h 35m",
-  categoría: "Terror",
+  categoría: "Aventura",
   actores: [
     {
       nombre: "Russell Crowe",
@@ -832,8 +831,8 @@ const GLADIATOR = {
       alt: "smile",
     },
     {
-      src: "../assets/img/gladiator.jpg",
-      alt: "gladiator",
+      src: "../assets/img/Eragon.jpg",
+      alt: "eragon",
     },
     {
       src: "../assets/img/volver al futuro.jpg",
@@ -850,7 +849,7 @@ const THENTHINGSIHATE = {
   },
   titulo: "10 things I Hate",
   duracion: "1h 37m",
-  categoría: "Terror",
+  categoría: "Comedia",
   actores: [
     {
       nombre: "Julia Stiles",
@@ -877,8 +876,8 @@ const THENTHINGSIHATE = {
   },
   similares: [
     {
-      src: "../assets/img/10things.jpeg",
-      alt: "10 things I hate about you",
+      src: "../assets/img/torrente.jpg",
+      alt: "torrente",
     },
     {
       src: "../assets/img/smile.jpg",
@@ -1096,7 +1095,7 @@ const ZATHURA = {
     {
       nombre: "Dax Shepard",
       url: "https://es.wikipedia.org/wiki/Dax_Shepard",
-    }
+    },
   ],
   sinopsis:
     "Dos hermanos encuentran un juego de mesa llamado Zathura. Danny empieza a jugar solo y, desde la primera jugada, se da cuenta de que no es un juego de mesa normal: la ficha de la nave espacial se mueve sola y lanza mensajes que se cumplen.",
@@ -1143,7 +1142,7 @@ const CHUCKY = {
     {
       numero: 3,
       capitulos: 8,
-    }
+    },
   ],
   categoría: "Terror",
   actores: [
@@ -1166,7 +1165,7 @@ const CHUCKY = {
     {
       nombre: "Jennifer Tilly",
       url: "https://es.wikipedia.org/wiki/Jennifer_Tilly",
-    }
+    },
   ],
   sinopsis:
     "Cuando un muñeco antiguo de Chucky aparece en una venta de jardín de los suburbios, una idílica ciudad estadounidense se ve sumida en el caos.",
@@ -1231,9 +1230,7 @@ const ERAGON = {
     {
       nombre: "John Malkovich",
       url: "https://es.wikipedia.org/wiki/John_Malkovich",
-    }
-      
-    
+    },
   ],
   sinopsis:
     "Eragon, un humilde joven granjero, vive en Alagaesia, un reino controlado por Galbatorix, un monarca poderoso y malvado. Un día, Eragon descubre una hermosa piedra que resulta ser el huevo de un dragón. Cuando la criatura nace, el joven idea un plan para poder restaurar la gloria de los legendarios Jinetes Dragón de su pueblo natal y poder derrocar a Galbatorix.",
@@ -1277,7 +1274,7 @@ const SERIES_Y_PELICULAS_A_GUARDAR = [
   LOST,
   EL_LUGAR_BUENO,
   ERAGON,
-  CHUCKY
+  CHUCKY,
 ];
 
 localStorage.setItem(
