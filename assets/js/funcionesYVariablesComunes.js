@@ -9,6 +9,7 @@ const buscador = document.querySelector("#buscar");
 let palabra_buscada = "";
 const USUARIO = localStorage.getItem("usuario")
 
+
 function removerClase(clase, selector, selector2, texto) {
   selector.classList.remove(clase);
   selector2.textContent = texto;
@@ -27,14 +28,16 @@ function validarCampo(evento, selector, selector2, texto) {
 }
 
 function soloLetras(evento, selector, selector2, texto) {
-  if (selector.value.match("[^A-Za-z]")) {
-    evento.preventDefault();
-    agregarClase("error", selector, selector2, texto);
+	const REGEX_LETERS = /[^A-Za-z]+$/i;
+	if (REGEX_LETERS.test(selector.value)) {
+     evento.preventDefault();
+     agregarClase("error", selector, selector2, texto);
   }
 }
 
 function soloLetrasYNumeros(evento, selector, selector2, texto) {
-  if (selector.value.match("[^0-9A-Za-z]")) {
+  const REGEX_LETERS_NUMBERS = /[^0-9A-Za-z]+$/i;
+  if (REGEX_LETERS_NUMBERS.test(selector.value)) {
     evento.preventDefault();
     agregarClase("error", selector, selector2, texto);
   }
