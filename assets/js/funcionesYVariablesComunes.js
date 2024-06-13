@@ -9,7 +9,6 @@ const buscador = document.querySelector("#buscar");
 let palabra_buscada = "";
 const USUARIO = localStorage.getItem("usuario")
 
-
 function removerClase(clase, selector, selector2, texto) {
   selector.classList.remove(clase);
   selector2.textContent = texto;
@@ -28,22 +27,24 @@ function validarCampo(evento, selector, selector2, texto) {
 }
 
 function soloLetras(evento, selector, selector2, texto) {
-	const REGEX_LETERS = /[^A-Za-z]+$/i;
-	if (REGEX_LETERS.test(selector.value)) {
+	const REGEX_LETTERS = /[^A-Za-z]+$/i;
+	if (REGEX_LETTERS.test(selector.value)) {
      evento.preventDefault();
      agregarClase("error", selector, selector2, texto);
   }
 }
 
 function soloLetrasYNumeros(evento, selector, selector2, texto) {
-  const REGEX_LETERS_NUMBERS = /[^0-9A-Za-z]+$/i;
-  if (REGEX_LETERS_NUMBERS.test(selector.value)) {
+  const REGEX_LETTERS_NUMBERS = /[^0-9A-Za-z]+$/i;
+  if (REGEX_LETTERS_NUMBERS.test(selector.value)) {
     evento.preventDefault();
     agregarClase("error", selector, selector2, texto);
   }
 }
 
 function verificarPassword(evento, selector, selector2, texto, texto2, texto3) {
+  const REGEX_LETTERS = /[A-Za-z]+$/i;
+  const REGEX_NUMBERS = /[0-9]/;
   const array = password.value.split("");
   let letras = 0;
   let numeros = 0;
@@ -56,9 +57,9 @@ function verificarPassword(evento, selector, selector2, texto, texto2, texto3) {
     agregarClase("error", selector, selector2, texto2);
   } else {
     for (let i = 0; i < array.length; i++) {
-      if (array[i].match("[A-Za-z]")) {
+      if (REGEX_LETTERS.test(array[i])) {
         letras++;
-      } else if (array[i].match("[0-9]")) {
+      } else if (REGEX_NUMBERS.test(array[i])) {
         numeros++;
       } else {
         caracteresEspeciales++;
