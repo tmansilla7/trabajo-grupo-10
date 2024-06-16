@@ -212,7 +212,7 @@
   border: 2px solid #ff0000;
 }
 
-#errorNombre, #errorPassword, #errorEmail, #errorApellido, #errorUsuario, #errorRepetirPassword, #errorTarjeta, #errorCheck {
+#errorNombre, #errorPassword, #errorEmail, #errorApellido, #errorUsuario, #errorNuevaPassword, #errorRepetirPassword, #errorTarjeta, #errorCheck {
   font-size: 1rem;
   margin: 0.5rem 0;
   color: #ff0000;
