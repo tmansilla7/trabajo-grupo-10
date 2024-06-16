@@ -21,6 +21,7 @@ const errorUsuario = document.querySelector("#errorUsuario");
 const errorPassword = document.querySelector("#errorPassword");
 const errorRepetirPassword = document.querySelector("#errorRepetirPassword");
 const errorTarjeta = document.querySelector("#errorTarjeta");
+const errorCheck = document.querySelector("#errorCheck")
 
 function habilitarBoton() {
   if (
@@ -68,6 +69,10 @@ function removerClaseErrorDeClave(evento) {
   removerClase("error", claveTarjeta, errorTarjeta);
 }
 
+function removerClaseErrorDeCheck(evento) {
+  errorCheck.textContent = "";
+}
+
 function verificarFormulario(evento) {
   validarCampo(evento, nombre, errorNombre, "Ingresa tu nombre");
   soloLetras(
@@ -106,7 +111,8 @@ function verificarFormulario(evento) {
     errorRepetirPassword,
     "Ambas contraseñas deben ser iguales"
   );
-  verificarClaveTarjeta(evento, numeroTarjeta, claveTarjeta, errorTarjeta, "Ingresa un número válido")
+  verificarTarjeta(evento, numeroTarjeta, claveTarjeta, errorTarjeta, "Ingresa un número válido")
+  verificarCupon(evento, errorCheck, "Selecciona uno")
 }
 
 submit.addEventListener("click", verificarFormulario);
@@ -130,6 +136,15 @@ tarjeta.addEventListener("click", deshabilitarCheck);
 cupon.addEventListener("click", habilitarBoton);
 cupon.addEventListener("click", habilitarCheck);
 cupon.addEventListener("click", deshabilitarTextarea);
+facil.addEventListener("click", removerClaseErrorDeCheck)
+rapi.addEventListener("click", removerClaseErrorDeCheck)
 transferencia.addEventListener("click", habilitarBoton);
 transferencia.addEventListener("click", deshabilitarTextarea);
 transferencia.addEventListener("click", deshabilitarCheck);
+tarjeta.addEventListener("click", removerClaseErrorDeCheck)
+transferencia.addEventListener("click", removerClaseErrorDeCheck)
+cupon.addEventListener("click", removerClaseErrorDeNumero)
+cupon.addEventListener("click", removerClaseErrorDeClave)
+transferencia.addEventListener("click", removerClaseErrorDeNumero)
+transferencia.addEventListener("click", removerClaseErrorDeClave)
+
