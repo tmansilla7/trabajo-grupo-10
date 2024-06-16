@@ -7,7 +7,7 @@ const CATEGORIAS = document.querySelector("#categorias");
 let categoria_seleccionada = "Todas";
 const buscador = document.querySelector("#buscar");
 let palabra_buscada = "";
-const USUARIO = localStorage.getItem("usuario")
+const USUARIO = localStorage.getItem("usuario");
 
 function removerClase(clase, selector, selector2, texto) {
   selector.classList.remove(clase);
@@ -27,10 +27,10 @@ function validarCampo(evento, selector, selector2, texto) {
 }
 
 function soloLetras(evento, selector, selector2, texto) {
-	const REGEX_LETTERS = /[^A-Za-z]+$/i;
-	if (REGEX_LETTERS.test(selector.value)) {
-     evento.preventDefault();
-     agregarClase("error", selector, selector2, texto);
+  const REGEX_LETTERS = /[^A-Za-z]+$/i;
+  if (REGEX_LETTERS.test(selector.value)) {
+    evento.preventDefault();
+    agregarClase("error", selector, selector2, texto);
   }
 }
 
@@ -107,8 +107,65 @@ function deshabilitarTextarea() {
 function deshabilitarCheck() {
   rapi.disabled = true;
   facil.disabled = true;
-  rapi.checked = false
-  facil.checked = false
+  rapi.checked = false;
+  facil.checked = false;
+}
+
+function verificarClaveTarjeta(
+  evento,
+  selector,
+  selector2,
+  selector3,
+  texto
+) {
+  const REGEX_NUMERO = /[0-9]/
+  const REGEX_CLAVE = /[1-9]/;
+  const array = claveTarjeta.value.split("");
+  const array2 = claveTarjeta.value.split("");
+  if (tarjeta.checked) {
+    if (numeroTarjeta.value == "" || numeroTarjeta.value.length < 16 || numeroTarjeta.value.length > 19) {
+      evento.preventDefault();
+      agregarClase("error", selector, selector3, texto);
+    }
+    for (let i = 0; i < array.length; i++) {
+      if (!REGEX_NUMERO.test(array[i])) {
+        evento.preventDefault();
+        agregarClase("error", selector, selector3, texto);
+      }
+    }
+    if (claveTarjeta.value == "" || claveTarjeta.value.length != 3) {
+      evento.preventDefault();
+      agregarClase("error", selector2, selector3, texto);
+    }
+    for (let i = 0; i < array2.length; i++) {
+      if (!REGEX_CLAVE.test(array2[i])) {
+        evento.preventDefault();
+        agregarClase("error", selector2, selector3, texto);
+      }
+    }
+  }
+
+  // if (password.value == "") {
+  //   evento.preventDefault();
+  //   agregarClase("error", selector, selector2, texto);
+  // } else if (password.value.length < 8) {
+  //   evento.preventDefault();
+  //   agregarClase("error", selector, selector2, texto2);
+  // } else {
+  //   for (let i = 0; i < array.length; i++) {
+  //     if (REGEX_LETTERS.test(array[i])) {
+  //       letras++;
+  //     } else if (REGEX_NUMBERS.test(array[i])) {
+  //       numeros++;
+  //     } else {
+  //       caracteresEspeciales++;
+  //     }
+  //   }
+  //   if (letras < 2 || numeros < 2 || caracteresEspeciales < 2) {
+  //     evento.preventDefault();
+  //     agregarClase("error", selector, selector2, texto3);
+  //   }
+  // }
 }
 
 function crearArticle(i) {

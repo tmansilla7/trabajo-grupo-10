@@ -20,6 +20,7 @@ const errorEmail = document.querySelector("#errorEmail");
 const errorUsuario = document.querySelector("#errorUsuario");
 const errorPassword = document.querySelector("#errorPassword");
 const errorRepetirPassword = document.querySelector("#errorRepetirPassword");
+const errorTarjeta = document.querySelector("#errorTarjeta");
 
 function habilitarBoton() {
   if (
@@ -57,6 +58,14 @@ function removerClaseErrorDePassword(evento) {
 
 function removerClaseErrorDeRepetirPassword(evento) {
   removerClase("error", repetirPassword, errorRepetirPassword);
+}
+
+function removerClaseErrorDeNumero(evento) {
+  removerClase("error", numeroTarjeta, errorTarjeta);
+}
+
+function removerClaseErrorDeClave(evento) {
+  removerClase("error", claveTarjeta, errorTarjeta);
 }
 
 function verificarFormulario(evento) {
@@ -97,6 +106,7 @@ function verificarFormulario(evento) {
     errorRepetirPassword,
     "Ambas contraseñas deben ser iguales"
   );
+  verificarClaveTarjeta(evento, numeroTarjeta, claveTarjeta, errorTarjeta, "Ingresa un número válido")
 }
 
 submit.addEventListener("click", verificarFormulario);
@@ -106,6 +116,8 @@ email.addEventListener("keyup", removerClaseErrorDelEmail);
 usuario.addEventListener("keyup", removerClaseErrorDelUsuario);
 password.addEventListener("keyup", removerClaseErrorDePassword);
 repetirPassword.addEventListener("keyup", removerClaseErrorDeRepetirPassword);
+numeroTarjeta.addEventListener("keyup", removerClaseErrorDeNumero);
+claveTarjeta.addEventListener("keyup", removerClaseErrorDeClave);
 nombre.addEventListener("keyup", habilitarBoton);
 apellido.addEventListener("keyup", habilitarBoton);
 email.addEventListener("keyup", habilitarBoton);
