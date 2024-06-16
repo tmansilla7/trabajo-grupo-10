@@ -6,6 +6,8 @@ const password = document.querySelector("#password");
 const repetirPassword = document.querySelector("#rep-password");
 const tarjeta = document.querySelector("#tarjeta");
 const cupon = document.querySelector("#cupon");
+const facil = document.querySelector("#facil");
+const rapi = document.querySelector("#rapi");
 const transferencia = document.querySelector("#transferencia");
 const numeroTarjeta = document.querySelector("#numeroTarjeta");
 const claveTarjeta = document.querySelector("#claveTarjeta");
@@ -55,18 +57,6 @@ function removerClaseErrorDePassword(evento) {
 
 function removerClaseErrorDeRepetirPassword(evento) {
   removerClase("error", repetirPassword, errorRepetirPassword);
-}
-
-function habilitarTextarea() {
-  if (tarjeta.checked) {
-    numeroTarjeta.disabled = false;
-    claveTarjeta.disabled = false;
-  }
-}
-
-function deshabilitarTextarea() {
-  numeroTarjeta.disabled = true;
-  claveTarjeta.disabled = true;
 }
 
 function verificarFormulario(evento) {
@@ -124,7 +114,10 @@ password.addEventListener("keyup", habilitarBoton);
 repetirPassword.addEventListener("keyup", habilitarBoton);
 tarjeta.addEventListener("click", habilitarBoton);
 tarjeta.addEventListener("click", habilitarTextarea);
+tarjeta.addEventListener("click", deshabilitarCheck);
 cupon.addEventListener("click", habilitarBoton);
+cupon.addEventListener("click", habilitarCheck);
 cupon.addEventListener("click", deshabilitarTextarea);
 transferencia.addEventListener("click", habilitarBoton);
 transferencia.addEventListener("click", deshabilitarTextarea);
+transferencia.addEventListener("click", deshabilitarCheck);

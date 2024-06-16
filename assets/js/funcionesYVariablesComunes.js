@@ -85,6 +85,32 @@ function verificarPasswordIguales(
   }
 }
 
+function habilitarTextarea() {
+  if (tarjeta.checked) {
+    numeroTarjeta.disabled = false;
+    claveTarjeta.disabled = false;
+  }
+}
+
+function habilitarCheck() {
+  if (cupon.checked) {
+    rapi.disabled = false;
+    facil.disabled = false;
+  }
+}
+
+function deshabilitarTextarea() {
+  numeroTarjeta.disabled = true;
+  claveTarjeta.disabled = true;
+}
+
+function deshabilitarCheck() {
+  rapi.disabled = true;
+  facil.disabled = true;
+  rapi.checked = false
+  facil.checked = false
+}
+
 function crearArticle(i) {
   let nodo_article = document.createElement("article");
   nodo_article.classList.add("frame");
