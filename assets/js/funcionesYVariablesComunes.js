@@ -2,6 +2,15 @@ const JSON_SERIES_Y_PELICULAS = localStorage.getItem(
   LOCAL_STORAGE_SERIES_Y_PELICULAS
 );
 const SERIES_Y_PELICULAS = JSON.parse(JSON_SERIES_Y_PELICULAS);
+
+const cerrarSesion = document.querySelector("#cerrar-sesion");
+
+function eliminarDatosDeLocalStorage() {
+  localStorage.clear();
+}
+
+cerrarSesion.addEventListener("click", eliminarDatosDeLocalStorage);
+
 let nodo_section = document.querySelector(".sermov");
 const CATEGORIAS = document.querySelector("#categorias");
 let categoria_seleccionada = "Todas";
@@ -48,7 +57,7 @@ function caracteresPassword(evento, selector, selector2, texto) {
   let caracteresEspeciales = 0;
   const REGEX_LETTERS = /[A-Za-z]+$/i;
   const REGEX_NUMBERS = /[0-9]/;
-  const array = password.value.split("");
+  const array = selector.value.split("");
   if (selector.value != "") {
     for (let i = 0; i < array.length; i++) {
       if (REGEX_LETTERS.test(array[i])) {
@@ -60,11 +69,10 @@ function caracteresPassword(evento, selector, selector2, texto) {
       }
     }
     if (letras < 2 || numeros < 2 || caracteresEspeciales < 2) {
-      evento.preventDefault();
       agregarClase("error", selector, selector2, texto);
+      evento.preventDefault;
     }
   }
-  
 }
 
 function verificarPassword(
@@ -77,14 +85,16 @@ function verificarPassword(
   texto3
 ) {
   if (password.value == "") {
-    evento.preventDefault();
     agregarClase("error", selector, selector2, texto);
+    password.focus();
+    return false;
   } else if (password.value.length < 8) {
-    evento.preventDefault();
     agregarClase("error", selector, selector2, texto2);
+    return false;
   } else {
-    caracteresPassword(evento, selector, selector2, texto3)
+    caracteresPassword(evento, selector, selector2, texto3);
   }
+  return true;
 }
 
 function verificarNuevaPassword(
@@ -92,15 +102,16 @@ function verificarNuevaPassword(
   password,
   selector,
   selector2,
-  texto,
   texto2,
   texto3
 ) {
   if (password.value.length < 8 && password.value != "") {
-    evento.preventDefault();
     agregarClase("error", selector, selector2, texto2);
+    password.focus();
+    return false;
   } else {
-    caracteresPassword(evento, selector, selector2, texto3)
+    caracteresPassword(evento, selector, selector2, texto3);
+    return false;
   }
 }
 
@@ -168,6 +179,7 @@ function verificarTarjeta(selector, selector2, selector3, texto) {
       selector.value.length > 19
     ) {
       agregarClase("error", selector, selector3, texto);
+      selector.focus();
       return false;
     }
     for (let i = 0; i < array.length; i++) {
@@ -178,6 +190,7 @@ function verificarTarjeta(selector, selector2, selector3, texto) {
     }
     if (selector2.value == "" || selector2.value.length != 3) {
       agregarClase("error", selector2, selector3, texto);
+      selector2.focus();
       return false;
     }
     for (let i = 0; i < array2.length; i++) {

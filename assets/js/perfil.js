@@ -12,7 +12,7 @@ const rapi = document.querySelector("#rapi");
 const transferencia = document.querySelector("#transferencia");
 const numeroTarjeta = document.querySelector("#numeroTarjeta");
 const claveTarjeta = document.querySelector("#claveTarjeta");
-const cbu = document.querySelector("#cbu")
+const cbu = document.querySelector("#cbu");
 const submit = document.querySelector("#btn-submit");
 const cancelar = document.querySelector("#btn-cancelar");
 
@@ -21,8 +21,6 @@ const errorNuevaPassword = document.querySelector("#errorNuevaPassword");
 const errorRepetirPassword = document.querySelector("#errorRepetirPassword");
 const errorTarjeta = document.querySelector("#errorTarjeta");
 const errorCheck = document.querySelector("#errorCheck");
-
-let metodoDePago = {}
 
 function datosDeUsuario(selector, texto) {
   selector.textContent = texto;
@@ -59,41 +57,93 @@ function habilitarBoton() {
   submit.disabled = false;
 }
 
-function guardarMetodoDePago(evento, password, errorPassword, texto1, texto2, texto3) {
-  if (tarjeta.checked) {
-    metodoDePago = {
-      método: "Tarjeta de crédito",
-      número: numeroTarjeta.value,
-      clave: claveTarjeta.value
+function guardarMetodoDePago(
+  evento,
+  password,
+  errorPassword,
+  texto1,
+  texto2,
+  texto3
+) {
+  if (tarjeta.checked || transferencia.checked || cupon.checked) {
+    let metodoDePago = {};
+    if (
+      verificarPassword(evento, password, errorPassword, texto1, texto2, texto3)
+    ) {
+      if (
+        tarjeta.checked &&
+        verificarTarjeta(
+          numeroTarjeta,
+          claveTarjeta,
+          errorTarjeta,
+          "Ingresa un número válido"
+        )
+      ) {
+        metodoDePago = {
+          método: "Tarjeta de Crédito",
+          número: numeroTarjeta.value,
+          clave: claveTarjeta.value,
+        };
+        localStorage.setItem("Método de pago", JSON.stringify(metodoDePago));
+      }
+
+      if (cupon.checked && verificarCupon(errorCheck, "Selecciona uno")) {
+        let tipo = "";
+        if (rapi.checked) {
+          tipo = "RapiPago";
+        } else if (facil.checked) {
+          tipo = "Pago Fácil";
+        }
+        metodoDePago = {
+          método: "Cupón de Pago",
+          tipo: tipo,
+        };
+        localStorage.setItem("Método de pago", JSON.stringify(metodoDePago));
+      }
+
+      if (transferencia.checked) {
+        metodoDePago = "Transferencia Bancaria: " + cbu.textContent;
+        localStorage.setItem("Método de pago", metodoDePago);
+      }
     }
   }
-  if (transferencia.checked) {
-    metodoDePago = "Transferencia Bancaria: " + cbu.textContent
-    
-  }
-  localStorage.setItem(
-    "Método de pago",
-    metodoDePago
-  );
-  console.log(JSON.stringify(metodoDePago))
 }
 
 function verificarFormulario(evento) {
-  verificarPassword(
-    evento,
-    password,
-    password,
-    errorPassword,
-    "Ingresa tu contraseña",
-    "La contraseña debe tener al menos 8 caracteres",
-    "La contraseña debe tener al menos 2 letras, 2 números y 2 caracteres especiales"
-  );
+  if (password.value != "") {
+    verificarPassword(
+      evento,
+      password,
+      password,
+      errorPassword,
+      "Ingresa tu contraseña",
+      "La contraseña debe tener al menos 8 caracteres",
+      "La contraseña debe tener al menos 2 letras, 2 números y 2 caracteres especiales"
+    );
+  }
+
+  if (
+    nuevaPassword.value != "" ||
+    tarjeta.checked ||
+    transferencia.checked ||
+    cupon.checked
+  ) {
+    verificarPassword(
+      evento,
+      password,
+      password,
+      errorPassword,
+      "Ingresa tu contraseña",
+      "La contraseña debe tener al menos 8 caracteres",
+      "La contraseña debe tener al menos 2 letras, 2 números y 2 caracteres especiales"
+    );
+  }
+
   verificarNuevaPassword(
     evento,
     nuevaPassword,
     nuevaPassword,
     errorNuevaPassword,
-    "Ingresa tu nueva contraseña",
     "La contraseña debe tener al menos 8 caracteres",
     "La contraseña debe tener al menos 2 letras, 2 números y 2 caracteres especiales"
   );
@@ -117,9 +167,14 @@ function verificarFormulario(evento) {
   if (!verificarCupon(errorCheck, "Selecciona uno")) {
     submit.disabled = true;
   }
-  guardarMetodoDePago(evento, password, password, "Ingresa tu contraseña",
+  guardarMetodoDePago(
+    evento,
+    password,
+    password,
+    "Ingresa tu contraseña",
     "La contraseña debe tener al menos 8 caracteres",
-    "La contraseña debe tener al menos 2 letras, 2 números y 2 caracteres especiales")
+    "La contraseña debe tener al menos 2 letras, 2 números y 2 caracteres especiales"
+  );
 }
 
 function verificarCancelarSuscripcion(evento) {
@@ -138,13 +193,16 @@ submit.addEventListener("click", verificarFormulario);
 cancelar.addEventListener("click", verificarCancelarSuscripcion);
 password.addEventListener("keyup", removerClaseErrorDePassword);
 nuevaPassword.addEventListener("keyup", removerClaseErrorDeNuevaPassword);
+nuevaPassword.addEventListener("keyup", removerClaseErrorDePassword);
 repetirPassword.addEventListener("keyup", removerClaseErrorDeRepetirPassword);
 numeroTarjeta.addEventListener("keyup", removerClaseErrorDeNumero);
 claveTarjeta.addEventListener("keyup", removerClaseErrorDeClave);
 tarjeta.addEventListener("click", habilitarTextarea);
 tarjeta.addEventListener("click", deshabilitarCheck);
+tarjeta.addEventListener("click", habilitarBoton);
 cupon.addEventListener("click", habilitarCheck);
 cupon.addEventListener("click", deshabilitarTextarea);
+cupon.addEventListener("click", habilitarBoton);
 facil.addEventListener("click", removerClaseErrorDeCheck);
 rapi.addEventListener("click", removerClaseErrorDeCheck);
 numeroTarjeta.addEventListener("keyup", habilitarBoton);
