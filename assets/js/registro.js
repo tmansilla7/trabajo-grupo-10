@@ -21,7 +21,7 @@ const errorUsuario = document.querySelector("#errorUsuario");
 const errorPassword = document.querySelector("#errorPassword");
 const errorRepetirPassword = document.querySelector("#errorRepetirPassword");
 const errorTarjeta = document.querySelector("#errorTarjeta");
-const errorCheck = document.querySelector("#errorCheck")
+const errorCheck = document.querySelector("#errorCheck");
 
 function habilitarBoton() {
   if (
@@ -99,6 +99,7 @@ function verificarFormulario(evento) {
   verificarPassword(
     evento,
     password,
+    password,
     errorPassword,
     "Ingresa tu contraseña",
     "La contraseña debe tener al menos 8 caracteres",
@@ -111,8 +112,13 @@ function verificarFormulario(evento) {
     errorRepetirPassword,
     "Ambas contraseñas deben ser iguales"
   );
-  verificarTarjeta(evento, numeroTarjeta, claveTarjeta, errorTarjeta, "Ingresa un número válido")
-  verificarCupon(evento, errorCheck, "Selecciona uno")
+  verificarTarjeta(
+    numeroTarjeta,
+    claveTarjeta,
+    errorTarjeta,
+    "Ingresa un número válido"
+  );
+  verificarCupon(errorCheck, "Selecciona uno");
 }
 
 submit.addEventListener("click", verificarFormulario);
@@ -136,15 +142,14 @@ tarjeta.addEventListener("click", deshabilitarCheck);
 cupon.addEventListener("click", habilitarBoton);
 cupon.addEventListener("click", habilitarCheck);
 cupon.addEventListener("click", deshabilitarTextarea);
-facil.addEventListener("click", removerClaseErrorDeCheck)
-rapi.addEventListener("click", removerClaseErrorDeCheck)
+facil.addEventListener("click", removerClaseErrorDeCheck);
+rapi.addEventListener("click", removerClaseErrorDeCheck);
 transferencia.addEventListener("click", habilitarBoton);
 transferencia.addEventListener("click", deshabilitarTextarea);
 transferencia.addEventListener("click", deshabilitarCheck);
-tarjeta.addEventListener("click", removerClaseErrorDeCheck)
-transferencia.addEventListener("click", removerClaseErrorDeCheck)
-cupon.addEventListener("click", removerClaseErrorDeNumero)
-cupon.addEventListener("click", removerClaseErrorDeClave)
-transferencia.addEventListener("click", removerClaseErrorDeNumero)
-transferencia.addEventListener("click", removerClaseErrorDeClave)
-
+tarjeta.addEventListener("click", removerClaseErrorDeCheck);
+transferencia.addEventListener("click", removerClaseErrorDeCheck);
+cupon.addEventListener("click", removerClaseErrorDeNumero);
+cupon.addEventListener("click", removerClaseErrorDeClave);
+transferencia.addEventListener("click", removerClaseErrorDeNumero);
+transferencia.addEventListener("click", removerClaseErrorDeClave);

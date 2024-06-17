@@ -42,7 +42,15 @@ function soloLetrasYNumeros(evento, selector, selector2, texto) {
   }
 }
 
-function verificarPassword(evento, selector, selector2, texto, texto2, texto3) {
+function verificarPassword(
+  evento,
+  password,
+  selector,
+  selector2,
+  texto,
+  texto2,
+  texto3
+) {
   const REGEX_LETTERS = /[A-Za-z]+$/i;
   const REGEX_NUMBERS = /[0-9]/;
   const array = password.value.split("");
@@ -69,6 +77,19 @@ function verificarPassword(evento, selector, selector2, texto, texto2, texto3) {
       evento.preventDefault();
       agregarClase("error", selector, selector2, texto3);
     }
+  }
+}
+
+function verificarPasswordDiferentes(
+  evento,
+  selector,
+  selector2,
+  selector3,
+  texto
+) {
+  if (selector.value === selector2.value) {
+    evento.preventDefault();
+    agregarClase("error", selector2, selector3, texto);
   }
 }
 
@@ -111,46 +132,48 @@ function deshabilitarCheck() {
   facil.checked = false;
 }
 
-function verificarTarjeta(evento, selector, selector2, selector3, texto) {
+function verificarTarjeta(selector, selector2, selector3, texto) {
   const REGEX_NUMERO = /[0-9]/;
   const REGEX_CLAVE = /[1-9]/;
-  const array = claveTarjeta.value.split("");
-  const array2 = claveTarjeta.value.split("");
+  const array = selector.value.split("")  
+  const array2 = selector2.value.split("");
   if (tarjeta.checked) {
     if (
-      numeroTarjeta.value == "" ||
-      numeroTarjeta.value.length < 16 ||
-      numeroTarjeta.value.length > 19
+      selector.value == "" ||
+      selector.value.length < 16 ||
+      selector.value.length > 19
     ) {
-      evento.preventDefault();
       agregarClase("error", selector, selector3, texto);
+      return false;
     }
     for (let i = 0; i < array.length; i++) {
       if (!REGEX_NUMERO.test(array[i])) {
-        evento.preventDefault();
         agregarClase("error", selector, selector3, texto);
+        return false;
       }
     }
-    if (claveTarjeta.value == "" || claveTarjeta.value.length != 3) {
-      evento.preventDefault();
+    if (selector2.value == "" || selector2.value.length != 3) {
       agregarClase("error", selector2, selector3, texto);
+      return false;
     }
     for (let i = 0; i < array2.length; i++) {
       if (!REGEX_CLAVE.test(array2[i])) {
-        evento.preventDefault();
         agregarClase("error", selector2, selector3, texto);
+        return false;
       }
     }
   }
+  return true;
 }
 
-function verificarCupon(evento, selector, texto) {
+function verificarCupon(selector, texto) {
   if (cupon.checked) {
     if (!rapi.checked && !facil.checked) {
-      evento.preventDefault();
       selector.textContent = texto;
+      return false;
     }
   }
+  return true;
 }
 
 function crearArticle(i) {
