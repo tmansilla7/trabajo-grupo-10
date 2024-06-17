@@ -146,13 +146,15 @@
 
 .perfil-guardar {
   display: flex;
+  width: 50%;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 1em;
 }
 
-.perfil-guardar button {
-  width: 250px;
+.perfil-guardar button,
+.perfil-guardar a button {
+  width: 300px;
 }
 
 .perfil .pago {

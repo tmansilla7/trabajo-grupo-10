@@ -13,6 +13,7 @@ const transferencia = document.querySelector("#transferencia");
 const numeroTarjeta = document.querySelector("#numeroTarjeta");
 const claveTarjeta = document.querySelector("#claveTarjeta");
 const submit = document.querySelector("#btn-submit");
+const cancelar = document.querySelector("#btn-cancelar");
 
 const errorPassword = document.querySelector("#errorPassword");
 const errorNuevaPassword = document.querySelector("#errorNuevaPassword");
@@ -81,33 +82,35 @@ function verificarFormulario(evento) {
     errorNuevaPassword,
     "La nueva contraseña no debe ser igual a la anterior"
   );
-
- 
-//   verificarTarjeta(
-//     numeroTarjeta,
-//     claveTarjeta,
-//     errorTarjeta,
-//     "Ingresa un número válido"
-//   );
-//   if (tarjeta.checked) {
-//     if (
-//       !verificarTarjeta(
-//         numeroTarjeta,
-//         claveTarjeta,
-//         errorTarjeta,
-//         "Ingresa un número válido"
-//       )
-//     ) {
-//       submit.disabled = true;
-//     }
-//   }
-
+  if (
+    !verificarTarjeta(
+      numeroTarjeta,
+      claveTarjeta,
+      errorTarjeta,
+      "Ingresa un número válido"
+    )
+  ) {
+    submit.disabled = true;
+  }
   if (!verificarCupon(errorCheck, "Selecciona uno")) {
     submit.disabled = true;
   }
 }
 
+function verificarCancelarSuscripcion(evento) {
+  verificarPassword(
+    evento,
+    password,
+    password,
+    errorPassword,
+    "Ingresa tu contraseña"
+  );
+  removerClaseErrorDeNuevaPassword(evento);
+  removerClaseErrorDeRepetirPassword(evento);
+}
+
 submit.addEventListener("click", verificarFormulario);
+cancelar.addEventListener("click", verificarCancelarSuscripcion);
 password.addEventListener("keyup", removerClaseErrorDePassword);
 nuevaPassword.addEventListener("keyup", removerClaseErrorDeNuevaPassword);
 repetirPassword.addEventListener("keyup", removerClaseErrorDeRepetirPassword);
@@ -119,6 +122,8 @@ cupon.addEventListener("click", habilitarCheck);
 cupon.addEventListener("click", deshabilitarTextarea);
 facil.addEventListener("click", removerClaseErrorDeCheck);
 rapi.addEventListener("click", removerClaseErrorDeCheck);
+numeroTarjeta.addEventListener("keyup", habilitarBoton);
+claveTarjeta.addEventListener("keyup", habilitarBoton);
 facil.addEventListener("click", habilitarBoton);
 rapi.addEventListener("click", habilitarBoton);
 transferencia.addEventListener("click", deshabilitarTextarea);

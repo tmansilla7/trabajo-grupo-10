@@ -135,9 +135,10 @@ function deshabilitarCheck() {
 function verificarTarjeta(selector, selector2, selector3, texto) {
   const REGEX_NUMERO = /[0-9]/;
   const REGEX_CLAVE = /[1-9]/;
-  const array = selector.value.split("")  
+  //const array = selector.value.split("")
   const array2 = selector2.value.split("");
   if (tarjeta.checked) {
+    const array = selector.value.split("");
     if (
       selector.value == "" ||
       selector.value.length < 16 ||
