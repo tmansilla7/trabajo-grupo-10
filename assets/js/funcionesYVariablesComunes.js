@@ -3,7 +3,7 @@ const JSON_SERIES_Y_PELICULAS = localStorage.getItem(
 );
 const SERIES_Y_PELICULAS = JSON.parse(JSON_SERIES_Y_PELICULAS);
 
-const cerrarSesion = document.querySelector("#cerrar-sesion");
+const cerrarSesion = document.querySelector("#cerrar-sesion a");
 
 function eliminarDatosDeLocalStorage() {
   localStorage.clear();
@@ -167,6 +167,32 @@ function deshabilitarCheck() {
   facil.checked = false;
 }
 
+function esPar(numero) {
+  if (numero % 2 == 0) {
+    return true;
+  }
+}
+
+function esImpar(numero) {
+  if (numero % 2 != 0) {
+    return true;
+  }
+}
+
+function ultimoNumeroTarjeta(selector) {
+  let suma = 0;
+  const array = selector.value.split("");
+  for (let i = 0; i < array.length - 1; i++) {
+    suma += parseInt(array[i]);
+  }
+  if (
+    (esPar(suma) && esImpar(array[array.length - 1])) ||
+    (esImpar(suma) && esPar(array[array.length - 1]))
+  ) {
+    return true;
+  }
+}
+
 function verificarTarjeta(selector, selector2, selector3, texto) {
   const REGEX_NUMERO = /[0-9]/;
   const REGEX_CLAVE = /[1-9]/;
@@ -188,6 +214,11 @@ function verificarTarjeta(selector, selector2, selector3, texto) {
         return false;
       }
     }
+    if (!ultimoNumeroTarjeta(selector)) {
+      agregarClase("error", selector, selector3, texto);
+      return false;
+    }
+    ultimoNumeroTarjeta(selector);
     if (selector2.value == "" || selector2.value.length != 3) {
       agregarClase("error", selector2, selector3, texto);
       selector2.focus();
