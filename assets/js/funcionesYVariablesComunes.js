@@ -42,28 +42,14 @@ function soloLetrasYNumeros(evento, selector, selector2, texto) {
   }
 }
 
-function verificarPassword(
-  evento,
-  password,
-  selector,
-  selector2,
-  texto,
-  texto2,
-  texto3
-) {
-  const REGEX_LETTERS = /[A-Za-z]+$/i;
-  const REGEX_NUMBERS = /[0-9]/;
-  const array = password.value.split("");
+function caracteresPassword(evento, selector, selector2, texto) {
   let letras = 0;
   let numeros = 0;
   let caracteresEspeciales = 0;
-  if (password.value == "") {
-    evento.preventDefault();
-    agregarClase("error", selector, selector2, texto);
-  } else if (password.value.length < 8) {
-    evento.preventDefault();
-    agregarClase("error", selector, selector2, texto2);
-  } else {
+  const REGEX_LETTERS = /[A-Za-z]+$/i;
+  const REGEX_NUMBERS = /[0-9]/;
+  const array = password.value.split("");
+  if (selector.value != "") {
     for (let i = 0; i < array.length; i++) {
       if (REGEX_LETTERS.test(array[i])) {
         letras++;
@@ -75,8 +61,46 @@ function verificarPassword(
     }
     if (letras < 2 || numeros < 2 || caracteresEspeciales < 2) {
       evento.preventDefault();
-      agregarClase("error", selector, selector2, texto3);
+      agregarClase("error", selector, selector2, texto);
     }
+  }
+  
+}
+
+function verificarPassword(
+  evento,
+  password,
+  selector,
+  selector2,
+  texto,
+  texto2,
+  texto3
+) {
+  if (password.value == "") {
+    evento.preventDefault();
+    agregarClase("error", selector, selector2, texto);
+  } else if (password.value.length < 8) {
+    evento.preventDefault();
+    agregarClase("error", selector, selector2, texto2);
+  } else {
+    caracteresPassword(evento, selector, selector2, texto3)
+  }
+}
+
+function verificarNuevaPassword(
+  evento,
+  password,
+  selector,
+  selector2,
+  texto,
+  texto2,
+  texto3
+) {
+  if (password.value.length < 8 && password.value != "") {
+    evento.preventDefault();
+    agregarClase("error", selector, selector2, texto2);
+  } else {
+    caracteresPassword(evento, selector, selector2, texto3)
   }
 }
 
@@ -87,7 +111,7 @@ function verificarPasswordDiferentes(
   selector3,
   texto
 ) {
-  if (selector.value === selector2.value) {
+  if (selector.value == selector2.value && selector.value != "") {
     evento.preventDefault();
     agregarClase("error", selector2, selector3, texto);
   }
@@ -135,7 +159,6 @@ function deshabilitarCheck() {
 function verificarTarjeta(selector, selector2, selector3, texto) {
   const REGEX_NUMERO = /[0-9]/;
   const REGEX_CLAVE = /[1-9]/;
-  //const array = selector.value.split("")
   const array2 = selector2.value.split("");
   if (tarjeta.checked) {
     const array = selector.value.split("");

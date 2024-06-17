@@ -12,6 +12,7 @@ const rapi = document.querySelector("#rapi");
 const transferencia = document.querySelector("#transferencia");
 const numeroTarjeta = document.querySelector("#numeroTarjeta");
 const claveTarjeta = document.querySelector("#claveTarjeta");
+const cbu = document.querySelector("#cbu")
 const submit = document.querySelector("#btn-submit");
 const cancelar = document.querySelector("#btn-cancelar");
 
@@ -20,6 +21,8 @@ const errorNuevaPassword = document.querySelector("#errorNuevaPassword");
 const errorRepetirPassword = document.querySelector("#errorRepetirPassword");
 const errorTarjeta = document.querySelector("#errorTarjeta");
 const errorCheck = document.querySelector("#errorCheck");
+
+let metodoDePago = {}
 
 function datosDeUsuario(selector, texto) {
   selector.textContent = texto;
@@ -56,6 +59,25 @@ function habilitarBoton() {
   submit.disabled = false;
 }
 
+function guardarMetodoDePago(evento, password, errorPassword, texto1, texto2, texto3) {
+  if (tarjeta.checked) {
+    metodoDePago = {
+      método: "Tarjeta de crédito",
+      número: numeroTarjeta.value,
+      clave: claveTarjeta.value
+    }
+  }
+  if (transferencia.checked) {
+    metodoDePago = "Transferencia Bancaria: " + cbu.textContent
+    
+  }
+  localStorage.setItem(
+    "Método de pago",
+    metodoDePago
+  );
+  console.log(JSON.stringify(metodoDePago))
+}
+
 function verificarFormulario(evento) {
   verificarPassword(
     evento,
@@ -66,7 +88,7 @@ function verificarFormulario(evento) {
     "La contraseña debe tener al menos 8 caracteres",
     "La contraseña debe tener al menos 2 letras, 2 números y 2 caracteres especiales"
   );
-  verificarPassword(
+  verificarNuevaPassword(
     evento,
     nuevaPassword,
     nuevaPassword,
@@ -95,6 +117,9 @@ function verificarFormulario(evento) {
   if (!verificarCupon(errorCheck, "Selecciona uno")) {
     submit.disabled = true;
   }
+  guardarMetodoDePago(evento, password, password, "Ingresa tu contraseña",
+    "La contraseña debe tener al menos 8 caracteres",
+    "La contraseña debe tener al menos 2 letras, 2 números y 2 caracteres especiales")
 }
 
 function verificarCancelarSuscripcion(evento) {
@@ -134,3 +159,4 @@ cupon.addEventListener("click", removerClaseErrorDeNumero);
 cupon.addEventListener("click", removerClaseErrorDeClave);
 transferencia.addEventListener("click", removerClaseErrorDeNumero);
 transferencia.addEventListener("click", removerClaseErrorDeClave);
+transferencia.addEventListener("click", habilitarBoton);
