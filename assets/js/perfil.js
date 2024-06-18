@@ -60,7 +60,7 @@ function habilitarBoton() {
   const passMatch = nuevaPass && repPass && nuevaPass === repPass;
   const metodoPagoSeleccionado = tarjeta.checked || transferencia.checked || cupon.checked;
 
-  submit.disabled = !(passMatch && metodoPagoSeleccionado);
+  submit.disabled = !(passMatch || metodoPagoSeleccionado);
 }
 
 function guardarMetodoDePago(
