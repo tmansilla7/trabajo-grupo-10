@@ -53,8 +53,14 @@ function removerClaseErrorDeCheck(evento) {
   errorCheck.textContent = "";
 }
 
+
 function habilitarBoton() {
-  submit.disabled = false;
+  const nuevaPass = nuevaPassword.value;
+  const repPass = repetirPassword.value;
+  const passMatch = nuevaPass && repPass && nuevaPass === repPass;
+  const metodoPagoSeleccionado = tarjeta.checked || transferencia.checked || cupon.checked;
+
+  submit.disabled = !(passMatch && metodoPagoSeleccionado);
 }
 
 function guardarMetodoDePago(
@@ -110,6 +116,7 @@ function guardarMetodoDePago(
 }
 
 function verificarFormulario(evento) {
+  evento.preventDefault();
   if (password.value != "") {
     verificarPassword(
       evento,
@@ -218,3 +225,7 @@ cupon.addEventListener("click", removerClaseErrorDeClave);
 transferencia.addEventListener("click", removerClaseErrorDeNumero);
 transferencia.addEventListener("click", removerClaseErrorDeClave);
 transferencia.addEventListener("click", habilitarBoton);
+
+nuevaPassword.addEventListener("keyup", habilitarBoton);
+repetirPassword.addEventListener("keyup", habilitarBoton);
+document.addEventListener("DOMContentLoaded", habilitarBoton);
