@@ -1469,10 +1469,10 @@ const LOSANILLOSDELPODER = {
 const STRANGERTHINGS = {
   tipo: "serie",
   imagen: {
-    src: "../assets/img/anillosdelpoder.jpg",
-    alt: "Los anillos del poder",
+    src: "../assets/img/strangerthings.jpg",
+    alt: "Stranger Things",
   },
-  titulo: "Los anillos del poder",
+  titulo: "Stranger Things",
   temporadas: [
     {
       numero: 1,
@@ -1507,11 +1507,11 @@ const STRANGERTHINGS = {
     },
   ],
   sinopsis:
-    "Los héroes se enfrentan al temido resurgimiento del mal en la Tierra Media y forjan legados que perdurarán mucho tiempo después de su desaparición.",
+    "              Stranger Things está ambientada en el pueblo ficticio de Hawkins, Indiana, en los años 1980. El cercano Laboratorio Nacional Hawkins aparentemente realiza investigaciones científicas para el Departamento de Energía de los Estados Unidos, pero experimenta en secreto con lo paranormal y lo sobrenatural, a veces con sujetos de prueba humanos. Sin darse cuenta, han creado un portal a una dimensión alternativa a la que se refieren como Upside Down, cuya presencia comienza a afectar a los residentes de Hawkins de manera calamitosa.",
 
   trailer: {
-    url_iframe: "https://www.youtube.com/embed/AEOF24u4vTI",
-    url_youtube: "https://www.youtube.com/embed/AEOF24u4vTI",
+    url_iframe: "https://www.youtube.com/embed/x7Yq9MJUqjY?si=OWyiUcu5NPMAcgEg",
+    url_youtube: "https://www.youtube.com/embed/x7Yq9MJUqjY?si=OWyiUcu5NPMAcgEg",
   },
   similares: [
     {
