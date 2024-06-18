@@ -1734,7 +1734,7 @@ const THERAIN = {
   ],
 };
 
-const THEWITCHER= {
+const THEWITCHER = {
   tipo: "serie",
   imagen: {
     src: "../assets/img/thewitcher.jpg",
@@ -1823,8 +1823,9 @@ const SERIES_Y_PELICULAS_A_GUARDAR = [
   STRANGERTHINGS,
   THEALIST,
   THELASTOFUS,
- THERAIN,
-  
+  THERAIN,
+  THEWITCHER,
+
 
 
 ];
