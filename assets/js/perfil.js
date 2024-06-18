@@ -53,12 +53,12 @@ function removerClaseErrorDeCheck(evento) {
   errorCheck.textContent = "";
 }
 
-
 function habilitarBoton() {
   const nuevaPass = nuevaPassword.value;
   const repPass = repetirPassword.value;
   const passMatch = nuevaPass && repPass && nuevaPass === repPass;
-  const metodoPagoSeleccionado = tarjeta.checked || transferencia.checked || cupon.checked;
+  const metodoPagoSeleccionado =
+    tarjeta.checked || transferencia.checked || cupon.checked;
 
   submit.disabled = !(passMatch || metodoPagoSeleccionado);
 }

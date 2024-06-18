@@ -1511,7 +1511,8 @@ const STRANGERTHINGS = {
 
   trailer: {
     url_iframe: "https://www.youtube.com/embed/x7Yq9MJUqjY?si=OWyiUcu5NPMAcgEg",
-    url_youtube: "https://www.youtube.com/embed/x7Yq9MJUqjY?si=OWyiUcu5NPMAcgEg",
+    url_youtube:
+      "https://www.youtube.com/embed/x7Yq9MJUqjY?si=OWyiUcu5NPMAcgEg",
   },
   similares: [
     {
@@ -1539,7 +1540,7 @@ const THEALIST = {
     src: "../assets/img/thealist.jpg",
     alt: "The a list",
   },
-  titulo: "The a list",
+  titulo: "The A List",
   temporadas: [
     {
       numero: 1,
@@ -1641,7 +1642,7 @@ const THELASTOFUS = {
     },
   ],
   sinopsis:
-    "            Joel y Ellie, dos personas conectadas por la brutalidad del mundo en el que viven, se ven obligados a enfrentarse a criaturas y asesinos despiadados, mientras viajan a través de un Estados Unidos posapocalíptico",
+    "Joel y Ellie, dos personas conectadas por la brutalidad del mundo en el que viven, se ven obligados a enfrentarse a criaturas y asesinos despiadados, mientras viajan a través de un Estados Unidos posapocalíptico",
 
   trailer: {
     url_iframe: "https://www.youtube.com/embed/yyGetSp7CIc",
@@ -1673,7 +1674,7 @@ const THERAIN = {
     src: "../assets/img/therain.jpg",
     alt: "The rain",
   },
-  titulo: "The rain",
+  titulo: "The Rain",
   temporadas: [
     {
       numero: 1,
@@ -1738,7 +1739,7 @@ const THEWITCHER = {
   tipo: "serie",
   imagen: {
     src: "../assets/img/thewitcher.jpg",
-    alt: "The witcher"
+    alt: "The witcher",
   },
   titulo: "The Witcher",
   temporadas: [
@@ -1800,6 +1801,72 @@ const THEWITCHER = {
     },
   ],
 };
+
+const YO_ANTES_DE_TI = {
+  tipo: "película",
+  imagen: {
+    src: "../assets/img/Yo antes de ti.jpg",
+    alt: "Yo antes de ti",
+  },
+  titulo: "Yo Antes de Ti",
+  duracion: "1h 50m",
+  categoría: "Drama",
+  actores: [
+    {
+      nombre: "Emilia Clarke",
+      url: "https://es.wikipedia.org/wiki/Emilia_Clarke",
+    },
+    {
+      nombre: "Sam Claflin",
+      url: "https://es.wikipedia.org/wiki/Sam_Claflin",
+    },
+    {
+      nombre: "Matthew Lewis",
+      url: "https://es.wikipedia.org/wiki/Matthew_Lewis_(actor)",
+    },
+    {
+      nombre: "Charles Dance",
+      url: "https://es.wikipedia.org/wiki/Charles_Dance",
+    },
+    {
+      nombre: "Jenna Coleman",
+      url: "https://es.wikipedia.org/wiki/Jenna_Coleman",
+    },
+    {
+      nombre: "Steve Peacocke",
+      url: "https://es.wikipedia.org/wiki/Steve_Peacocke",
+    },
+    {
+      nombre: "Janet McTeer",
+      url: "https://es.wikipedia.org/wiki/Janet_McTeer",
+    },
+  ],
+  sinopsis:
+    "La vida de Louisa Clark, una chica alegre y alocada, que va empalmando un trabajo con otro para ayudar a su familia a subsistir, cambia por completo cuando comienza a trabajar como cuidadora de un joven millonario, quien quedó paralítico tras un accidente. Poco a poco, se va estableciendo entre ellos una conexión cada vez más íntima.",
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/NTdBZvxDU18",
+    url_youtube: "https://www.youtube.com/watch?v=NTdBZvxDU18",
+  },
+  similares: [
+    {
+      src: "../assets/img/10things.jpeg",
+      alt: "10 things I hate about you",
+    },
+    {
+      src: "../assets/img/smile.jpg",
+      alt: "smile",
+    },
+    {
+      src: "../assets/img/gladiator.jpg",
+      alt: "gladiator",
+    },
+    {
+      src: "../assets/img/torrente.jpg",
+      alt: "torrente",
+    },
+  ],
+};
+
 const SERIES_Y_PELICULAS_A_GUARDAR = [
   SUPERNATURAL,
   HEROES,
@@ -1825,9 +1892,7 @@ const SERIES_Y_PELICULAS_A_GUARDAR = [
   THELASTOFUS,
   THERAIN,
   THEWITCHER,
-
-
-
+  YO_ANTES_DE_TI,
 ];
 
 localStorage.setItem(
