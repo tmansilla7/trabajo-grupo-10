@@ -1258,6 +1258,415 @@ const ERAGON = {
   ],
 };
 
+const GAMEOFTHRONES = {
+  tipo: "serie",
+  imagen: {
+    src: "../assets/img/gameofthrones.jpg",
+    alt: "Game Of thrones",
+  },
+  titulo: "Game of thrones",
+  temporadas: [
+    {
+      numero: 1,
+      capitulos: 8,
+    },
+    {
+      numero: 2,
+      capitulos: 8,
+    },
+    {
+      numero: 3,
+      capitulos: 8,
+    },
+  ],
+  categoría: "Fantasía",
+  actores: [
+    {
+      nombre: "Sean Bean",
+      url: "https://es.wikipedia.org/wiki/Sean_Bean",
+    },
+    {
+      nombre: "Nikolaj Coster-Waldau",
+      url: "https://es.wikipedia.org/wiki/Nikolaj_Coster-Waldau",
+    },
+    {
+      nombre: "Peter Dinklage",
+      url: "https://es.wikipedia.org/wiki/Peter_Dinklage",
+    },
+    {
+      nombre: "Emilia Clarkmilia Clark",
+      url: "https://es.wikipedia.org/wiki/Emilia_Clarke",
+    },
+    {
+      nombre: "Lena Headey",
+      url: "https://es.wikipedia.org/wiki/Masi_Oka",
+    },
+    {
+      nombre: "Kit Harington",
+      url: "https://es.wikipedia.org/wiki/Kit_Harington",
+    },
+  ],
+  sinopsis:
+    "Game of Thrones (conocida como Juego de tronos en España, El juego de tronos en Hispanoamérica y abreviada como GOT) es una serie de televisión de drama y fantasía medieval desarrollada por David Benioff y D. B. Weiss y producida por la cadena HBO. Su argumento está inspirado en la serie de novelas Canción de hielo y fuego, escrita por el estadounidense George R. R. Martin, y relata las vivencias de un grupo de personajes de distintas casas nobiliarias en el continente ficticio de Poniente para tener el control del Trono de Hierro y gobernar los siete reinos que conforman el territorio",
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/bjqEWgDVPe0",
+    url_youtube: "https://www.youtube.com/embed/bjqEWgDVPe0",
+  },
+  similares: [
+    {
+      src: "../assets/img/Supernatural.jpg",
+      alt: "supernatural",
+    },
+    {
+      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
+      alt: "the boys",
+    },
+    {
+      src: "../assets/img/merlina.jpg",
+      alt: "merlina",
+    },
+    {
+      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
+      alt: "house of the dragon",
+    },
+  ],
+};
+
+const HOUSEOFTHEDRAGON = {
+  tipo: "serie",
+  imagen: {
+    src: "../assets/img/houseofthedragon.jpg",
+    alt: "House of the dragon",
+  },
+  titulo: "House of the dragon",
+  temporadas: [
+    {
+      numero: 1,
+      capitulos: 8,
+    },
+    {
+      numero: 2,
+      capitulos: 8,
+    },
+    {
+      numero: 3,
+      capitulos: 8,
+    },
+  ],
+  categoría: "Terror",
+  actores: [
+    {
+      nombre: "Milly Alcock",
+      url: "https://es.wikipedia.org/wiki/Milly_Alcock",
+    },
+    {
+      nombre: "Matt Smith",
+      url: "https://es.wikipedia.org/wiki/Matt_Smith",
+    },
+    {
+      nombre: "Olivia Cooke",
+      url: "https://es.wikipedia.org/wiki/Olivia_Cooke",
+    },
+    {
+      nombre: "Paddy Considine",
+      url: "https://es.wikipedia.org/wiki/Paddy_Considine",
+    },
+  ],
+  sinopsis:
+    "La casa del dragón (en inglés: House of the Dragon - HOTD) es una serie de televisión británica de fantasía, drama, romance y acción creado por Ryan Condal y George R. R. Martin para HBO.​ Es una precuela de Game of Thrones y la segunda serie de televisión basada en la saga literaria Canción de hielo y fuego. Basada en la novela de Martin Fuego y sangre, la historia tiene lugar 200 años antes de los eventos de Game of Thrones y 172 antes del nacimiento de Daenerys Targaryen. Con un elenco coral liderado por Emma D'Arcy, Paddy Considine, Matt Smith, Olivia Cooke y Rhys Ifans, cuenta la historia del origen del final de la Casa Targaryen, y el desarrollo de un conflicto intrafamiliar conocido como la Danza de los Dragones, que deriva de la división de la realeza en dos bandos por la elección del heredero al trono de hierro",
+
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/g3MKPYGLZG8",
+    url_youtube: "https://www.youtube.com/embed/g3MKPYGLZG8",
+  },
+  similares: [
+    {
+      src: "../assets/img/Supernatural.jpg",
+      alt: "supernatural",
+    },
+    {
+      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
+      alt: "the boys",
+    },
+    {
+      src: "../assets/img/merlina.jpg",
+      alt: "merlina",
+    },
+    {
+      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
+      alt: "los anillos del poder",
+    },
+  ],
+};
+
+const LOSANILLOSDELPODER = {
+  tipo: "serie",
+  imagen: {
+    src: "../assets/img/anillosdelpoder.jpg",
+    alt: "Los anillos del poder",
+  },
+  titulo: "Los anillos del poder",
+  temporadas: [
+    {
+      numero: 1,
+      capitulos: 8,
+    },
+    {
+      numero: 2,
+      capitulos: 8,
+    },
+    {
+      numero: 3,
+      capitulos: 8,
+    },
+  ],
+  categoría: "Fantasía",
+  actores: [
+    {
+      nombre: "Morfydd Clark",
+      url: "https://es.wikipedia.org/wiki/Morfydd_Clark",
+    },
+    {
+      nombre: "Robert Aramayo",
+      url: "https://es.wikipedia.org/wiki/Robert_Aramayo",
+    },
+    {
+      nombre: "Sophia Nomvete",
+      url: "https://www.imdb.com/name/nm11273330/",
+    },
+    {
+      nombre: "Markella Kavenagh",
+      url: "https://es.wikipedia.org/wiki/Markella_Kavenagh",
+    },
+  ],
+  sinopsis:
+    "Los héroes se enfrentan al temido resurgimiento del mal en la Tierra Media y forjan legados que perdurarán mucho tiempo después de su desaparición.",
+
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/AEOF24u4vTI",
+    url_youtube: "https://www.youtube.com/embed/AEOF24u4vTI",
+  },
+  similares: [
+    {
+      src: "../assets/img/Supernatural.jpg",
+      alt: "supernatural",
+    },
+    {
+      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
+      alt: "the boys",
+    },
+    {
+      src: "../assets/img/merlina.jpg",
+      alt: "merlina",
+    },
+    {
+      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
+      alt: "house of the dragon",
+    },
+  ],
+};
+
+const STRANGERTHINGS = {
+  tipo: "serie",
+  imagen: {
+    src: "../assets/img/anillosdelpoder.jpg",
+    alt: "Los anillos del poder",
+  },
+  titulo: "Los anillos del poder",
+  temporadas: [
+    {
+      numero: 1,
+      capitulos: 8,
+    },
+    {
+      numero: 2,
+      capitulos: 8,
+    },
+    {
+      numero: 3,
+      capitulos: 8,
+    },
+  ],
+  categoría: "Fantasía",
+  actores: [
+    {
+      nombre: "Morfydd Clark",
+      url: "https://es.wikipedia.org/wiki/Morfydd_Clark",
+    },
+    {
+      nombre: "Robert Aramayo",
+      url: "https://es.wikipedia.org/wiki/Robert_Aramayo",
+    },
+    {
+      nombre: "Sophia Nomvete",
+      url: "https://www.imdb.com/name/nm11273330/",
+    },
+    {
+      nombre: "Markella Kavenagh",
+      url: "https://es.wikipedia.org/wiki/Markella_Kavenagh",
+    },
+  ],
+  sinopsis:
+    "Los héroes se enfrentan al temido resurgimiento del mal en la Tierra Media y forjan legados que perdurarán mucho tiempo después de su desaparición.",
+
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/AEOF24u4vTI",
+    url_youtube: "https://www.youtube.com/embed/AEOF24u4vTI",
+  },
+  similares: [
+    {
+      src: "../assets/img/Supernatural.jpg",
+      alt: "supernatural",
+    },
+    {
+      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
+      alt: "the boys",
+    },
+    {
+      src: "../assets/img/merlina.jpg",
+      alt: "merlina",
+    },
+    {
+      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
+      alt: "house of the dragon",
+    },
+  ],
+};
+
+const THEALIST = {
+  tipo: "serie",
+  imagen: {
+    src: "../assets/img/thealist.jpg",
+    alt: "The a list",
+  },
+  titulo: "The a list",
+  temporadas: [
+    {
+      numero: 1,
+      capitulos: 8,
+    },
+    {
+      numero: 2,
+      capitulos: 8,
+    },
+    {
+      numero: 3,
+      capitulos: 8,
+    },
+  ],
+  categoría: "Drama",
+  actores: [
+    {
+      nombre: "Ellie Duckles",
+      url: "https://www.sensacine.com/actores/actor-879070/",
+    },
+    {
+      nombre: "Lisa Ambalavanar",
+      url: "https://es.wikipedia.org/wiki/Lisa_Ambalavanar",
+    },
+    {
+      nombre: "Jacob Dudman",
+      url: "https://en.wikipedia.org/wiki/Jacob_Dudman",
+    },
+    {
+      nombre: "Rosie Dwyer",
+      url: "https://m.imdb.com/name/nm9892194/?language=es-es",
+    },
+  ],
+  sinopsis:
+    "Romance, rivalidad y misterio se entremezclan cuando un grupo de jóvenes viaja a un campamento de verano en una remota isla en este drama sobrenatural lleno de intriga.",
+
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/7kIKGd6w6Y8",
+    url_youtube: "https://www.youtube.com/embed/7kIKGd6w6Y8",
+  },
+  similares: [
+    {
+      src: "../assets/img/Supernatural.jpg",
+      alt: "supernatural",
+    },
+    {
+      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
+      alt: "the boys",
+    },
+    {
+      src: "../assets/img/merlina.jpg",
+      alt: "merlina",
+    },
+    {
+      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
+      alt: "house of the dragon",
+    },
+  ],
+};
+
+const THELASTOFUS = {
+  tipo: "serie",
+  imagen: {
+    src: "../assets/img/thealist.jpg",
+    alt: "The a list",
+  },
+  titulo: "The a list",
+  temporadas: [
+    {
+      numero: 1,
+      capitulos: 8,
+    },
+    {
+      numero: 2,
+      capitulos: 8,
+    },
+    {
+      numero: 3,
+      capitulos: 8,
+    },
+  ],
+  categoría: "Aventura",
+  actores: [
+    {
+      nombre: "Pedro Pascal",
+      url: "https://es.wikipedia.org/wiki/Pedro_Pascal",
+    },
+    {
+      nombre: "Bella Ramsey",
+      url: "https://es.wikipedia.org/wiki/Bella_Ramsey",
+    },
+    {
+      nombre: "Nico Parker",
+      url: "https://es.wikipedia.org/wiki/Nico_Parker",
+    },
+    {
+      nombre: "Anna Torvs",
+      url: "https://es.wikipedia.org/wiki/Anna_Torv",
+    },
+  ],
+  sinopsis:
+    "            Joel y Ellie, dos personas conectadas por la brutalidad del mundo en el que viven, se ven obligados a enfrentarse a criaturas y asesinos despiadados, mientras viajan a través de un Estados Unidos posapocalíptico",
+
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/yyGetSp7CIc",
+    url_youtube: "https://www.youtube.com/embed/yyGetSp7CIc",
+  },
+  similares: [
+    {
+      src: "../assets/img/Supernatural.jpg",
+      alt: "supernatural",
+    },
+    {
+      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
+      alt: "the boys",
+    },
+    {
+      src: "../assets/img/merlina.jpg",
+      alt: "merlina",
+    },
+    {
+      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
+      alt: "house of the dragon",
+    },
+  ],
+};
+
 const SERIES_Y_PELICULAS_A_GUARDAR = [
   SUPERNATURAL,
   HEROES,
@@ -1275,6 +1684,15 @@ const SERIES_Y_PELICULAS_A_GUARDAR = [
   EL_LUGAR_BUENO,
   ERAGON,
   CHUCKY,
+  GAMEOFTHRONES,
+  HOUSEOFTHEDRAGON,
+  LOSANILLOSDELPODER,
+  STRANGERTHINGS,
+  THEALIST,
+  THELASTOFUS,
+  
+
+
 ];
 
 localStorage.setItem(
