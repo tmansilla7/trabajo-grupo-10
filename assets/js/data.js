@@ -1603,10 +1603,10 @@ const THEALIST = {
 const THELASTOFUS = {
   tipo: "serie",
   imagen: {
-    src: "../assets/img/thealist.jpg",
-    alt: "The a list",
+    src: "../assets/img/thealastofus.jpg",
+    alt: "The last of us",
   },
-  titulo: "The a list",
+  titulo: "The last of us",
   temporadas: [
     {
       numero: 1,
