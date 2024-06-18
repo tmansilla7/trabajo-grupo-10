@@ -1667,6 +1667,139 @@ const THELASTOFUS = {
   ],
 };
 
+const THERAIN = {
+  tipo: "serie",
+  imagen: {
+    src: "../assets/img/therain.jpg",
+    alt: "The rain",
+  },
+  titulo: "The rain",
+  temporadas: [
+    {
+      numero: 1,
+      capitulos: 8,
+    },
+    {
+      numero: 2,
+      capitulos: 8,
+    },
+    {
+      numero: 3,
+      capitulos: 8,
+    },
+  ],
+  categoría: "Drama",
+  actores: [
+    {
+      nombre: "Lucas Lynggaard Tønnesen",
+      url: "https://es.wikipedia.org/wiki/Lucas_Lynggaard_T%C3%B8nnesen",
+    },
+    {
+      nombre: "Alba August",
+      url: "https://es.wikipedia.org/wiki/Alba_August",
+    },
+    {
+      nombre: "Angela Bundalovic",
+      url: "https://www.sensacine.com/actores/actor-813898/",
+    },
+    {
+      nombre: "Lukas Løkken",
+      url: "https://www.sensacine.com/actores/actor-809053/",
+    },
+  ],
+  sinopsis:
+    "Un virus letal, transmitido mediante la lluvia, aniquila a la población de Escandinavia. Seis años después del brote inicial, dos hermanos dejan la seguridad de su búnker para unirse a un grupo de sobrevivientes que busca hallar una cura",
+
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/HMGapZwZO_I",
+    url_youtube: "https://www.youtube.com/embed/HMGapZwZO_I",
+  },
+  similares: [
+    {
+      src: "../assets/img/Supernatural.jpg",
+      alt: "supernatural",
+    },
+    {
+      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
+      alt: "the boys",
+    },
+    {
+      src: "../assets/img/merlina.jpg",
+      alt: "merlina",
+    },
+    {
+      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
+      alt: "house of the dragon",
+    },
+  ],
+};
+
+const THEWITCHER= {
+  tipo: "serie",
+  imagen: {
+    src: "../assets/img/thewitcher.jpg",
+    alt: "The witcher"
+  },
+  titulo: "The Witcher",
+  temporadas: [
+    {
+      numero: 1,
+      capitulos: 8,
+    },
+    {
+      numero: 2,
+      capitulos: 8,
+    },
+    {
+      numero: 3,
+      capitulos: 8,
+    },
+  ],
+  categoría: "Aventura",
+  actores: [
+    {
+      nombre: "Henry Cavill",
+      url: "https://es.wikipedia.org/wiki/Henry_Cavill",
+    },
+    {
+      nombre: "Bella Ramsey",
+      url: "https://es.wikipedia.org/wiki/Bella_Ramsey",
+    },
+    {
+      nombre: "Freya Allan",
+      url: "https://es.wikipedia.org/wiki/Freya_Allan",
+    },
+    {
+      nombre: "Meng'er Zhang",
+      url: "https://es.wikipedia.org/wiki/Meng%27er_Zhang",
+    },
+  ],
+  sinopsis:
+    "El brujo Geralt, un cazador de monstruos, trata de encontrar su lugar en un mundo en el que las personas suelen ser más malvadas que las bestias.",
+
+  trailer: {
+    url_iframe: "https://www.youtube.com/embed/ETY44yszyNc",
+    url_youtube: "https://www.youtube.com/embed/ETY44yszyNc",
+  },
+  similares: [
+    {
+      src: "../assets/img/Supernatural.jpg",
+      alt: "supernatural",
+    },
+    {
+      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
+      alt: "the boys",
+    },
+    {
+      src: "../assets/img/merlina.jpg",
+      alt: "merlina",
+    },
+    {
+      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
+      alt: "house of the dragon",
+    },
+  ],
+};
 const SERIES_Y_PELICULAS_A_GUARDAR = [
   SUPERNATURAL,
   HEROES,
@@ -1690,6 +1823,7 @@ const SERIES_Y_PELICULAS_A_GUARDAR = [
   STRANGERTHINGS,
   THEALIST,
   THELASTOFUS,
+ THERAIN,
   
 
 
