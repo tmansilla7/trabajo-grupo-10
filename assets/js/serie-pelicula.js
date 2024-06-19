@@ -47,16 +47,15 @@ function agregarTemporadasODuracion(array) {
       temporada = nodo_select.options[nodo_select.selectedIndex].text;
       numero_capitulos = array["temporadas"][temporada - 1]["capitulos"];
 
-      nodo_select2.innerHTML = ""
-     
+      nodo_select2.innerHTML = "";
+
       for (let i = 1; i <= numero_capitulos; i++) {
         const nodo_option = document.createElement("option");
         nodo_option.value = i;
         nodo_option.textContent = i;
         nodo_select2.appendChild(nodo_option);
-      }     
+      }
     });
-
   } else {
     const nodo_div = document.querySelector("#duracion");
     const nodo_duracion = document.createElement("h3");
@@ -125,11 +124,11 @@ agregarDescripcion(
   SERIES_PELICULAS[indice_de_la_serie_pelicula]["sinopsis"]
 );
 
-let sliderInner = document.querySelector('.similares');
+let sliderInner = document.querySelector(".similares");
 let currentIndex = 0;
 
 function showSlide(index) {
-  const totalSlides = document.querySelectorAll('.similares article').length;
+  const totalSlides = document.querySelectorAll(".similares article").length;
   if (index >= totalSlides) {
     currentIndex = 0;
   } else if (index < 0) {
@@ -137,7 +136,7 @@ function showSlide(index) {
   } else {
     currentIndex = index;
   }
-  const newTransform = -currentIndex * 100 + '%';
+  const newTransform = -currentIndex * 100 + "%";
   sliderInner.style.transform = `translateX(${newTransform})`;
 }
 function nextSlide() {
@@ -146,6 +145,6 @@ function nextSlide() {
 function prevSlide() {
   showSlide(currentIndex - 1);
 }
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   showSlide(currentIndex);
 });

@@ -1264,7 +1264,7 @@ const GAMEOFTHRONES = {
     src: "../assets/img/gameofthrones.jpg",
     alt: "Game Of thrones",
   },
-  titulo: "Game of thrones",
+  titulo: "Game of Thrones",
   temporadas: [
     {
       numero: 1,
@@ -1338,7 +1338,7 @@ const HOUSEOFTHEDRAGON = {
     src: "../assets/img/houseofthedragon.jpg",
     alt: "House of the dragon",
   },
-  titulo: "House of the dragon",
+  titulo: "House of the Dragon",
   temporadas: [
     {
       numero: 1,
@@ -1393,8 +1393,8 @@ const HOUSEOFTHEDRAGON = {
       alt: "merlina",
     },
     {
-      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
-      alt: "los anillos del poder",
+      src: "../assets/img/gameofthrones.jpg",
+      alt: "game of thrones",
     },
   ],
 };
