@@ -113,12 +113,13 @@ function verificarFormulario(evento) {
     "Ambas contraseñas deben ser iguales"
   );
   verificarTarjeta(
+    evento,
     numeroTarjeta,
     claveTarjeta,
     errorTarjeta,
     "Ingresa un número válido"
   );
-  verificarCupon(errorCheck, "Selecciona uno");
+  verificarCupon(evento, errorCheck, "Selecciona uno");
 }
 
 submit.addEventListener("click", verificarFormulario);

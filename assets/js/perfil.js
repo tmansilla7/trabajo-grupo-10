@@ -79,6 +79,7 @@ function guardarMetodoDePago(
       if (
         tarjeta.checked &&
         verificarTarjeta(
+          evento,
           numeroTarjeta,
           claveTarjeta,
           errorTarjeta,
@@ -93,12 +94,14 @@ function guardarMetodoDePago(
         localStorage.setItem("Método de pago", JSON.stringify(metodoDePago));
       }
 
-      if (cupon.checked && verificarCupon(errorCheck, "Selecciona uno")) {
+      if (cupon.checked && verificarCupon(evento, errorCheck, "Selecciona uno")) {
         let tipo = "";
         if (rapi.checked) {
           tipo = "RapiPago";
         } else if (facil.checked) {
           tipo = "Pago Fácil";
+        } else if (facil.checked && rapi.checked) {
+          tipo = "Pago Fácil y RapiPago";
         }
         metodoDePago = {
           método: "Cupón de Pago",
@@ -116,7 +119,6 @@ function guardarMetodoDePago(
 }
 
 function verificarFormulario(evento) {
-  evento.preventDefault();
   if (password.value != "") {
     verificarPassword(
       evento,
@@ -163,6 +165,7 @@ function verificarFormulario(evento) {
   );
   if (
     !verificarTarjeta(
+      evento,
       numeroTarjeta,
       claveTarjeta,
       errorTarjeta,
@@ -171,7 +174,7 @@ function verificarFormulario(evento) {
   ) {
     submit.disabled = true;
   }
-  if (!verificarCupon(errorCheck, "Selecciona uno")) {
+  if (!verificarCupon(evento, errorCheck, "Selecciona uno")) {
     submit.disabled = true;
   }
   guardarMetodoDePago(

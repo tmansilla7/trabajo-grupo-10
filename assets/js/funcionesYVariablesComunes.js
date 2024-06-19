@@ -87,9 +87,11 @@ function verificarPassword(
   if (password.value == "") {
     agregarClase("error", selector, selector2, texto);
     password.focus();
+    evento.preventDefault();
     return false;
   } else if (password.value.length < 8) {
     agregarClase("error", selector, selector2, texto2);
+    evento.preventDefault();
     return false;
   } else {
     caracteresPassword(evento, selector, selector2, texto3);
@@ -108,9 +110,11 @@ function verificarNuevaPassword(
   if (password.value.length < 8 && password.value != "") {
     agregarClase("error", selector, selector2, texto2);
     password.focus();
+    evento.preventDefault();
     return false;
   } else {
     caracteresPassword(evento, selector, selector2, texto3);
+    evento.preventDefault();
     return false;
   }
 }
@@ -193,10 +197,10 @@ function ultimoNumeroTarjeta(selector) {
   }
 }
 
-function verificarTarjeta(selector, selector2, selector3, texto) {
+function verificarTarjeta(evento, selector, selector2, selector3, texto) {
   const REGEX_NUMERO = /[0-9]/;
   const REGEX_CLAVE = /[1-9]/;
-  const array2 = selector2.value.split("");
+
   if (tarjeta.checked) {
     const array = selector.value.split("");
     if (
@@ -206,27 +210,33 @@ function verificarTarjeta(selector, selector2, selector3, texto) {
     ) {
       agregarClase("error", selector, selector3, texto);
       selector.focus();
+      evento.preventDefault();
       return false;
     }
     for (let i = 0; i < array.length; i++) {
       if (!REGEX_NUMERO.test(array[i])) {
         agregarClase("error", selector, selector3, texto);
+        evento.preventDefault();
         return false;
       }
     }
     if (!ultimoNumeroTarjeta(selector)) {
       agregarClase("error", selector, selector3, texto);
+      evento.preventDefault();
       return false;
     }
     ultimoNumeroTarjeta(selector);
     if (selector2.value == "" || selector2.value.length != 3) {
       agregarClase("error", selector2, selector3, texto);
       selector2.focus();
+      evento.preventDefault();
       return false;
     }
+    const array2 = selector2.value.split("");
     for (let i = 0; i < array2.length; i++) {
       if (!REGEX_CLAVE.test(array2[i])) {
         agregarClase("error", selector2, selector3, texto);
+        evento.preventDefault();
         return false;
       }
     }
@@ -234,10 +244,11 @@ function verificarTarjeta(selector, selector2, selector3, texto) {
   return true;
 }
 
-function verificarCupon(selector, texto) {
+function verificarCupon(evento, selector, texto) {
   if (cupon.checked) {
     if (!rapi.checked && !facil.checked) {
       selector.textContent = texto;
+      evento.preventDefault();
       return false;
     }
   }
