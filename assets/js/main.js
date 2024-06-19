@@ -5,24 +5,29 @@ const errorNombre = document.querySelector("#errorNombre");
 const errorPassword = document.querySelector("#errorPassword");
 
 function removerClaseErrorDelNombre(evento) {
-  removerClase("error", nombreUsuario, errorNombre, "")
+  removerClase("error", nombreUsuario, errorNombre, "");
 }
 
 function removerClaseErrorDePassword(evento) {
-  removerClase("error", password, errorPassword, "")
+  removerClase("error", password, errorPassword, "");
 }
 
 function verificarFormulario(evento) {
   if (nombreUsuario.value == "") {
     evento.preventDefault();
-    agregarClase("error", nombreUsuario, errorNombre, "Ingresa tu nombre de usuario")
+    agregarClase(
+      "error",
+      nombreUsuario,
+      errorNombre,
+      "Ingresa tu nombre de usuario"
+    );
   } else {
     localStorage.setItem("usuario", nombreUsuario.value);
   }
 
   if (password.value == "") {
     evento.preventDefault();
-    agregarClase("error", password, errorPassword, "Ingresa tu contraseña")
+    agregarClase("error", password, errorPassword, "Ingresa tu contraseña");
   }
 }
 
