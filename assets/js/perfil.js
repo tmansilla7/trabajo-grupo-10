@@ -94,14 +94,14 @@ function guardarMetodoDePago(
         localStorage.setItem("Método de pago", JSON.stringify(metodoDePago));
       }
 
-      if (cupon.checked && verificarCupon(evento, errorCheck, "Selecciona uno")) {
-        let tipo = "";
+      if (
+        cupon.checked &&
+        verificarCupon(evento, errorCheck, "Selecciona uno")
+      ) {
         if (rapi.checked) {
           tipo = "RapiPago";
         } else if (facil.checked) {
           tipo = "Pago Fácil";
-        } else if (facil.checked && rapi.checked) {
-          tipo = "Pago Fácil y RapiPago";
         }
         metodoDePago = {
           método: "Cupón de Pago",
@@ -197,6 +197,7 @@ function verificarCancelarSuscripcion(evento) {
   );
   removerClaseErrorDeNuevaPassword(evento);
   removerClaseErrorDeRepetirPassword(evento);
+  eliminarDatosDeLocalStorage();
 }
 
 submit.addEventListener("click", verificarFormulario);
