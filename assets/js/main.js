@@ -22,13 +22,24 @@ function verificarFormulario(evento) {
       "Ingresa tu nombre de usuario"
     );
   } else {
+    soloLetrasYNumeros(
+      evento,
+      nombreUsuario,
+      errorNombre,
+      "Tu nombre de usuario sólo puede contener letras y números"
+    );
     localStorage.setItem("usuario", nombreUsuario.value);
   }
 
-  if (password.value == "") {
-    evento.preventDefault();
-    agregarClase("error", password, errorPassword, "Ingresa tu contraseña");
-  }
+  verificarPassword(
+    evento,
+    password,
+    password,
+    errorPassword,
+    "Ingresa tu contraseña",
+    "La contraseña debe tener al menos 8 caracteres",
+    "La contraseña debe tener al menos 2 letras, 2 números y 2 caracteres especiales"
+  );
 }
 
 submit.addEventListener("click", verificarFormulario);

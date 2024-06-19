@@ -22,6 +22,12 @@ function removerClaseErrorDeUsuario(evento) {
 function verificarFormulario(evento) {
   validarCampo(evento, email, errorEmail, "Ingresa tu email");
   validarCampo(evento, nombreUsuario, errorUsuario, "Ingresa tu usuario");
+  soloLetrasYNumeros(
+    evento,
+    nombreUsuario,
+    errorUsuario,
+    "Tu nombre de usuario sólo puede contener letras y números"
+  );
 }
 
 submit.addEventListener("click", verificarFormulario);

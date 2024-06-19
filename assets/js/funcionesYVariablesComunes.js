@@ -36,16 +36,16 @@ function validarCampo(evento, selector, selector2, texto) {
 }
 
 function soloLetras(evento, selector, selector2, texto) {
-  const REGEX_LETTERS = /[^A-Za-z]+$/i;
-  if (REGEX_LETTERS.test(selector.value)) {
+  const REGEX_LETTERS = /[A-Za-z]+$/i;
+  if (!REGEX_LETTERS.test(selector.value)) {
     evento.preventDefault();
     agregarClase("error", selector, selector2, texto);
   }
 }
 
 function soloLetrasYNumeros(evento, selector, selector2, texto) {
-  const REGEX_LETTERS_NUMBERS = /[^0-9A-Za-z]+$/i;
-  if (REGEX_LETTERS_NUMBERS.test(selector.value)) {
+  const REGEX_LETTERS_NUMBERS = /[0-9A-Za-z]+$/i;
+  if (!REGEX_LETTERS_NUMBERS.test(selector.value)) {
     evento.preventDefault();
     agregarClase("error", selector, selector2, texto);
   }
@@ -70,7 +70,9 @@ function caracteresPassword(evento, selector, selector2, texto) {
     }
     if (letras < 2 || numeros < 2 || caracteresEspeciales < 2) {
       agregarClase("error", selector, selector2, texto);
-      evento.preventDefault;
+      return false;
+    } else {
+      return true;
     }
   }
 }
@@ -93,8 +95,9 @@ function verificarPassword(
     agregarClase("error", selector, selector2, texto2);
     evento.preventDefault();
     return false;
-  } else {
-    caracteresPassword(evento, selector, selector2, texto3);
+  } else if (!caracteresPassword(evento, selector, selector2, texto3)) {
+    evento.preventDefault();
+    return false;
   }
   return true;
 }
