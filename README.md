@@ -2,8 +2,8 @@
 
 ## Codigo y sitio web
 
-[code](https://github.com/tmansilla7/Product-preview-card-component-main) 
-[demo](https://tmansilla7.github.io/Product-preview-card-component-main/)
+[Github code](https://github.com/tmansilla7/Product-preview-card-component-main) y
+[Netlify Deploy](https://tmansilla7.github.io/Product-preview-card-component-main/)
 
 ## Autores
 - Marmol Mariel
