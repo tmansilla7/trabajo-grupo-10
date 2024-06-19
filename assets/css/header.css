@@ -21,6 +21,7 @@
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+  margin: .5em auto;
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
@@ -74,7 +75,14 @@
 }
 
 .menu h3 {
-  font-size: 1em;
+  font-size: 0.5em;
+  margin: 0.5rem auto;
+}
+@media (min-width: 768px) { 
+  .menu h3{
+    font-size: 1em;
+    margin: 1rem auto;
+  }
 }
 
 .menu li:hover {

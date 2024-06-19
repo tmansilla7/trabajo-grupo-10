@@ -173,7 +173,8 @@ iframe {
     flex-direction: column;
   }
   .category {
-    width: 100%;
+    max-width: 1000px;
+    width: 90%;
     height: 100%;
     margin-left: 1rem;
     margin-right: 1rem;
