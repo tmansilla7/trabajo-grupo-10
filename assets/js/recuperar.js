@@ -20,14 +20,43 @@ function removerClaseErrorDeUsuario(evento) {
 }
 
 function verificarFormulario(evento) {
-  validarCampo(evento, email, errorEmail, "Ingresa tu email");
-  validarCampo(evento, nombreUsuario, errorUsuario, "Ingresa tu usuario");
-  soloLetrasYNumeros(
-    evento,
-    nombreUsuario,
-    errorUsuario,
-    "Tu nombre de usuario sólo puede contener letras y números"
+  let usuarioExistente = arrayUsuarios.find(
+    (usuario) => usuario.nombreDeUsuario === nombreUsuario.value
   );
+
+  let emailExistente = arrayUsuarios.find(
+    (usuario) => usuario.nombreDeUsuario === nombreUsuario.value
+  );
+
+  if (email.value == "") {
+    evento.preventDefault();
+    agregarClase(
+      "error",
+      email,
+      errorEmail,
+      "Ingresa tu email"
+    );
+  } else if (!emailExistente) {
+    evento.preventDefault();
+    agregarClase("error", email, errorEmail, "Ingresa un email válido");
+  }
+
+  if (nombreUsuario.value == "") {
+    evento.preventDefault();
+    agregarClase(
+      "error",
+      nombreUsuario,
+      errorUsuario,
+      "Ingresa tu nombre de usuario"
+    );
+  } else if (!usuarioExistente) {
+    evento.preventDefault();
+    agregarClase("error", nombreUsuario, errorUsuario, "Ingresa un usuario válido");
+  }
+
+  
+  
+  
 }
 
 submit.addEventListener("click", verificarFormulario);

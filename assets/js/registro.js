@@ -23,15 +23,6 @@ const errorRepetirPassword = document.querySelector("#errorRepetirPassword");
 const errorTarjeta = document.querySelector("#errorTarjeta");
 const errorCheck = document.querySelector("#errorCheck");
 
-function obtenerUsuariosRegistrados() {
-  if (JSON_USUARIOS) {
-    return USUARIOS;
-  } else {
-    return [];
-  }
-}
-
-const arrayUsuarios = obtenerUsuariosRegistrados();
 const usuarioNuevo = {
   nombre: "",
   apellido: "",
@@ -102,12 +93,47 @@ function validarEmail(evento) {
   }
 }
 
+function usuarioExistente() {
+  let existente = arrayUsuarios.find(
+    (usuario) => usuario.nombreDeUsuario === nombreUsuario.value
+  );
+
+  if (existente) {
+    agregarClase(
+      "error",
+      nombreUsuario,
+      errorUsuario,
+      "Ese nombre de usuario ya existe"
+    );
+    usuarioNuevo.nombreDeUsuario = "";
+    return false;
+  } else {
+    usuarioNuevo.nombreDeUsuario = nombreUsuario.value;
+  }
+}
+
+function emailExistente() {
+  let existente = arrayUsuarios.find(
+    (usuario) => usuario.email === email.value
+  );
+
+  if (existente) {
+    agregarClase("error", email, errorEmail, "Ese email ya fue utilizado");
+    usuarioNuevo.email = "";
+    return false;
+  } else {
+    usuarioNuevo.email = email.value;
+  }
+}
+
 function verificarFormulario(evento) {
   validarCampo(evento, nombre, errorNombre, "Ingresa tu nombre");
   soloLetras(
     evento,
     nombre,
     errorNombre,
+    "nombre",
+    nombre,
     "El nombre sólo puede contener letras"
   );
   validarCampo(evento, apellido, errorApellido, "Ingresa tu apellido");
@@ -115,10 +141,13 @@ function verificarFormulario(evento) {
     evento,
     apellido,
     errorApellido,
+    "apellido",
+    apellido,
     "El apellido sólo puede contener letras"
   );
   validarCampo(evento, email, errorEmail, "Ingresa tu email");
   validarEmail(evento);
+  emailExistente();
   validarCampo(
     evento,
     nombreUsuario,
@@ -131,6 +160,7 @@ function verificarFormulario(evento) {
     errorUsuario,
     "El nombre de usuario sólo puede contener letras y números"
   );
+  usuarioExistente();
   verificarPassword(
     evento,
     password,
@@ -155,58 +185,6 @@ function verificarFormulario(evento) {
     "Ingresa un número válido"
   );
   verificarCupon(evento, errorCheck, "Selecciona uno");
-
-  if (
-    soloLetras(
-      evento,
-      nombre,
-      errorNombre,
-      "El nombre sólo puede contener letras"
-    )
-  ) {
-    usuarioNuevo.nombre = nombre.value;
-  }
-
-  if (
-    soloLetras(
-      evento,
-      apellido,
-      errorApellido,
-      "El apellido sólo puede contener letras"
-    )
-  ) {
-    usuarioNuevo.apellido = apellido.value;
-  }
-
-  if (USUARIOS == null) {
-    usuarioNuevo.nombreDeUsuario = nombreUsuario.value;
-  } else {
-    const filtro = USUARIOS.find(
-      (usuario) => usuario.nombreDeUsuario === nombreUsuario.value
-    );
-    if (
-      !soloLetrasYNumeros(
-        evento,
-        nombreUsuario,
-        errorUsuario,
-        "El nombre de usuario sólo puede contener letras y números"
-      )
-    ) {
-      usuarioNuevo.nombreDeUsuario = "";
-    }
-
-    if (filtro) {
-      agregarClase(
-        "error",
-        nombreUsuario,
-        errorUsuario,
-        "Ese nombre de usuario ya existe"
-      );
-      usuarioNuevo.nombreDeUsuario = "";
-    } else {
-      usuarioNuevo.nombreDeUsuario = nombreUsuario.value;
-    }
-  }
 }
 
 function agregarUsuario(evento) {
@@ -219,13 +197,6 @@ function agregarUsuario(evento) {
     arrayUsuarios.push(usuarioNuevo);
     localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(arrayUsuarios));
   }
-
-  console.log(
-    usuarioNuevo.nombre,
-    usuarioNuevo.apellido,
-    usuarioNuevo.email,
-    usuarioNuevo.nombreDeUsuario
-  );
 }
 
 submit.addEventListener("click", verificarFormulario);
