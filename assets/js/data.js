@@ -1,4 +1,5 @@
 const LOCAL_STORAGE_SERIES_Y_PELICULAS = "series y películas";
+const LOCAL_STORAGE_USUARIOS = "usuarios";
 
 const SUPERNATURAL = {
   tipo: "serie",
@@ -1995,7 +1996,11 @@ const SERIES_Y_PELICULAS_A_GUARDAR = [
   YO_ANTES_DE_TI,
 ];
 
+const USUARIOS_REGISTRADOS = [];
+
 localStorage.setItem(
   LOCAL_STORAGE_SERIES_Y_PELICULAS,
   JSON.stringify(SERIES_Y_PELICULAS_A_GUARDAR)
 );
+
+

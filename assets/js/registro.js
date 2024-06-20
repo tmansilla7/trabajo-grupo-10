@@ -23,6 +23,24 @@ const errorRepetirPassword = document.querySelector("#errorRepetirPassword");
 const errorTarjeta = document.querySelector("#errorTarjeta");
 const errorCheck = document.querySelector("#errorCheck");
 
+function obtenerUsuariosRegistrados() {
+  if (JSON_USUARIOS) {
+    return USUARIOS;
+  } else {
+    return [];
+  }
+}
+
+const arrayUsuarios = obtenerUsuariosRegistrados();
+const usuarioNuevo = {
+  nombre: "",
+  apellido: "",
+  email: "",
+  nombreDeUsuario: "",
+  password: "",
+  metodoDePago: {},
+};
+
 function habilitarBoton() {
   if (
     nombre.value != "" &&
@@ -89,6 +107,7 @@ function verificarFormulario(evento) {
     "El apellido sólo puede contener letras"
   );
   validarCampo(evento, email, errorEmail, "Ingresa tu email");
+  usuarioNuevo.email = email.value;
   validarCampo(evento, usuario, errorUsuario, "Ingresa el nombre de usuario");
   soloLetrasYNumeros(
     evento,
@@ -122,7 +141,46 @@ function verificarFormulario(evento) {
   verificarCupon(evento, errorCheck, "Selecciona uno");
 }
 
+function agregarUsuario(evento) {
+  if (!validarCampo(evento, nombre, errorNombre, "Ingresa tu nombre")) {
+    return false;
+  }
+  if (
+    !soloLetras(
+      evento,
+      nombre,
+      errorNombre,
+      "El nombre sólo puede contener letras"
+    )
+  ) {
+    return false;
+  } else {
+    usuarioNuevo.nombre = nombre.value;
+  }
+  if (!validarCampo(evento, apellido, errorApellido, "Ingresa tu apellido")) {
+    return false;
+  }
+
+  if (
+    !soloLetras(
+      evento,
+      apellido,
+      errorApellido,
+      "El apellido sólo puede contener letras"
+    )
+  ) {
+    return false;
+  } else {
+    usuarioNuevo.apellido = apellido.value;
+  }
+
+  arrayUsuarios.push(usuarioNuevo);
+  localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(arrayUsuarios));
+ 
+}
+
 submit.addEventListener("click", verificarFormulario);
+submit.addEventListener("click", agregarUsuario);
 nombre.addEventListener("keyup", removerClaseErrorDelNombre);
 apellido.addEventListener("keyup", removerClaseErrorDelApellido);
 email.addEventListener("keyup", removerClaseErrorDelEmail);

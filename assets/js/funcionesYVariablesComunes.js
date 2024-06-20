@@ -1,7 +1,9 @@
 const JSON_SERIES_Y_PELICULAS = localStorage.getItem(
   LOCAL_STORAGE_SERIES_Y_PELICULAS
 );
+const JSON_USUARIOS = localStorage.getItem(LOCAL_STORAGE_USUARIOS);
 const SERIES_Y_PELICULAS = JSON.parse(JSON_SERIES_Y_PELICULAS);
+const USUARIOS = JSON.parse(JSON_USUARIOS);
 
 let nodo_section = document.querySelector(".sermov");
 const CATEGORIAS = document.querySelector("#categorias");
@@ -24,6 +26,7 @@ function validarCampo(evento, selector, selector2, texto) {
   if (selector.value == "") {
     evento.preventDefault();
     agregarClase("error", selector, selector2, texto);
+    return false;
   }
 }
 
@@ -32,6 +35,9 @@ function soloLetras(evento, selector, selector2, texto) {
   if (!REGEX_LETTERS.test(selector.value)) {
     evento.preventDefault();
     agregarClase("error", selector, selector2, texto);
+    return false;
+  } else {
+    return true;
   }
 }
 
@@ -40,6 +46,7 @@ function soloLetrasYNumeros(evento, selector, selector2, texto) {
   if (!REGEX_LETTERS_NUMBERS.test(selector.value)) {
     evento.preventDefault();
     agregarClase("error", selector, selector2, texto);
+    return false
   }
 }
 
@@ -137,6 +144,7 @@ function verificarPasswordIguales(
   if (selector.value != selector2.value) {
     evento.preventDefault();
     agregarClase("error", selector2, selector3, texto);
+    return false
   }
 }
 
