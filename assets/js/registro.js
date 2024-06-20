@@ -9,6 +9,7 @@ const cupon = document.querySelector("#cupon");
 const facil = document.querySelector("#facil");
 const rapi = document.querySelector("#rapi");
 const transferencia = document.querySelector("#transferencia");
+const cbu = document.querySelector("#cbu");
 const numeroTarjeta = document.querySelector("#numeroTarjeta");
 const claveTarjeta = document.querySelector("#claveTarjeta");
 const submit = document.querySelector("#btn-submit");
@@ -185,8 +186,37 @@ function verificarFormulario(evento) {
     errorTarjeta,
     "Ingresa un número válido"
   );
+  if (
+    verificarTarjeta(
+      evento,
+      numeroTarjeta,
+      claveTarjeta,
+      errorTarjeta,
+      "Ingresa un número válido"
+    )
+  ) {
+    usuarioNuevo.metodoDePago = {
+      tipo: "Tarjeta de Crédito",
+      numero: numeroTarjeta.value,
+      clave: claveTarjeta.value,
+    };
+  }
   verificarCupon(evento, errorCheck, "Selecciona uno");
-  
+  if (verificarCupon(evento, errorCheck, "Selecciona uno")) {
+    if (rapi.checked) {
+      tipo = "RapiPago";
+    } else if (facil.checked) {
+      tipo = "Pago Fácil";
+    }
+    usuarioNuevo.metodoDePago = {
+      método: "Cupón de Pago",
+      tipo: tipo,
+    };
+  }
+
+  if (transferencia.checked) {
+    usuarioNuevo.metodoDePago = "Transferencia Bancaria: " + cbu.textContent;
+  }
 }
 
 function agregarUsuario(evento) {

@@ -217,7 +217,14 @@ function ultimoNumeroTarjeta(selector) {
   }
 }
 
-function verificarTarjeta(evento, selector, selector2, selector3, texto) {
+function verificarTarjeta(
+  evento,
+  selector,
+  selector2,
+  selector3,
+  usuario,
+  texto
+) {
   const REGEX_NUMERO = /[0-9]/;
   const REGEX_CLAVE = /[1-9]/;
 

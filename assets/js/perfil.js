@@ -119,33 +119,21 @@ function guardarMetodoDePago(
 }
 
 function verificarFormulario(evento) {
-  if (password.value != "") {
-    verificarPassword(
-      evento,
-      password,
-      password,
-      errorPassword,
-      "Ingresa tu contraseña",
-      "La contraseña debe tener al menos 8 caracteres",
-      "La contraseña debe tener al menos 2 letras, 2 números y 2 caracteres especiales"
-    );
-  }
-
   if (
     nuevaPassword.value != "" ||
     tarjeta.checked ||
     transferencia.checked ||
     cupon.checked
   ) {
-    verificarPassword(
-      evento,
-      password,
-      password,
-      errorPassword,
-      "Ingresa tu contraseña",
-      "La contraseña debe tener al menos 8 caracteres",
-      "La contraseña debe tener al menos 2 letras, 2 números y 2 caracteres especiales"
-    );
+    if (password.value == "") {
+      agregarClase("error", password, errorPassword, "Ingresa tu contraseña");
+      password.focus();
+      evento.preventDefault();
+    } else if (password.value !== USUARIO_INGRESADO.password) {
+      agregarClase("error", password, errorPassword, "Contraseña incorrecta");
+      password.focus();
+      evento.preventDefault();
+    }
   }
 
   verificarNuevaPassword(
