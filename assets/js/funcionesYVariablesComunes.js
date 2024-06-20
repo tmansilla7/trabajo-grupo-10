@@ -5,6 +5,9 @@ const JSON_USUARIOS = localStorage.getItem(LOCAL_STORAGE_USUARIOS);
 const SERIES_Y_PELICULAS = JSON.parse(JSON_SERIES_Y_PELICULAS);
 const USUARIOS = JSON.parse(JSON_USUARIOS);
 
+const JSON_USUARIO = localStorage.getItem("usuario");
+const USUARIO_INGRESADO = JSON.parse(JSON_USUARIO);
+
 function obtenerUsuariosRegistrados() {
   if (JSON_USUARIOS) {
     return USUARIOS;
@@ -58,10 +61,8 @@ function soloLetrasYNumeros(evento, selector, selector2, texto) {
   if (!REGEX_LETTERS_NUMBERS.test(selector.value)) {
     agregarClase("error", selector, selector2, texto);
     evento.preventDefault();
-    
   } else {
     usuarioNuevo.nombreDeUsuario = selector.value;
-
   }
 }
 
@@ -96,24 +97,23 @@ function verificarPassword(
   password,
   selector,
   selector2,
+  selector3,
+  selector4,
   texto,
-  texto2,
-  texto3
+  texto2
 ) {
   if (password.value == "") {
     agregarClase("error", selector, selector2, texto);
     password.focus();
     evento.preventDefault();
-    return false;
   } else if (password.value.length < 8) {
     agregarClase("error", selector, selector2, texto2);
     evento.preventDefault();
-    return false;
-  } else if (!caracteresPassword(evento, selector, selector2, texto3)) {
+  } else if (!caracteresPassword(evento, selector, selector2, texto2)) {
     evento.preventDefault();
-    return false;
+  } else {
+    selector3[selector4] = selector.value;
   }
-  return true;
 }
 
 function verificarNuevaPassword(
@@ -160,6 +160,8 @@ function verificarPasswordIguales(
     evento.preventDefault();
     agregarClase("error", selector2, selector3, texto);
     return false;
+  } else {
+    return true;
   }
 }
 

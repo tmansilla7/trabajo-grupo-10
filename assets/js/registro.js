@@ -166,9 +166,10 @@ function verificarFormulario(evento) {
     password,
     password,
     errorPassword,
+    usuarioNuevo,
+    "password",
     "Ingresa tu contraseña",
-    "La contraseña debe tener al menos 8 caracteres",
-    "La contraseña debe tener al menos 2 letras, 2 números y 2 caracteres especiales"
+    "La contraseña debe tener al menos 8 caracteres, al menos 2 letras, 2 números y 2 caracteres especiales"
   );
   verificarPasswordIguales(
     evento,
@@ -185,6 +186,7 @@ function verificarFormulario(evento) {
     "Ingresa un número válido"
   );
   verificarCupon(evento, errorCheck, "Selecciona uno");
+  
 }
 
 function agregarUsuario(evento) {
@@ -192,7 +194,23 @@ function agregarUsuario(evento) {
     usuarioNuevo.nombre != "" &&
     usuarioNuevo.apellido != "" &&
     usuarioNuevo.email != "" &&
-    usuarioNuevo.nombreDeUsuario != ""
+    usuarioNuevo.nombreDeUsuario != "" &&
+    usuarioNuevo.password != "" &&
+    verificarPasswordIguales(
+      evento,
+      password,
+      repetirPassword,
+      errorRepetirPassword,
+      "Ambas contraseñas deben ser iguales"
+    ) &&
+    verificarTarjeta(
+      evento,
+      numeroTarjeta,
+      claveTarjeta,
+      errorTarjeta,
+      "Ingresa un número válido"
+    ) &&
+    verificarCupon(evento, errorCheck, "Selecciona uno")
   ) {
     arrayUsuarios.push(usuarioNuevo);
     localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(arrayUsuarios));

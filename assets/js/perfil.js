@@ -1,6 +1,5 @@
 const nombreUsuario = document.querySelector("#nombre-usuario");
 const emailUsuario = document.querySelector("#email-usuario");
-const email = USUARIO.toLowerCase() + "@gmail.com";
 
 const password = document.querySelector("#password");
 const nuevaPassword = document.querySelector("#nueva-password");
@@ -26,8 +25,8 @@ function datosDeUsuario(selector, texto) {
   selector.textContent = texto;
 }
 
-datosDeUsuario(nombreUsuario, USUARIO);
-datosDeUsuario(emailUsuario, email);
+datosDeUsuario(nombreUsuario, USUARIO_INGRESADO.nombreDeUsuario);
+datosDeUsuario(emailUsuario, USUARIO_INGRESADO.email);
 
 function removerClaseErrorDePassword(evento) {
   removerClase("error", password, errorPassword);
@@ -86,12 +85,12 @@ function guardarMetodoDePago(
           "Ingresa un número válido"
         )
       ) {
-        metodoDePago = {
+        USUARIO_INGRESADO.metodoDePago = {
           método: "Tarjeta de Crédito",
           número: numeroTarjeta.value,
           clave: claveTarjeta.value,
         };
-        localStorage.setItem("Método de pago", JSON.stringify(metodoDePago));
+        localStorage.setItem("usuario", JSON.stringify(USUARIO_INGRESADO));
       }
 
       if (
@@ -103,16 +102,17 @@ function guardarMetodoDePago(
         } else if (facil.checked) {
           tipo = "Pago Fácil";
         }
-        metodoDePago = {
+        USUARIO_INGRESADO.metodoDePago = {
           método: "Cupón de Pago",
           tipo: tipo,
         };
-        localStorage.setItem("Método de pago", JSON.stringify(metodoDePago));
+
+        localStorage.setItem("usuario", JSON.stringify(USUARIO_INGRESADO));
       }
 
       if (transferencia.checked) {
         metodoDePago = "Transferencia Bancaria: " + cbu.textContent;
-        localStorage.setItem("Método de pago", metodoDePago);
+        localStorage.setItem("usuario", JSON.stringify(USUARIO_INGRESADO));
       }
     }
   }
@@ -188,16 +188,24 @@ function verificarFormulario(evento) {
 }
 
 function verificarCancelarSuscripcion(evento) {
-  verificarPassword(
-    evento,
-    password,
-    password,
-    errorPassword,
-    "Ingresa tu contraseña"
-  );
-  removerClaseErrorDeNuevaPassword(evento);
-  removerClaseErrorDeRepetirPassword(evento);
-  eliminarDatosDeLocalStorage();
+  if (password.value == "") {
+    agregarClase("error", password, errorPassword, "Ingresa tu contraseña");
+    password.focus();
+    evento.preventDefault();
+  } else if (password.value !== USUARIO_INGRESADO.password) {
+    agregarClase("error", password, errorPassword, "Contraseña incorrecta");
+    password.focus();
+    evento.preventDefault();
+  } else {
+    removerClaseErrorDeNuevaPassword(evento);
+    removerClaseErrorDeRepetirPassword(evento);
+    const usuarioEliminado = arrayUsuarios.find(
+      (usuario) => usuario.nombreDeUsuario === USUARIO_INGRESADO.nombreDeUsuario
+    );
+    localStorage.removeItem("usuario");
+    const filtro = USUARIOS.filter((usuario) => usuario !== usuarioEliminado);
+    localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(filtro));
+  }
 }
 
 submit.addEventListener("click", verificarFormulario);

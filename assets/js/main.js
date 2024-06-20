@@ -13,9 +13,11 @@ function removerClaseErrorDePassword(evento) {
 }
 
 function verificarFormulario(evento) {
-  let existente = arrayUsuarios.find(
+  const existente = arrayUsuarios.find(
     (usuario) => usuario.nombreDeUsuario === nombre_usuario.value
   );
+
+  const usuarioIngresado = existente
 
   if (nombre_usuario.value == "") {
     evento.preventDefault();
@@ -29,12 +31,15 @@ function verificarFormulario(evento) {
     evento.preventDefault();
     agregarClase("error", nombre_usuario, errorNombre, "Ese usuario no existe");
   } else {
-    localStorage.setItem("usuario", nombre_usuario.value);
+    localStorage.setItem("usuario",  JSON.stringify(usuarioIngresado));
   }
 
   if (password.value == "") {
     evento.preventDefault();
     agregarClase("error", password, errorPassword, "Ingresa tu contraseña");
+  } else if (password.value !== existente.password) {
+    evento.preventDefault();
+    agregarClase("error", password, errorPassword, "Contraseña incorrecta");
   }
 }
 

@@ -20,25 +20,15 @@ function removerClaseErrorDeUsuario(evento) {
 }
 
 function verificarFormulario(evento) {
-  let usuarioExistente = arrayUsuarios.find(
-    (usuario) => usuario.nombreDeUsuario === nombreUsuario.value
-  );
-
-  let emailExistente = arrayUsuarios.find(
-    (usuario) => usuario.nombreDeUsuario === nombreUsuario.value
+  let existente = arrayUsuarios.find(
+    (usuario) =>
+      usuario.nombreDeUsuario === nombreUsuario.value &&
+      usuario.email === email.value
   );
 
   if (email.value == "") {
     evento.preventDefault();
-    agregarClase(
-      "error",
-      email,
-      errorEmail,
-      "Ingresa tu email"
-    );
-  } else if (!emailExistente) {
-    evento.preventDefault();
-    agregarClase("error", email, errorEmail, "Ingresa un email válido");
+    agregarClase("error", email, errorEmail, "Ingresa tu email");
   }
 
   if (nombreUsuario.value == "") {
@@ -49,14 +39,15 @@ function verificarFormulario(evento) {
       errorUsuario,
       "Ingresa tu nombre de usuario"
     );
-  } else if (!usuarioExistente) {
+  } else if (!existente) {
     evento.preventDefault();
-    agregarClase("error", nombreUsuario, errorUsuario, "Ingresa un usuario válido");
+    agregarClase(
+      "error",
+      nombreUsuario,
+      errorUsuario,
+      "Email o usuario incorrecto"
+    );
   }
-
-  
-  
-  
 }
 
 submit.addEventListener("click", verificarFormulario);
