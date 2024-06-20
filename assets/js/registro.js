@@ -1,7 +1,7 @@
 const nombre = document.querySelector("#nombre");
 const apellido = document.querySelector("#apellido");
 const email = document.querySelector("#email");
-const usuario = document.querySelector("#usuario");
+const nombreUsuario = document.querySelector("#usuario");
 const password = document.querySelector("#password");
 const repetirPassword = document.querySelector("#rep-password");
 const tarjeta = document.querySelector("#tarjeta");
@@ -46,7 +46,7 @@ function habilitarBoton() {
     nombre.value != "" &&
     apellido.value != "" &&
     email.value != "" &&
-    usuario.value != "" &&
+    nombreUsuario.value != "" &&
     password.value != "" &&
     repetirPassword.value != "" &&
     (tarjeta.checked || cupon.checked || transferencia.checked)
@@ -68,7 +68,7 @@ function removerClaseErrorDelEmail(evento) {
 }
 
 function removerClaseErrorDelUsuario(evento) {
-  removerClase("error", usuario, errorUsuario);
+  removerClase("error", nombreUsuario, errorUsuario);
 }
 
 function removerClaseErrorDePassword(evento) {
@@ -91,6 +91,17 @@ function removerClaseErrorDeCheck(evento) {
   errorCheck.textContent = "";
 }
 
+function validarEmail(evento) {
+  const REGEX_EMAIL = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+
+  if (!REGEX_EMAIL.test(email.value)) {
+    evento.preventDefault();
+    agregarClase("error", email, errorEmail, "Ingresa un email válido");
+  } else {
+    usuarioNuevo.email = email.value;
+  }
+}
+
 function verificarFormulario(evento) {
   validarCampo(evento, nombre, errorNombre, "Ingresa tu nombre");
   soloLetras(
@@ -107,11 +118,16 @@ function verificarFormulario(evento) {
     "El apellido sólo puede contener letras"
   );
   validarCampo(evento, email, errorEmail, "Ingresa tu email");
-  usuarioNuevo.email = email.value;
-  validarCampo(evento, usuario, errorUsuario, "Ingresa el nombre de usuario");
+  validarEmail(evento);
+  validarCampo(
+    evento,
+    nombreUsuario,
+    errorUsuario,
+    "Ingresa el nombre de usuario"
+  );
   soloLetrasYNumeros(
     evento,
-    usuario,
+    nombreUsuario,
     errorUsuario,
     "El nombre de usuario sólo puede contener letras y números"
   );
@@ -139,44 +155,77 @@ function verificarFormulario(evento) {
     "Ingresa un número válido"
   );
   verificarCupon(evento, errorCheck, "Selecciona uno");
-}
 
-function agregarUsuario(evento) {
-  if (!validarCampo(evento, nombre, errorNombre, "Ingresa tu nombre")) {
-    return false;
-  }
   if (
-    !soloLetras(
+    soloLetras(
       evento,
       nombre,
       errorNombre,
       "El nombre sólo puede contener letras"
     )
   ) {
-    return false;
-  } else {
     usuarioNuevo.nombre = nombre.value;
-  }
-  if (!validarCampo(evento, apellido, errorApellido, "Ingresa tu apellido")) {
-    return false;
   }
 
   if (
-    !soloLetras(
+    soloLetras(
       evento,
       apellido,
       errorApellido,
       "El apellido sólo puede contener letras"
     )
   ) {
-    return false;
-  } else {
     usuarioNuevo.apellido = apellido.value;
   }
 
-  arrayUsuarios.push(usuarioNuevo);
-  localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(arrayUsuarios));
- 
+  if (USUARIOS == null) {
+    usuarioNuevo.nombreDeUsuario = nombreUsuario.value;
+  } else {
+    const filtro = USUARIOS.find(
+      (usuario) => usuario.nombreDeUsuario === nombreUsuario.value
+    );
+    if (
+      !soloLetrasYNumeros(
+        evento,
+        nombreUsuario,
+        errorUsuario,
+        "El nombre de usuario sólo puede contener letras y números"
+      )
+    ) {
+      usuarioNuevo.nombreDeUsuario = "";
+    }
+
+    if (filtro) {
+      agregarClase(
+        "error",
+        nombreUsuario,
+        errorUsuario,
+        "Ese nombre de usuario ya existe"
+      );
+      usuarioNuevo.nombreDeUsuario = "";
+    } else {
+      usuarioNuevo.nombreDeUsuario = nombreUsuario.value;
+    }
+  }
+}
+
+function agregarUsuario(evento) {
+  if (
+    usuarioNuevo.nombre != "" &&
+    usuarioNuevo.apellido != "" &&
+    usuarioNuevo.email != "" &&
+    usuarioNuevo.nombreDeUsuario != ""
+  ) {
+    arrayUsuarios.push(usuarioNuevo);
+    localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(arrayUsuarios));
+  }
+
+  console.log(
+    usuarioNuevo.nombre,
+    usuarioNuevo.apellido,
+    usuarioNuevo.email,
+    usuarioNuevo.nombreDeUsuario
+  );
 }
 
 submit.addEventListener("click", verificarFormulario);
@@ -184,7 +233,7 @@ submit.addEventListener("click", agregarUsuario);
 nombre.addEventListener("keyup", removerClaseErrorDelNombre);
 apellido.addEventListener("keyup", removerClaseErrorDelApellido);
 email.addEventListener("keyup", removerClaseErrorDelEmail);
-usuario.addEventListener("keyup", removerClaseErrorDelUsuario);
+nombreUsuario.addEventListener("keyup", removerClaseErrorDelUsuario);
 password.addEventListener("keyup", removerClaseErrorDePassword);
 repetirPassword.addEventListener("keyup", removerClaseErrorDeRepetirPassword);
 numeroTarjeta.addEventListener("keyup", removerClaseErrorDeNumero);
@@ -192,7 +241,7 @@ claveTarjeta.addEventListener("keyup", removerClaseErrorDeClave);
 nombre.addEventListener("keyup", habilitarBoton);
 apellido.addEventListener("keyup", habilitarBoton);
 email.addEventListener("keyup", habilitarBoton);
-usuario.addEventListener("keyup", habilitarBoton);
+nombreUsuario.addEventListener("keyup", habilitarBoton);
 password.addEventListener("keyup", habilitarBoton);
 repetirPassword.addEventListener("keyup", habilitarBoton);
 tarjeta.addEventListener("click", habilitarBoton);
