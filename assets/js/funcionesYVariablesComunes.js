@@ -3,14 +3,6 @@ const JSON_SERIES_Y_PELICULAS = localStorage.getItem(
 );
 const SERIES_Y_PELICULAS = JSON.parse(JSON_SERIES_Y_PELICULAS);
 
-const cerrarSesion = document.querySelector("#cerrar-sesion a");
-
-function eliminarDatosDeLocalStorage() {
-  localStorage.clear();
-}
-
-cerrarSesion.addEventListener("click", eliminarDatosDeLocalStorage);
-
 let nodo_section = document.querySelector(".sermov");
 const CATEGORIAS = document.querySelector("#categorias");
 let categoria_seleccionada = "Todas";

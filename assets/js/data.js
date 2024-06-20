@@ -161,18 +161,22 @@ const SUPERNATURAL = {
   },
   similares: [
     {
+      titulo: "Stranger Things",
       src: "https://www.aceprensa.com/wp-content/uploads/2016/10/stranger-things.jpg",
       alt: "stranger things",
     },
     {
+      titulo: "The Witcher",
       src: "https://es.web.img2.acsta.net/pictures/19/11/22/09/33/5060052.jpg",
       alt: "the witcher",
     },
     {
+      titulo: "The last of us",
       src: "https://pics.filmaffinity.com/The_Last_of_Us_Cuando_te_pierdas_en_la_oscuridad_Episodio_piloto_TV-991188499-mmed.jpg",
       alt: "the last of us",
     },
     {
+      titulo: "The Boys",
       src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
       alt: "the boys",
     },
@@ -295,18 +299,22 @@ const HEROES = {
   },
   similares: [
     {
+      titulo: "Game of Thrones",
       src: "https://images.justwatch.com/poster/245159343/s592/juego-de-tronos",
       alt: "juego de tronos",
     },
     {
+      titulo: "The Boys",
       src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
       alt: "the boys",
     },
     {
+      titulo: "Los anillos del poder",
       src: "https://es.web.img3.acsta.net/pictures/22/10/04/16/26/1929878.jpg",
       alt: "los anillos del poder",
     },
     {
+      titulo: "Merlina",
       src: "../assets/img/merlina.jpg",
       alt: "merlina",
     },
@@ -352,18 +360,22 @@ const VOLVER_AL_FUTURO = {
   },
   similares: [
     {
+      titulo: "10 things I Hate",
       src: "../assets/img/10things.jpeg",
       alt: "10 things I hate about you",
     },
     {
+      titulo: "Smile",
       src: "../assets/img/smile.jpg",
       alt: "smile",
     },
     {
+      titulo: "Gladiator",
       src: "../assets/img/gladiator.jpg",
       alt: "gladiator",
     },
     {
+      titulo: "Torrente",
       src: "../assets/img/torrente.jpg",
       alt: "torrente",
     },
@@ -442,18 +454,22 @@ const THE_BOYS = {
   },
   similares: [
     {
+      titulo: "Heroes",
       src: "../assets/img/Heroes.jpg",
       alt: "heroes",
     },
     {
+      titulo: "Supernatural",
       src: "../assets/img/Supernatural.jpg",
       alt: "supernatural",
     },
     {
+      titulo: "Los anillos del poder",
       src: "https://es.web.img3.acsta.net/pictures/22/10/04/16/26/1929878.jpg",
       alt: "los anillos del poder",
     },
     {
+      titulo: "House of the Dragon",
       src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
       alt: "house of the dragon",
     },
@@ -499,18 +515,22 @@ const TORRENTE = {
   },
   similares: [
     {
+      titulo: "10 things I Hate",
       src: "../assets/img/10things.jpeg",
       alt: "10 things I hate about you",
     },
     {
+      titulo: "Smile",
       src: "../assets/img/smile.jpg",
       alt: "smile",
     },
     {
+      titulo: "Gladiator",
       src: "../assets/img/gladiator.jpg",
       alt: "gladiator",
     },
     {
+      titulo: "Volver al Futuro",
       src: "../assets/img/volver al futuro.jpg",
       alt: "volver al futuro",
     },
@@ -573,18 +593,22 @@ const THE_END_OF_THE_FXXXING_WORLD = {
   },
   similares: [
     {
+      titulo: "Game of Thrones",
       src: "https://images.justwatch.com/poster/245159343/s592/juego-de-tronos",
       alt: "juego de tronos",
     },
     {
+      titulo: "The Boys",
       src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
       alt: "the boys",
     },
     {
+      titulo: "Los anillos del poder",
       src: "https://es.web.img3.acsta.net/pictures/22/10/04/16/26/1929878.jpg",
       alt: "los anillos del poder",
     },
     {
+      titulo: "Merlina",
       src: "../assets/img/merlina.jpg",
       alt: "merlina",
     },
@@ -659,18 +683,22 @@ const REASONS_WHY = {
   },
   similares: [
     {
+      titulo: "Merlina",
       src: "../assets/img/merlina.jpg",
       alt: "merlina",
     },
     {
+      titulo: "The A List",
       src: "../assets/img/thealist.jpg",
       alt: "the a list",
     },
     {
+      titulo: "The End of the F*g world",
       src: "../assets/img/theendof.jpg",
       alt: "the end of the f*g world",
     },
     {
+      titulo: "Heroes",
       src: "../assets/img/Heroes.jpg",
       alt: "heroes",
     },
@@ -717,20 +745,24 @@ const MERLINA = {
   },
   similares: [
     {
+      titulo: "Game of Thrones",
       src: "https://images.justwatch.com/poster/245159343/s592/juego-de-tronos",
       alt: "juego de tronos",
     },
     {
+      titulo: "The Boys",
       src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
       alt: "the boys",
     },
     {
+      titulo: "Los anillos del poder",
       src: "https://es.web.img3.acsta.net/pictures/22/10/04/16/26/1929878.jpg",
       alt: "los anillos del poder",
     },
     {
-      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
-      alt: "house of the dragon",
+      titulo: "The End of the F*g world",
+      src: "../assets/img/theendof.jpg",
+      alt: "the end of the f*g world",
     },
   ],
 };
@@ -774,20 +806,24 @@ const SMILE = {
   },
   similares: [
     {
+      titulo: "10 things I Hate",
       src: "../assets/img/10things.jpeg",
       alt: "10 things I hate about you",
     },
     {
-      src: "../assets/img/smile.jpg",
-      alt: "smile",
+      titulo: "Volver al Futuro",
+      src: "../assets/img/volver al futuro.jpg",
+      alt: "volver al futuro",
     },
     {
+      titulo: "Gladiator",
       src: "../assets/img/gladiator.jpg",
       alt: "gladiator",
     },
     {
-      src: "../assets/img/volver al futuro.jpg",
-      alt: "volver al futuro",
+      titulo: "Torrente",
+      src: "../assets/img/torrente.jpg",
+      alt: "torrente",
     },
   ],
 };
@@ -823,20 +859,24 @@ const GLADIATOR = {
   },
   similares: [
     {
+      titulo: "10 things I Hate",
       src: "../assets/img/10things.jpeg",
       alt: "10 things I hate about you",
     },
     {
-      src: "../assets/img/smile.jpg",
-      alt: "smile",
-    },
-    {
-      src: "../assets/img/Eragon.jpg",
-      alt: "eragon",
-    },
-    {
+      titulo: "Volver al Futuro",
       src: "../assets/img/volver al futuro.jpg",
       alt: "volver al futuro",
+    },
+    {
+      titulo: "Torrente",
+      src: "../assets/img/torrente.jpg",
+      alt: "torrente",
+    },
+    {
+      titulo: "Eragon",
+      src: "../assets/img/Eragon.jpg",
+      alt: "eragon",
     },
   ],
 };
@@ -876,20 +916,24 @@ const THENTHINGSIHATE = {
   },
   similares: [
     {
+      titulo: "Volver al Futuro",
+      src: "../assets/img/volver al futuro.jpg",
+      alt: "volver al futuro",
+    },
+    {
+      titulo: "Torrente",
       src: "../assets/img/torrente.jpg",
       alt: "torrente",
     },
     {
+      titulo: "Eragon",
+      src: "../assets/img/Eragon.jpg",
+      alt: "eragon",
+    },
+    {
+      titulo: "Smile",
       src: "../assets/img/smile.jpg",
       alt: "smile",
-    },
-    {
-      src: "../assets/img/gladiator.jpg",
-      alt: "gladiator",
-    },
-    {
-      src: "../assets/img/volver al futuro.jpg",
-      alt: "volver al futuro",
     },
   ],
 };
@@ -974,20 +1018,24 @@ const LOST = {
   },
   similares: [
     {
-      src: "https://images.justwatch.com/poster/245159343/s592/juego-de-tronos",
-      alt: "juego de tronos",
+      titulo: "Supernatural",
+      src: "../assets/img/Supernatural.jpg",
+      alt: "supernatural",
     },
     {
-      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
-      alt: "the boys",
+      titulo: "The A List",
+      src: "../assets/img/thealist.jpg",
+      alt: "the a list",
     },
     {
-      src: "https://es.web.img3.acsta.net/pictures/22/10/04/16/26/1929878.jpg",
-      alt: "los anillos del poder",
+      titulo: "The End of the F*g world",
+      src: "../assets/img/theendof.jpg",
+      alt: "the end of the f*g world",
     },
     {
-      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
-      alt: "house of the dragon",
+      titulo: "Heroes",
+      src: "../assets/img/Heroes.jpg",
+      alt: "heroes",
     },
   ],
 };
@@ -1052,20 +1100,24 @@ const EL_LUGAR_BUENO = {
   },
   similares: [
     {
+      titulo: "Supernatural",
       src: "../assets/img/Supernatural.jpg",
       alt: "supernatural",
     },
     {
+      titulo: "The A List",
+      src: "../assets/img/thealist.jpg",
+      alt: "the a list",
+    },
+    {
+      titulo: "The End of the F*g world",
+      src: "../assets/img/theendof.jpg",
+      alt: "the end of the f*g world",
+    },
+    {
+      titulo: "Heroes",
       src: "../assets/img/Heroes.jpg",
       alt: "heroes",
-    },
-    {
-      src: "../assets/img/merlina.jpg",
-      alt: "merlina",
-    },
-    {
-      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
-      alt: "house of the dragon",
     },
   ],
 };
@@ -1105,20 +1157,24 @@ const ZATHURA = {
   },
   similares: [
     {
-      src: "../assets/img/10things.jpeg",
-      alt: "10 things I hate about you",
-    },
-    {
-      src: "../assets/img/smile.jpg",
-      alt: "smile",
-    },
-    {
-      src: "../assets/img/gladiator.jpg",
-      alt: "gladiator",
-    },
-    {
+      titulo: "Volver al Futuro",
       src: "../assets/img/volver al futuro.jpg",
       alt: "volver al futuro",
+    },
+    {
+      titulo: "Torrente",
+      src: "../assets/img/torrente.jpg",
+      alt: "torrente",
+    },
+    {
+      titulo: "Eragon",
+      src: "../assets/img/Eragon.jpg",
+      alt: "eragon",
+    },
+    {
+      titulo: "Smile",
+      src: "../assets/img/smile.jpg",
+      alt: "smile",
     },
   ],
 };
@@ -1175,20 +1231,24 @@ const CHUCKY = {
   },
   similares: [
     {
+      titulo: "Supernatural",
       src: "../assets/img/Supernatural.jpg",
       alt: "supernatural",
     },
     {
-      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
-      alt: "the boys",
+      titulo: "The A List",
+      src: "../assets/img/thealist.jpg",
+      alt: "the a list",
     },
     {
-      src: "../assets/img/merlina.jpg",
-      alt: "merlina",
+      titulo: "The End of the F*g world",
+      src: "../assets/img/theendof.jpg",
+      alt: "the end of the f*g world",
     },
     {
-      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
-      alt: "house of the dragon",
+      titulo: "Heroes",
+      src: "../assets/img/Heroes.jpg",
+      alt: "heroes",
     },
   ],
 };
@@ -1240,20 +1300,24 @@ const ERAGON = {
   },
   similares: [
     {
+      titulo: "10 things I Hate",
       src: "../assets/img/10things.jpeg",
       alt: "10 things I hate about you",
     },
     {
-      src: "../assets/img/smile.jpg",
-      alt: "smile",
-    },
-    {
-      src: "../assets/img/gladiator.jpg",
-      alt: "gladiator",
-    },
-    {
+      titulo: "Volver al Futuro",
       src: "../assets/img/volver al futuro.jpg",
       alt: "volver al futuro",
+    },
+    {
+      titulo: "Torrente",
+      src: "../assets/img/torrente.jpg",
+      alt: "torrente",
+    },
+    {
+      titulo: "Smile",
+      src: "../assets/img/smile.jpg",
+      alt: "smile",
     },
   ],
 };
@@ -1314,20 +1378,24 @@ const GAMEOFTHRONES = {
   },
   similares: [
     {
+      titulo: "House of the Dragon",
+      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
+      alt: "house of the dragon",
+    },
+    {
+      titulo: "Supernatural",
       src: "../assets/img/Supernatural.jpg",
       alt: "supernatural",
     },
     {
-      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
-      alt: "the boys",
+      titulo: "The A List",
+      src: "../assets/img/thealist.jpg",
+      alt: "the a list",
     },
     {
-      src: "../assets/img/merlina.jpg",
-      alt: "merlina",
-    },
-    {
-      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
-      alt: "house of the dragon",
+      titulo: "Heroes",
+      src: "../assets/img/Heroes.jpg",
+      alt: "heroes",
     },
   ],
 };
@@ -1381,20 +1449,24 @@ const HOUSEOFTHEDRAGON = {
   },
   similares: [
     {
+      titulo: "Game of Thrones",
+      src: "../assets/img/gameofthrones.jpg",
+      alt: "game of thrones",
+    },
+    {
+      titulo: "Supernatural",
       src: "../assets/img/Supernatural.jpg",
       alt: "supernatural",
     },
     {
-      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
-      alt: "the boys",
+      titulo: "The A List",
+      src: "../assets/img/thealist.jpg",
+      alt: "the a list",
     },
     {
-      src: "../assets/img/merlina.jpg",
-      alt: "merlina",
-    },
-    {
-      src: "../assets/img/gameofthrones.jpg",
-      alt: "game of thrones",
+      titulo: "The End of the F*g world",
+      src: "../assets/img/theendof.jpg",
+      alt: "the end of the f*g world",
     },
   ],
 };
@@ -1448,20 +1520,24 @@ const LOSANILLOSDELPODER = {
   },
   similares: [
     {
+      titulo: "Game of Thrones",
+      src: "../assets/img/gameofthrones.jpg",
+      alt: "game of thrones",
+    },
+    {
+      titulo: "Supernatural",
       src: "../assets/img/Supernatural.jpg",
       alt: "supernatural",
     },
     {
-      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
-      alt: "the boys",
+      titulo: "The A List",
+      src: "../assets/img/thealist.jpg",
+      alt: "the a list",
     },
     {
-      src: "../assets/img/merlina.jpg",
-      alt: "merlina",
-    },
-    {
-      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
-      alt: "house of the dragon",
+      titulo: "The End of the F*g world",
+      src: "../assets/img/theendof.jpg",
+      alt: "the end of the f*g world",
     },
   ],
 };
@@ -1507,7 +1583,7 @@ const STRANGERTHINGS = {
     },
   ],
   sinopsis:
-    "              Stranger Things está ambientada en el pueblo ficticio de Hawkins, Indiana, en los años 1980. El cercano Laboratorio Nacional Hawkins aparentemente realiza investigaciones científicas para el Departamento de Energía de los Estados Unidos, pero experimenta en secreto con lo paranormal y lo sobrenatural, a veces con sujetos de prueba humanos. Sin darse cuenta, han creado un portal a una dimensión alternativa a la que se refieren como Upside Down, cuya presencia comienza a afectar a los residentes de Hawkins de manera calamitosa.",
+    "Stranger Things está ambientada en el pueblo ficticio de Hawkins, Indiana, en los años 1980. El cercano Laboratorio Nacional Hawkins aparentemente realiza investigaciones científicas para el Departamento de Energía de los Estados Unidos, pero experimenta en secreto con lo paranormal y lo sobrenatural, a veces con sujetos de prueba humanos. Sin darse cuenta, han creado un portal a una dimensión alternativa a la que se refieren como Upside Down, cuya presencia comienza a afectar a los residentes de Hawkins de manera calamitosa.",
 
   trailer: {
     url_iframe: "https://www.youtube.com/embed/x7Yq9MJUqjY?si=OWyiUcu5NPMAcgEg",
@@ -1516,20 +1592,24 @@ const STRANGERTHINGS = {
   },
   similares: [
     {
+      titulo: "Game of Thrones",
+      src: "../assets/img/gameofthrones.jpg",
+      alt: "game of thrones",
+    },
+    {
+      titulo: "Supernatural",
       src: "../assets/img/Supernatural.jpg",
       alt: "supernatural",
     },
     {
-      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
-      alt: "the boys",
+      titulo: "The A List",
+      src: "../assets/img/thealist.jpg",
+      alt: "the a list",
     },
     {
-      src: "../assets/img/merlina.jpg",
-      alt: "merlina",
-    },
-    {
-      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
-      alt: "house of the dragon",
+      titulo: "The End of the F*g world",
+      src: "../assets/img/theendof.jpg",
+      alt: "the end of the f*g world",
     },
   ],
 };
@@ -1583,20 +1663,24 @@ const THEALIST = {
   },
   similares: [
     {
-      src: "../assets/img/Supernatural.jpg",
-      alt: "supernatural",
-    },
-    {
-      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
-      alt: "the boys",
-    },
-    {
+      titulo: "Merlina",
       src: "../assets/img/merlina.jpg",
       alt: "merlina",
     },
     {
-      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
-      alt: "house of the dragon",
+      titulo: "Game of Thrones",
+      src: "../assets/img/gameofthrones.jpg",
+      alt: "game of thrones",
+    },
+    {
+      titulo: "Supernatural",
+      src: "../assets/img/Supernatural.jpg",
+      alt: "supernatural",
+    },
+    {
+      titulo: "The End of the F*g world",
+      src: "../assets/img/theendof.jpg",
+      alt: "the end of the f*g world",
     },
   ],
 };
@@ -1650,20 +1734,24 @@ const THELASTOFUS = {
   },
   similares: [
     {
-      src: "../assets/img/Supernatural.jpg",
-      alt: "supernatural",
-    },
-    {
-      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
-      alt: "the boys",
-    },
-    {
+      titulo: "Merlina",
       src: "../assets/img/merlina.jpg",
       alt: "merlina",
     },
     {
-      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
-      alt: "house of the dragon",
+      titulo: "Game of Thrones",
+      src: "../assets/img/gameofthrones.jpg",
+      alt: "game of thrones",
+    },
+    {
+      titulo: "Supernatural",
+      src: "../assets/img/Supernatural.jpg",
+      alt: "supernatural",
+    },
+    {
+      titulo: "The End of the F*g world",
+      src: "../assets/img/theendof.jpg",
+      alt: "the end of the f*g world",
     },
   ],
 };
@@ -1717,20 +1805,24 @@ const THERAIN = {
   },
   similares: [
     {
-      src: "../assets/img/Supernatural.jpg",
-      alt: "supernatural",
-    },
-    {
-      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
-      alt: "the boys",
-    },
-    {
+      titulo: "Merlina",
       src: "../assets/img/merlina.jpg",
       alt: "merlina",
     },
     {
-      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
-      alt: "house of the dragon",
+      titulo: "Game of Thrones",
+      src: "../assets/img/gameofthrones.jpg",
+      alt: "game of thrones",
+    },
+    {
+      titulo: "Supernatural",
+      src: "../assets/img/Supernatural.jpg",
+      alt: "supernatural",
+    },
+    {
+      titulo: "The End of the F*g world",
+      src: "../assets/img/theendof.jpg",
+      alt: "the end of the f*g world",
     },
   ],
 };
@@ -1784,20 +1876,24 @@ const THEWITCHER = {
   },
   similares: [
     {
-      src: "../assets/img/Supernatural.jpg",
-      alt: "supernatural",
-    },
-    {
-      src: "https://es.web.img3.acsta.net/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52",
-      alt: "the boys",
-    },
-    {
+      titulo: "Merlina",
       src: "../assets/img/merlina.jpg",
       alt: "merlina",
     },
     {
-      src: "https://www.teaservision.com/uploads/images/House_of_the_Dragon-6397412582128.jpeg",
-      alt: "house of the dragon",
+      titulo: "Game of Thrones",
+      src: "../assets/img/gameofthrones.jpg",
+      alt: "game of thrones",
+    },
+    {
+      titulo: "Supernatural",
+      src: "../assets/img/Supernatural.jpg",
+      alt: "supernatural",
+    },
+    {
+      titulo: "The End of the F*g world",
+      src: "../assets/img/theendof.jpg",
+      alt: "the end of the f*g world",
     },
   ],
 };
@@ -1849,18 +1945,22 @@ const YO_ANTES_DE_TI = {
   },
   similares: [
     {
+      titulo: "10 things I Hate",
       src: "../assets/img/10things.jpeg",
       alt: "10 things I hate about you",
     },
     {
+      titulo: "Smile",
       src: "../assets/img/smile.jpg",
       alt: "smile",
     },
     {
+      titulo: "Gladiator",
       src: "../assets/img/gladiator.jpg",
       alt: "gladiator",
     },
     {
+      titulo: "Torrente",
       src: "../assets/img/torrente.jpg",
       alt: "torrente",
     },

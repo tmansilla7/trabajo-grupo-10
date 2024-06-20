@@ -94,10 +94,19 @@ function agregarSimilares(array) {
   const nodo_similares = document.querySelector(".similares");
   for (let similar of array["similares"]) {
     let nodo_similar = document.createElement("article");
+    let nodo_a = document.createElement("a");
+
+    for (let i in SERIES_PELICULAS) {
+      if (SERIES_PELICULAS[i]["titulo"] == similar["titulo"]) {
+        nodo_a.href = `./serie-pelicula.html?indice=${i}`;
+      }
+    }
+
     let nodo_img = document.createElement("img");
     nodo_img.src = similar["src"];
     nodo_img.alt = similar["alt"];
-    nodo_similar.appendChild(nodo_img);
+    nodo_a.appendChild(nodo_img);
+    nodo_similar.appendChild(nodo_a);
     nodo_similares.appendChild(nodo_similar);
   }
 }
