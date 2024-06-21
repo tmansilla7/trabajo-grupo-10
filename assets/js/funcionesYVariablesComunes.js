@@ -121,16 +121,14 @@ function verificarNuevaPassword(
   password,
   selector,
   selector2,
-  texto2,
-  texto3
+  texto,
 ) {
   if (password.value.length < 8 && password.value != "") {
-    agregarClase("error", selector, selector2, texto2);
-    password.focus();
+    agregarClase("error", selector, selector2, texto);
     evento.preventDefault();
     return false;
   } else {
-    caracteresPassword(evento, selector, selector2, texto3);
+    caracteresPassword(evento, selector, selector2, texto);
     evento.preventDefault();
     return false;
   }
@@ -222,7 +220,6 @@ function verificarTarjeta(
   selector,
   selector2,
   selector3,
-  usuario,
   texto
 ) {
   const REGEX_NUMERO = /[0-9]/;

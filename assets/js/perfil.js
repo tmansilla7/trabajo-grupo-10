@@ -68,7 +68,44 @@ function datosGuardadosCorrectamente() {
   metodo_guardado.textContent = "Los datos fueron guardados correctamente";
 }
 
-function cambiarPassword() {}
+function cambiarPassword(evento) {
+  let dataStorage = JSON.parse(localStorage.getItem("usuario"));
+  let usuariosRegistrados = JSON.parse(localStorage.getItem("usuarios"));
+  let usuarioEnArray = usuariosRegistrados.find(
+    (usuario) => usuario.nombreDeUsuario === dataStorage.nombreDeUsuario
+  );
+  if (password.value == "") {
+    agregarClase("error", password, errorPassword, "Ingresa tu contraseña");
+    password.focus();
+    evento.preventDefault();
+  } else {
+    if (password.value != dataStorage.password) {
+      agregarClase("error", password, errorPassword, "Contraseña incorrecta");
+      password.focus();
+      evento.preventDefault();
+    } else if (
+      caracteresPassword(
+        evento,
+        nuevaPassword,
+        errorNuevaPassword,
+        "La contraseña debe tener al menos 8 caracteres, al menos 2 letras, 2 números y 2 caracteres especiales"
+      )
+    ) {
+      dataStorage.password = nuevaPassword.value;
+
+      localStorage.setItem("usuario", JSON.stringify(dataStorage));
+
+      const filtro = usuariosRegistrados.filter(
+        (usuario) => usuario !== usuarioEnArray
+      );
+      filtro.push(dataStorage);
+      localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(filtro));
+
+      datosGuardadosCorrectamente();
+      removerClaseErrorDePassword(evento);
+    }
+  }
+}
 
 function guardarMetodoDePago(evento) {
   metodo_guardado.textContent = "";
@@ -112,6 +149,7 @@ function guardarMetodoDePago(evento) {
       localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(filtro));
 
       datosGuardadosCorrectamente();
+      removerClaseErrorDePassword(evento);
     } else if (
       cupon.checked &&
       verificarCupon(evento, errorCheck, "Selecciona uno")
@@ -135,9 +173,10 @@ function guardarMetodoDePago(evento) {
       localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(filtro));
 
       datosGuardadosCorrectamente();
+      removerClaseErrorDePassword(evento);
     } else if (transferencia.checked) {
       dataStorage.metodoDePago = "Transferencia Bancaria: " + cbu.textContent;
-     
+
       localStorage.setItem("usuario", JSON.stringify(dataStorage));
 
       const filtro = usuariosRegistrados.filter(
@@ -147,6 +186,7 @@ function guardarMetodoDePago(evento) {
       localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(filtro));
 
       datosGuardadosCorrectamente();
+      removerClaseErrorDePassword(evento);
     }
   }
 }
@@ -174,8 +214,7 @@ function verificarFormulario(evento) {
     nuevaPassword,
     nuevaPassword,
     errorNuevaPassword,
-    "La contraseña debe tener al menos 8 caracteres",
-    "La contraseña debe tener al menos 2 letras, 2 números y 2 caracteres especiales"
+    "La contraseña debe tener al menos 8 caracteres, al menos 2 letras, 2 números y 2 caracteres especiales"
   );
   verificarPasswordDiferentes(
     evento,
@@ -198,6 +237,7 @@ function verificarFormulario(evento) {
   if (!verificarCupon(evento, errorCheck, "Selecciona uno")) {
     submit.disabled = true;
   }
+  cambiarPassword(evento);
   guardarMetodoDePago(evento);
 }
 
