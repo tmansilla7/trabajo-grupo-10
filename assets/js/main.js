@@ -13,16 +13,15 @@ function removerClaseErrorDePassword(evento) {
 }
 
 function verificarFormulario(evento) {
-  let existente = ""
-  
-  if (nombre_usuario !== "") {
-     existente = arrayUsuarios.find(
-    (usuario) => usuario.nombreDeUsuario === nombre_usuario.value
-  );
-  }
- 
+  let existente = "";
 
-  const usuarioIngresado = existente
+  if (nombre_usuario !== "") {
+    existente = arrayUsuarios.find(
+      (usuario) => usuario.nombreDeUsuario === nombre_usuario.value
+    );
+  }
+
+  const usuarioIngresado = existente;
 
   if (nombre_usuario.value == "") {
     evento.preventDefault();
@@ -36,7 +35,7 @@ function verificarFormulario(evento) {
     evento.preventDefault();
     agregarClase("error", nombre_usuario, errorNombre, "Ese usuario no existe");
   } else {
-    localStorage.setItem("usuario",  JSON.stringify(usuarioIngresado));
+    localStorage.setItem("usuario", JSON.stringify(usuarioIngresado));
   }
 
   if (password.value == "") {
@@ -45,7 +44,7 @@ function verificarFormulario(evento) {
   } else if (!existente || password.value !== existente.password) {
     evento.preventDefault();
     agregarClase("error", password, errorPassword, "Contraseña incorrecta");
-  } 
+  }
 }
 
 submit.addEventListener("click", verificarFormulario);

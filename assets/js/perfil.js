@@ -14,6 +14,7 @@ const claveTarjeta = document.querySelector("#claveTarjeta");
 const cbu = document.querySelector("#cbu");
 const submit = document.querySelector("#btn-submit");
 const cancelar = document.querySelector("#btn-cancelar");
+const metodo_guardado = document.querySelector("#metodo-guardado");
 
 const errorPassword = document.querySelector("#errorPassword");
 const errorNuevaPassword = document.querySelector("#errorNuevaPassword");
@@ -62,58 +63,93 @@ function habilitarBoton() {
   submit.disabled = !(passMatch || metodoPagoSeleccionado);
 }
 
-function guardarMetodoDePago(
-  evento,
-  password,
-  errorPassword,
-  texto1,
-  texto2,
-  texto3
-) {
-  if (tarjeta.checked || transferencia.checked || cupon.checked) {
-    let metodoDePago = {};
-    if (
-      verificarPassword(evento, password, errorPassword, texto1, texto2, texto3)
+function datosGuardadosCorrectamente() {
+  metodo_guardado.classList.add("correcto");
+  metodo_guardado.textContent = "Los datos fueron guardados correctamente";
+}
+
+function cambiarPassword() {
+  
+}
+
+function guardarMetodoDePago(evento) {
+  let dataStorage = JSON.parse(localStorage.getItem("usuario"));
+  let usuariosRegistrados = JSON.parse(localStorage.getItem("usuarios"));
+  let usuarioEnArray = usuariosRegistrados.find(
+    (usuario) => usuario.nombreDeUsuario === dataStorage.nombreDeUsuario
+  );
+
+  if (password.value == "") {
+    agregarClase("error", password, errorPassword, "Ingresa tu contraseña");
+      password.focus();
+      evento.preventDefault();
+  } else if (tarjeta.checked || transferencia.checked || cupon.checked) {
+    if (password.value != dataStorage.password) {
+      agregarClase("error", password, errorPassword, "Contraseña incorrecta");
+      password.focus();
+      evento.preventDefault();
+    } else if (
+      tarjeta.checked &&
+      verificarTarjeta(
+        evento,
+        numeroTarjeta,
+        claveTarjeta,
+        errorTarjeta,
+        "Ingresa un número válido"
+      )
     ) {
-      if (
-        tarjeta.checked &&
-        verificarTarjeta(
-          evento,
-          numeroTarjeta,
-          claveTarjeta,
-          errorTarjeta,
-          "Ingresa un número válido"
-        )
-      ) {
-        USUARIO_INGRESADO.metodoDePago = {
-          método: "Tarjeta de Crédito",
-          número: numeroTarjeta.value,
-          clave: claveTarjeta.value,
-        };
-        localStorage.setItem("usuario", JSON.stringify(USUARIO_INGRESADO));
-      }
+      dataStorage.metodoDePago = {
+        método: "Tarjeta de Crédito",
+        número: numeroTarjeta.value,
+        clave: claveTarjeta.value,
+      };
+      usuarioEnArray.metodoDePago = {
+        método: "Tarjeta de Crédito",
+        número: numeroTarjeta.value,
+        clave: claveTarjeta.value,
+      };
+      localStorage.setItem("usuario", JSON.stringify(dataStorage));
 
-      if (
-        cupon.checked &&
-        verificarCupon(evento, errorCheck, "Selecciona uno")
-      ) {
-        if (rapi.checked) {
-          tipo = "RapiPago";
-        } else if (facil.checked) {
-          tipo = "Pago Fácil";
-        }
-        USUARIO_INGRESADO.metodoDePago = {
-          método: "Cupón de Pago",
-          tipo: tipo,
-        };
+      usuariosRegistrados.push(usuarioEnArray);
+      localStorage.setItem("usuarios", JSON.stringify(usuariosRegistrados));
 
-        localStorage.setItem("usuario", JSON.stringify(USUARIO_INGRESADO));
+      datosGuardadosCorrectamente();
+    } else if (
+      cupon.checked &&
+      verificarCupon(evento, errorCheck, "Selecciona uno")
+    ) {
+      let tipo = "";
+      if (rapi.checked) {
+        tipo = "RapiPago";
+      } else if (facil.checked) {
+        tipo = "Pago Fácil";
       }
+      dataStorage.metodoDePago = {
+        método: "Cupón de Pago",
+        tipo: tipo,
+      };
+      usuarioEnArray.metodoDePago = {
+        método: "Cupón de Pago",
+        tipo: tipo,
+      };
 
-      if (transferencia.checked) {
-        metodoDePago = "Transferencia Bancaria: " + cbu.textContent;
-        localStorage.setItem("usuario", JSON.stringify(USUARIO_INGRESADO));
-      }
+      localStorage.setItem("usuario", JSON.stringify(dataStorage));
+
+      usuariosRegistrados.push(usuarioEnArray);
+      localStorage.setItem("usuarios", JSON.stringify(usuariosRegistrados));
+
+      datosGuardadosCorrectamente();
+    } else if (transferencia.checked) {
+      dataStorage.metodoDePago = "Transferencia Bancaria: " + cbu.textContent;
+      usuarioEnArray.metodoDePago =
+        "Transferencia Bancaria: " + cbu.textContent;
+
+      localStorage.setItem("usuario", JSON.stringify(dataStorage));
+
+      usuariosRegistrados.push(usuarioEnArray);
+      localStorage.setItem("usuarios", JSON.stringify(usuariosRegistrados));
+
+      datosGuardadosCorrectamente();
     }
   }
 }
@@ -166,12 +202,7 @@ function verificarFormulario(evento) {
     submit.disabled = true;
   }
   guardarMetodoDePago(
-    evento,
-    password,
-    password,
-    "Ingresa tu contraseña",
-    "La contraseña debe tener al menos 8 caracteres",
-    "La contraseña debe tener al menos 2 letras, 2 números y 2 caracteres especiales"
+    evento
   );
 }
 

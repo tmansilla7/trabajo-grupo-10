@@ -100,8 +100,8 @@
   font-size: 2em;
 }
 
-@media (min-width: 768px) { 
-  .registro h1{
+@media (min-width: 768px) {
+  .registro h1 {
     margin: 2em 0 1em 2em;
   }
 }
@@ -141,7 +141,7 @@
   margin-top: 1em;
   text-align: left;
   margin-left: 0;
-  width: 250px
+  width: 250px;
 }
 
 .perfil-guardar {
@@ -214,9 +214,23 @@
   border: 2px solid #ff0000;
 }
 
-#errorNombre, #errorPassword, #errorEmail, #errorApellido, #errorUsuario, #errorNuevaPassword, #errorRepetirPassword, #errorTarjeta, #errorCheck {
+#errorNombre,
+#errorPassword,
+#errorEmail,
+#errorApellido,
+#errorUsuario,
+#errorNuevaPassword,
+#errorRepetirPassword,
+#errorTarjeta,
+#errorCheck {
   font-size: 1rem;
   margin: 0.5rem 0;
   color: #ff0000;
   text-align: center;
+}
+
+.correcto {
+  color: #011708;
+  text-align: center;
+  margin-top: 1rem;
 }

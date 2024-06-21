@@ -196,24 +196,26 @@ function verificarFormulario(evento) {
     )
   ) {
     usuarioNuevo.metodoDePago = {
-      tipo: "Tarjeta de Crédito",
+      metodo: "Tarjeta de Crédito",
       numero: numeroTarjeta.value,
       clave: claveTarjeta.value,
     };
   }
   verificarCupon(evento, errorCheck, "Selecciona uno");
-  if (verificarCupon(evento, errorCheck, "Selecciona uno")) {
-    if (rapi.checked) {
-      tipo = "RapiPago";
-    } else if (facil.checked) {
-      tipo = "Pago Fácil";
+  if (cupon.checked) {
+    if (verificarCupon(evento, errorCheck, "Selecciona uno")) {
+      let tipo = "";
+      if (rapi.checked) {
+        tipo = "RapiPago";
+      } else if (facil.checked) {
+        tipo = "Pago Fácil";
+      }
+      usuarioNuevo.metodoDePago = {
+        metodo: "Cupón de Pago",
+        tipo: tipo,
+      };
     }
-    usuarioNuevo.metodoDePago = {
-      método: "Cupón de Pago",
-      tipo: tipo,
-    };
   }
-
   if (transferencia.checked) {
     usuarioNuevo.metodoDePago = "Transferencia Bancaria: " + cbu.textContent;
   }

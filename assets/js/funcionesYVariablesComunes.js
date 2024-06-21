@@ -243,12 +243,14 @@ function verificarTarjeta(
     for (let i = 0; i < array.length; i++) {
       if (!REGEX_NUMERO.test(array[i])) {
         agregarClase("error", selector, selector3, texto);
+        selector.focus();
         evento.preventDefault();
         return false;
       }
     }
     if (!ultimoNumeroTarjeta(selector)) {
       agregarClase("error", selector, selector3, texto);
+      selector.focus();
       evento.preventDefault();
       return false;
     }
@@ -263,6 +265,7 @@ function verificarTarjeta(
     for (let i = 0; i < array2.length; i++) {
       if (!REGEX_CLAVE.test(array2[i])) {
         agregarClase("error", selector2, selector3, texto);
+        selector.focus();
         evento.preventDefault();
         return false;
       }
