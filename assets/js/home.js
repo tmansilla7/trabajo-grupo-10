@@ -1,3 +1,5 @@
+const no_encontradas = document.querySelector("#no-encontradas")
+
 function agregarSeriesYPeliculas() {
   for (let i in SERIES_Y_PELICULAS) {
     crearArticle(i);
@@ -40,6 +42,7 @@ buscador.addEventListener("keyup", (event) => {
             .toUpperCase()
             .includes(palabra_buscada.toUpperCase())
         ) {
+          encontradas.push(SERIES_Y_PELICULAS[i])
           crearArticle(i);
         }
       }
@@ -51,6 +54,7 @@ buscador.addEventListener("keyup", (event) => {
             .includes(palabra_buscada.toUpperCase())
         ) {
           if (SERIES_Y_PELICULAS[i]["categoría"] == categoria_seleccionada) {
+            encontradas.push(SERIES_Y_PELICULAS[i])
             crearArticle(i);
           }
         }
