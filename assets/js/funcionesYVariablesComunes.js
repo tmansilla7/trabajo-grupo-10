@@ -8,6 +8,8 @@ const USUARIOS = JSON.parse(JSON_USUARIOS);
 const JSON_USUARIO = localStorage.getItem("usuario");
 const USUARIO_INGRESADO = JSON.parse(JSON_USUARIO);
 
+const no_encontradas = document.querySelector("#no-encontradas");
+
 function obtenerUsuariosRegistrados() {
   if (JSON_USUARIOS) {
     return USUARIOS;
@@ -116,13 +118,7 @@ function verificarPassword(
   }
 }
 
-function verificarNuevaPassword(
-  evento,
-  password,
-  selector,
-  selector2,
-  texto,
-) {
+function verificarNuevaPassword(evento, password, selector, selector2, texto) {
   if (password.value.length < 8 && password.value != "") {
     agregarClase("error", selector, selector2, texto);
     evento.preventDefault();
@@ -215,13 +211,7 @@ function ultimoNumeroTarjeta(selector) {
   }
 }
 
-function verificarTarjeta(
-  evento,
-  selector,
-  selector2,
-  selector3,
-  texto
-) {
+function verificarTarjeta(evento, selector, selector2, selector3, texto) {
   const REGEX_NUMERO = /[0-9]/;
   const REGEX_CLAVE = /[1-9]/;
 
@@ -330,6 +320,8 @@ function cambioDeCategoria(array, tipo) {
 
 function buscar(array, tipo) {
   buscador.addEventListener("keyup", (event) => {
+    let encontradas = 0;
+    no_encontradas.textContent = "";
     nodo_section.innerHTML = "";
     palabra_buscada = buscador.value;
     if (palabra_buscada == "" && categoria_seleccionada == "Todas") {
@@ -343,6 +335,7 @@ function buscar(array, tipo) {
               .includes(palabra_buscada.toUpperCase())
           ) {
             if (array[i]["tipo"] == tipo) {
+              encontradas++;
               crearArticle(i);
             }
           }
@@ -358,10 +351,14 @@ function buscar(array, tipo) {
               array[i]["categoría"] == categoria_seleccionada &&
               array[i]["tipo"] == tipo
             ) {
+              encontradas++;
               crearArticle(i);
             }
           }
         }
+      }
+      if (encontradas == 0) {
+        no_encontradas.textContent = "Sin resultados";
       }
     }
   });

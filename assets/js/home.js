@@ -1,5 +1,3 @@
-const no_encontradas = document.querySelector("#no-encontradas")
-
 function agregarSeriesYPeliculas() {
   for (let i in SERIES_Y_PELICULAS) {
     crearArticle(i);
@@ -30,6 +28,8 @@ function cambioDeCategoriaEnHome() {
 cambioDeCategoriaEnHome();
 
 buscador.addEventListener("keyup", (event) => {
+  let encontradas = 0;
+  no_encontradas.textContent = "";
   nodo_section.innerHTML = "";
   palabra_buscada = buscador.value;
   if (palabra_buscada == "" && categoria_seleccionada == "Todas") {
@@ -42,7 +42,7 @@ buscador.addEventListener("keyup", (event) => {
             .toUpperCase()
             .includes(palabra_buscada.toUpperCase())
         ) {
-          encontradas.push(SERIES_Y_PELICULAS[i])
+          encontradas++;
           crearArticle(i);
         }
       }
@@ -54,11 +54,14 @@ buscador.addEventListener("keyup", (event) => {
             .includes(palabra_buscada.toUpperCase())
         ) {
           if (SERIES_Y_PELICULAS[i]["categoría"] == categoria_seleccionada) {
-            encontradas.push(SERIES_Y_PELICULAS[i])
+            encontradas++;
             crearArticle(i);
           }
         }
       }
+    }
+    if (encontradas == 0) {
+      no_encontradas.textContent = "Sin resultados";
     }
   }
 });
