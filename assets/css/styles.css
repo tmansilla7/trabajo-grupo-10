@@ -256,6 +256,9 @@ iframe {
   .registro .pago {
     overflow: hidden;
   }
+  .label-registro.label-tarjeta {
+    display: block;
+  }
 }
 
 .similares {
