@@ -35,15 +35,15 @@ function verificarFormulario(evento) {
     evento.preventDefault();
     agregarClase("error", nombre_usuario, errorNombre, "Ese usuario no existe");
   } else {
-    localStorage.setItem("usuario", JSON.stringify(usuarioIngresado));
-  }
-
-  if (password.value == "") {
-    evento.preventDefault();
-    agregarClase("error", password, errorPassword, "Ingresa tu contraseña");
-  } else if (!existente || password.value !== existente.password) {
-    evento.preventDefault();
-    agregarClase("error", password, errorPassword, "Contraseña incorrecta");
+    if (password.value == "") {
+      evento.preventDefault();
+      agregarClase("error", password, errorPassword, "Ingresa tu contraseña");
+    } else if (!existente || password.value !== existente.password) {
+      evento.preventDefault();
+      agregarClase("error", password, errorPassword, "Contraseña incorrecta");
+    } else {
+      localStorage.setItem("usuario", JSON.stringify(usuarioIngresado));
+    }
   }
 }
 

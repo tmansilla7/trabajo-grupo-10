@@ -16,6 +16,7 @@ const submit = document.querySelector("#btn-submit");
 const cancelar = document.querySelector("#btn-cancelar");
 const metodo_guardado = document.querySelector("#metodo-guardado");
 const metodo_de_usuario = document.querySelector("#metodo-de-usuario");
+const passwordGuardada = document.querySelector("#password-guardada");
 
 const errorPassword = document.querySelector("#errorPassword");
 const errorNuevaPassword = document.querySelector("#errorNuevaPassword");
@@ -90,36 +91,50 @@ function cambiarPassword(evento) {
   let usuarioEnArray = usuariosRegistrados.find(
     (usuario) => usuario.nombreDeUsuario === dataStorage.nombreDeUsuario
   );
-  if (password.value == "") {
+  if (
+    password.value == "" &&
+    nuevaPassword.value != "" &&
+    repetirPassword.value != ""
+  ) {
     agregarClase("error", password, errorPassword, "Ingresa tu contraseña");
     password.focus();
     evento.preventDefault();
   } else {
-    if (password.value != dataStorage.password) {
-      agregarClase("error", password, errorPassword, "Contraseña incorrecta");
-      password.focus();
-      evento.preventDefault();
-    } else if (
-      caracteresPassword(
-        evento,
-        nuevaPassword,
-        errorNuevaPassword,
-        "La contraseña debe tener al menos 8 caracteres, al menos 2 letras, 2 números y 2 caracteres especiales"
-      )
-    ) {
-      dataStorage.password = nuevaPassword.value;
-
-      localStorage.setItem("usuario", JSON.stringify(dataStorage));
-
-      const filtro = usuariosRegistrados.filter(
-        (usuario) => usuario !== usuarioEnArray
-      );
-      filtro.push(dataStorage);
-      localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(filtro));
-
-      datosGuardadosCorrectamente();
-      removerClaseErrorDePassword(evento);
+    if (password.value == nuevaPassword.value) {
+      evento.preventDefault()
+    } else {
+      if (password.value != dataStorage.password) {
+        agregarClase("error", password, errorPassword, "Contraseña incorrecta");
+        password.focus();
+        evento.preventDefault();
+      } else if (
+        caracteresPassword(
+          evento,
+          nuevaPassword,
+          errorNuevaPassword,
+          "La contraseña debe tener al menos 8 caracteres, al menos 2 letras, 2 números y 2 caracteres especiales"
+        )
+      ) {
+        dataStorage.password = nuevaPassword.value;
+  
+        localStorage.setItem("usuario", JSON.stringify(dataStorage));
+  
+        const filtro = usuariosRegistrados.filter(
+          (usuario) => usuario !== usuarioEnArray
+        );
+        filtro.push(dataStorage);
+        localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(filtro));
+  
+        password.value = nuevaPassword.value;
+        repetirPassword.value = "";
+        nuevaPassword.value = "";
+  
+        passwordGuardada.textContent = "Contraseña cambiada correctamente";
+        passwordGuardada.className = "correcto";
+        metodo_guardado.textContent = "";
+      }
     }
+    
   }
 }
 
@@ -165,6 +180,7 @@ function guardarMetodoDePago(evento) {
       localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(filtro));
 
       datosGuardadosCorrectamente();
+      passwordGuardada.textContent = "";
       metodo_de_usuario.textContent = "Tarjeta de crédito";
       removerClaseErrorDePassword(evento);
     } else if (
@@ -190,6 +206,7 @@ function guardarMetodoDePago(evento) {
       localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(filtro));
 
       datosGuardadosCorrectamente();
+      passwordGuardada.textContent = "";
       metodo_de_usuario.textContent = tipo;
       removerClaseErrorDePassword(evento);
     } else if (transferencia.checked) {
@@ -204,6 +221,7 @@ function guardarMetodoDePago(evento) {
       localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(filtro));
 
       datosGuardadosCorrectamente();
+      passwordGuardada.textContent = "";
       metodo_de_usuario.textContent = "Transferencia bancaria";
       removerClaseErrorDePassword(evento);
     }

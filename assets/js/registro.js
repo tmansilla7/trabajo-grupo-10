@@ -113,12 +113,13 @@ function usuarioExistente() {
   }
 }
 
-function emailExistente() {
+function emailExistente(evento) {
   let existente = arrayUsuarios.find(
     (usuario) => usuario.email === email.value
   );
 
   if (existente) {
+    evento.preventDefault();
     agregarClase("error", email, errorEmail, "Ese email ya fue utilizado");
     usuarioNuevo.email = "";
     return false;
@@ -148,7 +149,7 @@ function verificarFormulario(evento) {
   );
   validarCampo(evento, email, errorEmail, "Ingresa tu email");
   validarEmail(evento);
-  emailExistente();
+  emailExistente(evento);
   validarCampo(
     evento,
     nombreUsuario,
