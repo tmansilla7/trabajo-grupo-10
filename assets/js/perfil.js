@@ -15,12 +15,28 @@ const cbu = document.querySelector("#cbu");
 const submit = document.querySelector("#btn-submit");
 const cancelar = document.querySelector("#btn-cancelar");
 const metodo_guardado = document.querySelector("#metodo-guardado");
+const metodo_de_usuario = document.querySelector("#metodo-de-usuario");
 
 const errorPassword = document.querySelector("#errorPassword");
 const errorNuevaPassword = document.querySelector("#errorNuevaPassword");
 const errorRepetirPassword = document.querySelector("#errorRepetirPassword");
 const errorTarjeta = document.querySelector("#errorTarjeta");
 const errorCheck = document.querySelector("#errorCheck");
+
+function metodoDePagoActual() {
+  const metodo = JSON.stringify(USUARIO_INGRESADO.metodoDePago);
+  if (metodo.includes("Tarjeta de Crédito")) {
+    metodo_de_usuario.textContent = "Tarjeta de crédito";
+  } else if (metodo.includes("Pago Fácil")) {
+    metodo_de_usuario.textContent = "Pago Fácil";
+  } else if (metodo.includes("RapiPago")) {
+    metodo_de_usuario.textContent = "RapiPago";
+  } else if (metodo.includes("Transferencia")) {
+    metodo_de_usuario.textContent = "Transferencia bancaria";
+  }
+}
+
+metodoDePagoActual();
 
 function datosDeUsuario(selector, texto) {
   selector.textContent = texto;
@@ -149,6 +165,7 @@ function guardarMetodoDePago(evento) {
       localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(filtro));
 
       datosGuardadosCorrectamente();
+      metodo_de_usuario.textContent = "Tarjeta de crédito";
       removerClaseErrorDePassword(evento);
     } else if (
       cupon.checked &&
@@ -173,6 +190,7 @@ function guardarMetodoDePago(evento) {
       localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(filtro));
 
       datosGuardadosCorrectamente();
+      metodo_de_usuario.textContent = tipo;
       removerClaseErrorDePassword(evento);
     } else if (transferencia.checked) {
       dataStorage.metodoDePago = "Transferencia Bancaria: " + cbu.textContent;
@@ -186,6 +204,7 @@ function guardarMetodoDePago(evento) {
       localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(filtro));
 
       datosGuardadosCorrectamente();
+      metodo_de_usuario.textContent = "Transferencia bancaria";
       removerClaseErrorDePassword(evento);
     }
   }
