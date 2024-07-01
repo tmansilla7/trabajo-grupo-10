@@ -28,12 +28,26 @@ function metodoDePagoActual() {
   const metodo = JSON.stringify(USUARIO_INGRESADO.metodoDePago);
   if (metodo.includes("Tarjeta de Crédito")) {
     metodo_de_usuario.textContent = "Tarjeta de crédito";
+    tarjeta.checked = true;
+    numeroTarjeta.disabled = false;
+    claveTarjeta.disabled = false;
+    numeroTarjeta.value = USUARIO_INGRESADO.metodoDePago.número;
+    claveTarjeta.value = USUARIO_INGRESADO.metodoDePago.clave;
   } else if (metodo.includes("Pago Fácil")) {
     metodo_de_usuario.textContent = "Pago Fácil";
+    cupon.checked = true;
+    facil.disabled = false;
+    rapi.disabled = false;
+    facil.checked = true;
   } else if (metodo.includes("RapiPago")) {
     metodo_de_usuario.textContent = "RapiPago";
+    cupon.checked = true;
+    facil.disabled = false;
+    rapi.disabled = false;
+    rapi.checked = true;
   } else if (metodo.includes("Transferencia")) {
     metodo_de_usuario.textContent = "Transferencia bancaria";
+    transferencia.checked = true;
   }
 }
 
@@ -101,7 +115,7 @@ function cambiarPassword(evento) {
     evento.preventDefault();
   } else {
     if (password.value == nuevaPassword.value) {
-      evento.preventDefault()
+      evento.preventDefault();
     } else {
       if (password.value != dataStorage.password) {
         agregarClase("error", password, errorPassword, "Contraseña incorrecta");
@@ -116,25 +130,24 @@ function cambiarPassword(evento) {
         )
       ) {
         dataStorage.password = nuevaPassword.value;
-  
+
         localStorage.setItem("usuario", JSON.stringify(dataStorage));
-  
+
         const filtro = usuariosRegistrados.filter(
           (usuario) => usuario !== usuarioEnArray
         );
         filtro.push(dataStorage);
         localStorage.setItem(LOCAL_STORAGE_USUARIOS, JSON.stringify(filtro));
-  
+
         password.value = nuevaPassword.value;
         repetirPassword.value = "";
         nuevaPassword.value = "";
-  
+
         passwordGuardada.textContent = "Contraseña cambiada correctamente";
         passwordGuardada.className = "correcto";
         metodo_guardado.textContent = "";
       }
     }
-    
   }
 }
 
